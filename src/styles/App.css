@@ -184,8 +184,9 @@ body {
 
 .header-content > div {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .header-content h1 {
@@ -253,8 +254,9 @@ body {
 
 .file-uploader-header .header-content > div {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .file-uploader-header h1 {
@@ -2623,8 +2625,9 @@ body {
 
 .analysis-history-header .header-content > div {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .analysis-history-header h1 {
