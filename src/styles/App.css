@@ -161,11 +161,11 @@ body {
 .app-header {
   background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
   color: white;
-  padding: 20px var(--page-padding);
+  padding: 16px var(--page-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80px;
+  min-height: 70px;
   height: auto;
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
@@ -179,6 +179,7 @@ body {
   align-items: center;
   gap: 20px;
   flex: 1;
+  padding-left: 8px;
 }
 
 .header-content > div {
@@ -218,19 +219,21 @@ body {
 
 .header-actions {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 6px;
   align-items: center;
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 
 /* ===== 首页 FileUploader Header 样式 ===== */
 .file-uploader-header {
   background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
   color: white;
-  padding: 20px var(--page-padding);
+  padding: 16px var(--page-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80px;
+  min-height: 70px;
   height: auto;
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
@@ -245,6 +248,7 @@ body {
   align-items: center;
   gap: 20px;
   flex: 1;
+  padding-left: 8px;
 }
 
 .file-uploader-header .header-content > div {
@@ -2595,11 +2599,11 @@ body {
 .analysis-history-header {
   background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
   color: white;
-  padding: 20px var(--page-padding);
+  padding: 16px var(--page-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80px;
+  min-height: 70px;
   height: auto;
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
@@ -2614,6 +2618,7 @@ body {
   align-items: center;
   gap: 20px;
   flex: 1;
+  padding-left: 8px;
 }
 
 .analysis-history-header .header-content > div {
