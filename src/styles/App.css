@@ -80,6 +80,67 @@
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Z-Index 层级体系 */
+  --z-dropdown: 100;      /* 下拉菜单 */
+  --z-sticky: 200;        /* 粘性元素（Tab等） */
+  --z-tooltip: 300;       /* 提示框 */
+  --z-popover: 400;       /* 相对弹出框（删除确认等） */
+  --z-modal: 1000;        /* 模态框（导出对话框等） */
+  --z-notification: 1100; /* 通知/Toast */
+}
+
+/* 超小屏幕响应式变量 (360px - 479px) */
+@media (max-width: 479px) {
+  :root {
+    --text-2xl: 18px;
+    --text-xl: 17px;
+    --text-lg: 15px;
+    --text-sm: 13px;
+  }
+
+  .app-header h1,
+  .file-uploader-header h1,
+  .analysis-history-header h1 {
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .app-header .subtitle,
+  .file-uploader-header .subtitle,
+  .analysis-history-header .subtitle {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 4px;
+    margin-left: 8px;
+  }
+
+  .header-actions .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 小屏幕响应式变量 (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --text-2xl: 20px;
+  }
+
+  .app-header h1,
+  .file-uploader-header h1,
+  .analysis-history-header h1 {
+    font-size: 18px;
+  }
+
+  .app-header .subtitle,
+  .file-uploader-header .subtitle,
+  .analysis-history-header .subtitle {
+    display: block;
+    font-size: 13px;
+  }
 }
 
 /* 平板端响应式变量 (768px+) */
@@ -171,31 +232,14 @@ body {
   height: auto;
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 0 !important;
 }
 
-/* 只有结果页的app-header在result-container中，需要特殊处理 */
-.result-container .app-header {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
+/* 结果页的app-header继承通用样式 */
 
-/* 首页和分析历史页的header在其他容器中 */
-.upload-analyze-container .file-uploader-header {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: calc(-1 * var(--page-padding));
-  margin-bottom: 0;
-}
-
-.analysis-history .analysis-history-header {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: calc(-1 * var(--page-padding) * 2);
-  margin-bottom: 0;
-}
+/* 首页和分析历史页的header继承通用样式 */
 
 /* Header 内容通用样式 */
 .app-header .header-content,
@@ -462,6 +506,52 @@ body {
   margin-bottom: 20px;
 }
 
+/* ===== Alert 提示框样式 ===== */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.3s ease-out;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.alert-error {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.alert-success {
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.alert-warning {
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.alert-info {
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+@media (max-width: 480px) {
+  .alert {
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 8px;
+  }
+}
+
 /* ===== 文件上传区域 ===== */
 
 /* File Uploader 容器 */
@@ -565,7 +655,7 @@ body {
 .upload-zone {
   border: 2px dashed var(--gray-300);
   border-radius: var(--radius-lg);
-  padding: 32px 20px;
+  padding: 32px 24px;
   text-align: center;
   transition: all var(--duration-base) var(--ease-out);
   background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
@@ -578,14 +668,14 @@ body {
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
-  min-height: 140px;
+  min-height: 150px;
 }
 
 @media (min-width: 768px) {
   .upload-area,
   .upload-zone {
     min-height: 160px;
-    padding: 32px 20px;
+    padding: 40px 24px;
   }
 }
 
@@ -748,9 +838,9 @@ body {
 /* ===== 隐私保护提示框 ===== */
 .privacy-alert {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
-  padding: 20px var(--spacing-lg);
+  padding: 20px 16px;
   background: #fef3c7;
   border-radius: var(--radius-sm);
   border-left: 4px solid #f59e0b;
@@ -771,14 +861,14 @@ body {
 .alert-icon {
   font-size: 20px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .alert-content {
   flex: 1;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .alert-title {
@@ -786,20 +876,47 @@ body {
   font-weight: 600;
   color: #92400e;
   margin: 0;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .alert-text {
   font-size: 12px;
-  color: #b45309;
+  color: #92400e;
   margin: 0;
   line-height: 1.5;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .privacy-alert {
     padding: 20px 18px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .alert-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .alert-icon {
+    margin-top: 0;
+  }
+
+  .alert-title {
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .alert-text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .privacy-alert {
+    padding: 22px 20px;
     gap: 14px;
   }
 
@@ -820,7 +937,7 @@ body {
 .footer-info {
   background: white;
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 28px 20px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
   margin-bottom: 20px;
@@ -864,7 +981,7 @@ body {
 
 @media (min-width: 768px) {
   .footer-info {
-    padding: 24px;
+    padding: 32px 28px;
     margin-bottom: 24px;
   }
 
@@ -1100,7 +1217,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--z-modal);
   animation: fadeIn 0.2s ease;
 }
 
@@ -1697,6 +1814,11 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   flex: 1;
+  /* 防止滚动条导致的布局抖动 */
+  scrollbar-gutter: stable;
+  /* 备用方案：为防止滚动条的空间预留 */
+  padding-right: 17px;
+  margin-right: -17px;
 }
 
 /* 平板端+ */
@@ -1796,7 +1918,7 @@ body {
   position: sticky;
   top: 0;
   background: white;
-  z-index: 100;
+  z-index: var(--z-sticky);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   -webkit-overflow-scrolling: touch;  /* 平滑滚动 */
   transform: translateZ(0);  /* GPU 加速 */
@@ -2181,7 +2303,7 @@ body {
   margin-top: 0;
   background: white;
   border-radius: 12px;
-  padding: var(--spacing-2xl);
+  padding: 24px var(--spacing-2xl);
   border: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -2238,7 +2360,7 @@ body {
 
 @media (max-width: 768px) {
   .recent-analyses {
-    padding: var(--spacing-xl);
+    padding: 20px var(--spacing-xl);
   }
 
   .analyses-list {
@@ -2248,14 +2370,36 @@ body {
 
 /* 分析列表项 */
 .analysis-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
   align-items: center;
   padding: 12px;
   background: var(--gray-50);
   border-radius: 8px;
   border: 1px solid var(--gray-200);
   transition: all 0.2s ease;
+}
+
+@media (max-width: 480px) {
+  .analysis-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .item-info {
+    min-width: 0;
+  }
+
+  .item-actions {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .item-actions .btn {
+    flex: 1;
+  }
 }
 
 .analysis-item:hover {
@@ -2302,7 +2446,6 @@ body {
   gap: 8px;
   align-items: center;
   flex-shrink: 0;
-  margin-left: 12px;
 }
 
 /* 按钮公共样式 */
@@ -2316,13 +2459,16 @@ body {
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  min-height: 32px;
 }
 
 /* 小按钮 */
 .btn-sm {
-  padding: 4px 10px;
+  padding: 6px 12px;
   font-size: 12px;
+  min-height: 32px;
 }
 
 /* 描边按钮 */
@@ -2338,10 +2484,10 @@ body {
 
 /* 删除按钮 */
 .btn-delete {
-  padding: 6px 8px;
+  padding: 6px 12px;
   font-size: 14px;
-  min-width: 40px;
-  min-height: 40px;
+  min-width: 32px;
+  min-height: 32px;
   cursor: pointer;
   background: white;
   border: 1px solid var(--gray-300);
@@ -2356,10 +2502,10 @@ body {
 
 /* 图标按钮 */
 .btn-icon {
-  padding: 6px 8px;
+  padding: 6px 12px;
   font-size: 14px;
-  min-width: 40px;
-  min-height: 40px;
+  min-width: 32px;
+  min-height: 32px;
   justify-content: center;
 }
 
@@ -2410,7 +2556,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--z-modal);
   animation: fadeIn 0.2s ease-out;
 }
 
@@ -2993,7 +3139,7 @@ body {
   border-radius: 8px;
   padding: 12px 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 100;
+  z-index: var(--z-popover);
   min-width: 200px;
   animation: slideUp 0.2s ease-out;
 }
@@ -3020,7 +3166,7 @@ body {
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 100;
+  z-index: var(--z-popover);
   min-width: 200px;
   animation: slideUp 0.2s ease-out;
 }

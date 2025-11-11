@@ -189,20 +189,11 @@ export default function FileUploader({
         </div>
       </div>
 
-      {/* 文件验证错误提示（内联显示） */}
+      {/* 文件验证错误提示 */}
       {fileValidationError && (
-        <div className="alert alert-error" style={{
-          marginTop: '12px',
-          padding: '12px 16px',
-          backgroundColor: '#fee2e2',
-          border: '1px solid #fecaca',
-          borderRadius: '6px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '10px'
-        }}>
-          <span style={{ fontSize: '18px' }}>❌</span>
-          <span style={{ color: '#991b1b', fontWeight: '500' }}>{fileValidationError}</span>
+        <div className="alert alert-error">
+          <span>❌</span>
+          <span>{fileValidationError}</span>
         </div>
       )}
 
