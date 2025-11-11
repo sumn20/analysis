@@ -161,11 +161,12 @@ body {
 .app-header {
   background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
   color: white;
-  padding: var(--spacing-md) var(--page-padding);
+  padding: 20px var(--page-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: var(--header-height);
+  min-height: 80px;
+  height: auto;
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
 }
@@ -173,8 +174,14 @@ body {
 .header-content {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: 20px;
   flex: 1;
+}
+
+.header-content > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .header-content h1 {
@@ -182,21 +189,24 @@ body {
   margin: 0;
   font-weight: 700;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .header-content .subtitle {
   font-size: var(--text-sm);
   opacity: 1;
   display: none;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 400;
   letter-spacing: 0.3px;
-  margin: 4px 0 0 0;
+  margin: 0;
   padding: 0;
   background: transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* 桌面端显示副标题 */
+/* 平板端显示副标题 */
 @media (min-width: 768px) {
   .header-content .subtitle {
     display: block;
