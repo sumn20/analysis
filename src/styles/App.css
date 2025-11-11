@@ -441,16 +441,29 @@ body {
 }
 
 .hero-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--dark);
   margin: 0 0 8px 0;
   letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+@media (min-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 768px) {
   .hero-title {
     font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 34px;
   }
 }
 
@@ -464,10 +477,16 @@ body {
   font-size: 14px;
   color: var(--gray-600);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.8;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 480px) {
+  .hero-subtitle {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -671,10 +690,10 @@ body {
 .privacy-alert {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 14px 16px;
+  gap: 12px;
+  padding: var(--spacing-md) var(--spacing-lg);
   background: #fef3c7;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border-left: 4px solid #f59e0b;
   animation: slideIn 0.4s ease-out;
 }
@@ -693,7 +712,7 @@ body {
 .alert-icon {
   font-size: 20px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .alert-content {
