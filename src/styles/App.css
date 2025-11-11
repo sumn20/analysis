@@ -222,9 +222,9 @@ body {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-left: 16px;
+  margin-left: 24px;
   flex-shrink: 0;
-  padding-right: 8px;
+  padding-right: 0;
 }
 
 /* ===== 首页 FileUploader Header 样式 ===== */
