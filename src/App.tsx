@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { AnalysisResult, AnalysisProgress } from './types';
 import { analyzeApk } from './services/apkAnalyzer';
 import { loadConfig, type AppConfig } from './config';
+import { useTextOverflowDetection } from './hooks/useTextOverflowDetection';
 import FileUploader from './components/FileUploader';
 import AnalysisProgressComponent from './components/AnalysisProgress';
 import ResultTabs from './components/ResultTabs';
@@ -35,6 +36,15 @@ export default function App() {
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showExportModal, setShowExportModal] = useState(false);
+
+  // 自动检测页脚信息框是否被遮挡
+  useTextOverflowDetection({
+    containerSelector: '.footer-info',
+    textSelector: '.info-list',
+    minPaddingBottom: 20,
+    checkInterval: 1000,
+    debug: false,
+  });
 
   // 初始化：加载配置
   useEffect(() => {

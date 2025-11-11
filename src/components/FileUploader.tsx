@@ -3,6 +3,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { AnalysisResult } from '../types';
+import { useTextOverflowDetection } from '../hooks/useTextOverflowDetection';
 
 interface RecentAnalysis {
   id: number;
@@ -43,6 +44,15 @@ export default function FileUploader({
 }: FileUploaderProps) {
   const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // 自动检测上传区域文字是否被遮挡
+  useTextOverflowDetection({
+    containerSelector: '.upload-zone',
+    textSelector: '.upload-info',
+    minPaddingBottom: 40,
+    checkInterval: 500,
+    debug: false, // 设为 true 可在控制台查看调试信息
+  });
 
   // 当删除弹窗打开时，禁用滚动
   useEffect(() => {
