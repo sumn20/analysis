@@ -207,6 +207,66 @@ interface AppConfig {
 }
 ```
 
+## 空值处理
+
+本项目采用智能空值处理机制，确保**配置项为空时不会在页面上显示对应元素**：
+
+### 哪些值被视为"空"
+
+- `null` - 空值
+- `undefined` - 未定义
+- `""` - 空字符串
+- `"   "` - 仅包含空格的字符串
+
+### 空值行为说明
+
+| 配置项 | 为空时的行为 |
+|--------|------------|
+| `footer.projectUrl` 或 `footer.projectLabel` | 整个项目链接部分不显示 |
+| `footer.icp.enabled` 为 `false` 或其他值为空 | ICP 备案部分不显示 |
+| `footer.copyright` | 版权信息部分不显示 |
+
+### 配置示例：完全隐藏所有可选项
+
+```json
+{
+  "footer": {
+    "projectUrl": "https://github.com/ShellMonster/JavaScript_Apk_Analysis",
+    "projectLabel": "查看源码",
+    "icp": {
+      "enabled": false,
+      "number": "",
+      "url": "",
+      "label": ""
+    },
+    "copyright": ""
+  }
+}
+```
+
+结果：底部只显示项目链接，ICP 和版权信息都隐藏
+
+### 配置示例：仅显示 ICP
+
+```json
+{
+  "footer": {
+    "projectUrl": "",
+    "projectLabel": "",
+    "icp": {
+      "enabled": true,
+      "number": "京ICP备2025001234号-1",
+      "url": "https://beian.miit.gov.cn/"
+    },
+    "copyright": ""
+  }
+}
+```
+
+结果：底部只显示 ICP 备案链接
+
+---
+
 ## 常见问题
 
 ### Q: 修改了 config.json 但页面没有更新？
@@ -215,10 +275,14 @@ A: 检查以下几点：
 1. 确认修改的是 `public/config.json` 而不是其他文件
 2. 重新启动开发服务器或刷新浏览器
 3. 检查浏览器控制台是否有错误信息
+4. 确保 JSON 格式正确（使用 jq 或在线验证工具）
 
 ### Q: ICP 链接显示不出来？
 
-A: 确保配置中的 `icp.enabled` 设置为 `true`：
+A: 检查以下条件都满足：
+1. `icp.enabled` 必须为 `true`
+2. `icp.number` 必须有值（不为空）
+3. `icp.url` 必须有值（不为空）
 
 ```json
 {
@@ -229,6 +293,54 @@ A: 确保配置中的 `icp.enabled` 设置为 `true`：
       "url": "https://beian.miit.gov.cn/",
       "label": "ICP 备案号"
     }
+  }
+}
+```
+
+### Q: 项目链接显示不出来？
+
+A: 检查 `projectUrl` 和 `projectLabel` 都有值且不为空：
+
+```json
+{
+  "footer": {
+    "projectUrl": "https://github.com/yourorg/yourrepo",
+    "projectLabel": "查看源码"
+  }
+}
+```
+
+如果设置为空字符串，整个项目链接部分会被隐藏。
+
+### Q: 版权信息显示不出来？
+
+A: 检查 `copyright` 有值且不仅是空格：
+
+```json
+{
+  "footer": {
+    "copyright": "© 2025 My Company. All rights reserved."
+  }
+}
+```
+
+设置为 `""` 或只包含空格会被视为空，不会显示。
+
+### Q: 如何完全移除底部的某一项？
+
+A: 将对应配置设置为空字符串 `""`：
+
+```json
+{
+  "footer": {
+    "projectUrl": "",           // 隐藏项目链接
+    "projectLabel": "",
+    "icp": {
+      "enabled": false,         // 隐藏 ICP 备案
+      "number": "",
+      "url": ""
+    },
+    "copyright": ""             // 隐藏版权信息
   }
 }
 ```
@@ -245,6 +357,13 @@ public/config.test.json     # 测试环境
 
 # 在构建脚本中动态选择：
 # build: "cp public/config.$NODE_ENV.json public/config.json && vite build"
+```
+
+或使用 Docker 时：
+
+```dockerfile
+# 在容器启动时覆盖配置
+COPY config.${ENVIRONMENT}.json /app/dist/config.json
 ```
 
 ## 最佳实践

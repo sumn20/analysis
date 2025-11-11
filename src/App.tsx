@@ -255,29 +255,34 @@ export default function App() {
         {config && (
           <>
             <div className="footer-content">
-              <div className="footer-project">
-                <p>
-                  基于{' '}
-                  <a
-                    href={config.footer.projectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={config.footer.projectUrl}
-                  >
-                    {config.footer.projectLabel}
-                  </a>{' '}
-                  | 支持识别 2800+ SDK
-                </p>
-              </div>
+              {/* 项目链接 - 如果配置了 URL 才显示 */}
+              {config.footer.projectUrl && config.footer.projectLabel && (
+                <div className="footer-project">
+                  <p>
+                    基于{' '}
+                    <a
+                      href={config.footer.projectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={config.footer.projectUrl}
+                    >
+                      {config.footer.projectLabel}
+                    </a>{' '}
+                    | 支持识别 2800+ SDK
+                  </p>
+                </div>
+              )}
 
-              {/* ICP 备案信息 */}
-              {config.footer.icp?.enabled && (
+              {/* ICP 备案信息 - 只有启用且有值才显示 */}
+              {config.footer.icp?.enabled &&
+               config.footer.icp.number &&
+               config.footer.icp.url && (
                 <div className="footer-icp">
                   <a
                     href={config.footer.icp.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title={config.footer.icp.label}
+                    title={config.footer.icp.label || 'ICP 备案号'}
                     className="icp-link"
                   >
                     {config.footer.icp.number}
@@ -286,8 +291,8 @@ export default function App() {
               )}
             </div>
 
-            {/* 版权信息 */}
-            {config.footer.copyright && (
+            {/* 版权信息 - 只有值存在才显示 */}
+            {config.footer.copyright && config.footer.copyright.trim() && (
               <div className="footer-copyright">
                 {config.footer.copyright}
               </div>

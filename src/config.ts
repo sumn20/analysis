@@ -98,12 +98,45 @@ export function getConfig(): AppConfig | null {
 }
 
 /**
+ * 检查值是否为空（null、undefined、空字符串）
+ */
+function isEmpty(value: any): boolean {
+  return value === null || value === undefined || (typeof value === 'string' && value.trim() === '');
+}
+
+/**
  * 合并配置：深度合并用户配置和默认配置
  * @param defaults 默认配置
  * @param overrides 用户配置
  * @returns 合并后的配置
  */
 function mergeConfig(defaults: AppConfig, overrides: Partial<AppConfig>): AppConfig {
+  // 过滤掉空值的 footer 配置
+  const footerOverrides = overrides.footer || {};
+  const cleanedFooter: any = {};
+
+  // 只保留非空的值
+  if (!isEmpty(footerOverrides.projectUrl)) cleanedFooter.projectUrl = footerOverrides.projectUrl;
+  if (!isEmpty(footerOverrides.projectLabel)) cleanedFooter.projectLabel = footerOverrides.projectLabel;
+  if (!isEmpty(footerOverrides.copyright)) cleanedFooter.copyright = footerOverrides.copyright;
+
+  // 处理 ICP 配置
+  if (footerOverrides.icp) {
+    const icpConfig: any = {};
+    if (footerOverrides.icp.enabled !== undefined) icpConfig.enabled = footerOverrides.icp.enabled;
+    if (!isEmpty(footerOverrides.icp.number)) icpConfig.number = footerOverrides.icp.number;
+    if (!isEmpty(footerOverrides.icp.url)) icpConfig.url = footerOverrides.icp.url;
+    if (!isEmpty(footerOverrides.icp.label)) icpConfig.label = footerOverrides.icp.label;
+
+    // 只有当有实际值时才合并 ICP 配置
+    if (Object.keys(icpConfig).length > 0) {
+      cleanedFooter.icp = {
+        ...defaults.footer.icp,
+        ...icpConfig,
+      };
+    }
+  }
+
   return {
     app: {
       ...defaults.app,
@@ -111,14 +144,7 @@ function mergeConfig(defaults: AppConfig, overrides: Partial<AppConfig>): AppCon
     },
     footer: {
       ...defaults.footer,
-      ...(overrides.footer || {}),
-      icp: overrides.footer?.icp
-        ? {
-            ...defaults.footer.icp,
-            ...overrides.footer.icp,
-          }
-        : defaults.footer.icp,
-      links: overrides.footer?.links || defaults.footer.links,
+      ...cleanedFooter,
     },
     rules: {
       ...defaults.rules,
