@@ -818,6 +818,13 @@ body {
   }
 }
 
+/* PC/MacBook 优化 (1024px+) - 确保滚动到底时有足够间距 */
+@media (min-width: 1024px) {
+  .footer-info {
+    margin-bottom: 40px;
+  }
+}
+
 /* ===== 进度条 ===== */
 .progress-container {
   margin: 20px 0;
