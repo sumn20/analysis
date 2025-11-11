@@ -826,11 +826,12 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 20px 16px;
+  padding: 28px 16px;
   background: #fef3c7;
   border-radius: var(--radius-sm);
   border-left: 4px solid #f59e0b;
   animation: slideIn 0.4s ease-out;
+  margin: 24px 0;
 }
 
 @keyframes slideIn {
@@ -873,9 +874,10 @@ body {
 
 @media (min-width: 480px) {
   .privacy-alert {
-    padding: 20px 18px;
+    padding: 28px 18px;
     gap: 12px;
     align-items: center;
+    margin: 28px 0;
   }
 
   .alert-content {
@@ -923,10 +925,11 @@ body {
 .footer-info {
   background: white;
   border-radius: var(--radius);
-  padding: 28px 20px;
+  padding: 36px 20px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
-  margin-bottom: 20px;
+  margin-top: 28px;
+  margin-bottom: 28px;
   flex-shrink: 0;
 }
 
@@ -967,8 +970,9 @@ body {
 
 @media (min-width: 768px) {
   .footer-info {
-    padding: 32px 28px;
-    margin-bottom: 24px;
+    padding: 40px 28px;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   .footer-info h4 {
@@ -2284,10 +2288,11 @@ body {
 
 /* 最近分析容器 */
 .recent-analyses {
-  margin-top: 0;
+  margin-top: 28px;
+  margin-bottom: 28px;
   background: white;
   border-radius: 12px;
-  padding: 24px var(--spacing-2xl);
+  padding: 28px var(--spacing-2xl);
   border: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -2344,7 +2349,9 @@ body {
 
 @media (max-width: 768px) {
   .recent-analyses {
-    padding: 20px var(--spacing-xl);
+    padding: 24px var(--spacing-xl);
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   .analyses-list {
@@ -2664,8 +2671,9 @@ body {
 @media (max-width: 768px) {
   /* 最近分析列表响应式 */
   .recent-analyses {
-    margin-top: 20px;
-    padding: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 20px;
   }
 
   .analysis-item {
