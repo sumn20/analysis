@@ -186,11 +186,15 @@ body {
 .upload-analyze-container .file-uploader-header {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: calc(-1 * var(--page-padding));
+  margin-bottom: 0;
 }
 
 .analysis-history .analysis-history-header {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: calc(-1 * var(--page-padding));
+  margin-bottom: 0;
 }
 
 /* Header 内容通用样式 */
