@@ -1,0 +1,256 @@
+// src/App.tsx
+// 主应用组件 - 状态管理和组件编排
+
+import { useState } from 'react';
+import { AnalysisResult, AnalysisProgress } from './types';
+import { analyzeApk } from './services/apkAnalyzer';
+import FileUploader from './components/FileUploader';
+import AnalysisProgressComponent from './components/AnalysisProgress';
+import ResultTabs from './components/ResultTabs';
+import ReportExport from './components/ReportExport';
+import AnalysisHistory from './components/AnalysisHistory';
+import './styles/App.css';
+
+// 应用状态类型
+type AppState = 'idle' | 'analyzing' | 'completed' | 'error' | 'history';
+
+// 最近分析记录类型
+interface RecentAnalysis {
+  id: number;
+  fileName: string;
+  fileSize: string;
+  packageName: string;
+  analyzeTime: string;
+  result: AnalysisResult;
+}
+
+export default function App() {
+  // 应用状态
+  const [state, setState] = useState<AppState>('idle');
+  const [progress, setProgress] = useState<AnalysisProgress | null>(null);
+  const [result, setResult] = useState<AnalysisResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [showExportModal, setShowExportModal] = useState(false);
+
+  // 最近分析列表状态
+  const [recentAnalyses, setRecentAnalyses] = useState<RecentAnalysis[]>(() => {
+    // 从 localStorage 加载最近的分析记录
+    try {
+      const stored = localStorage.getItem('recentAnalyses');
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  // 文件大小验证错误状态
+  const [fileSizeError, setFileSizeError] = useState<string | null>(null);
+
+  // 删除确认弹窗状态
+  const [deletingRecordId, setDeletingRecordId] = useState<number | null>(null);
+
+  // 处理文件选择
+  const handleFileSelect = async (file: File) => {
+    setFileSizeError(null);
+    setState('analyzing');
+    setError(null);
+    setProgress({
+      stage: 'extracting',
+      progress: 0,
+      message: '正在提取 APK 文件...',
+    });
+
+    try {
+      // 调用分析服务
+      const analysisResult = await analyzeApk(file, (progressUpdate) => {
+        setProgress(progressUpdate);
+      });
+
+      // 分析完成
+      setResult(analysisResult);
+      setState('completed');
+      setProgress(null);
+
+      // 添加到最近分析列表
+      const newRecord: RecentAnalysis = {
+        id: Date.now(),
+        fileName: file.name,
+        fileSize: analysisResult.file?.sizeFormatted || '未知',
+        packageName: analysisResult.basic.packageName,
+        analyzeTime: new Date().toLocaleString('zh-CN'),
+        result: analysisResult,
+      };
+
+      // 将新记录添加到列表顶部，并限制列表大小
+      const updated = [newRecord, ...recentAnalyses].slice(0, 10);
+      setRecentAnalyses(updated);
+      localStorage.setItem('recentAnalyses', JSON.stringify(updated));
+    } catch (err) {
+      console.error('分析失败:', err);
+      setState('error');
+      setError(err instanceof Error ? err.message : '分析过程中发生未知错误');
+      setProgress(null);
+    }
+  };
+
+  // 处理文件验证错误
+  const handleFileValidationError = (errorMessage: string) => {
+    setFileSizeError(errorMessage);
+  };
+
+  // 快速重新分析
+  const handleQuickReanalyze = (record: RecentAnalysis) => {
+    setFileSizeError(null);
+    // 重新分析该APK需要重新上传，这里先返回到上传界面
+    // 在实际应用中可以缓存APK文件进行重新分析
+    setState('idle');
+  };
+
+  // 查看历史记录
+  const handleViewHistory = () => {
+    setState('history');
+  };
+
+  // 清空所有历史记录
+  const handleClearAllHistory = () => {
+    setRecentAnalyses([]);
+    localStorage.setItem('recentAnalyses', JSON.stringify([]));
+  };
+
+  // 删除分析记录
+  const handleDeleteRecord = (recordId: number) => {
+    const updated = recentAnalyses.filter(record => record.id !== recordId);
+    setRecentAnalyses(updated);
+    localStorage.setItem('recentAnalyses', JSON.stringify(updated));
+    setDeletingRecordId(null);
+  };
+
+  // 重置状态（返回上传页面）
+  const handleReset = () => {
+    setState('idle');
+    setResult(null);
+    setError(null);
+    setProgress(null);
+    setShowExportModal(false);
+    setFileSizeError(null);
+  };
+
+  // 打开导出对话框
+  const handleExport = () => {
+    setShowExportModal(true);
+  };
+
+  // 关闭导出对话框
+  const handleCloseExport = () => {
+    setShowExportModal(false);
+  };
+
+  return (
+    <div className="app">
+      {/* 主内容区域 */}
+      <main className="app-main">
+        {/* 空闲状态 - 显示上传界面 */}
+        {state === 'idle' && (
+          <div className="upload-analyze-container">
+            <FileUploader
+              onFileSelect={handleFileSelect}
+              disabled={false}
+              recentAnalyses={recentAnalyses}
+              onQuickReanalyze={handleQuickReanalyze}
+              onViewHistory={handleViewHistory}
+              onDeleteRecord={handleDeleteRecord}
+              fileValidationError={fileSizeError}
+              onValidationError={handleFileValidationError}
+              deletingRecordId={deletingRecordId}
+              onSetDeletingRecordId={setDeletingRecordId}
+            />
+          </div>
+        )}
+
+        {/* 分析中 - 显示进度 */}
+        {state === 'analyzing' && progress && (
+          <div className="upload-analyze-container">
+            <AnalysisProgressComponent progress={progress} />
+          </div>
+        )}
+
+        {/* 分析完成 - 显示结果 */}
+        {state === 'completed' && result && (
+          <>
+            {/* Header with actions for result view */}
+            <header className="app-header">
+              <div className="header-content">
+                <div>
+                  <h1>🔍 APK SDK 分析工具</h1>
+                  <p className="subtitle">快速识别 Android 应用中的 SDK 和第三方库</p>
+                </div>
+              </div>
+              <div className="header-actions">
+                <button className="btn btn-sm btn-secondary" onClick={handleExport}>
+                  导出报告
+                </button>
+                <button className="btn btn-sm btn-secondary" onClick={handleReset}>
+                  重新分析
+                </button>
+              </div>
+            </header>
+            <div className="result-container">
+              <ResultTabs
+                result={result}
+                onExport={handleExport}
+                onReset={handleReset}
+              />
+            </div>
+          </>
+        )}
+
+        {/* 错误状态 - 显示错误信息 */}
+        {state === 'error' && (
+          <div className="upload-analyze-container">
+            <div className="card error-card">
+              <div className="error-icon">❌</div>
+              <h2>分析失败</h2>
+              <p className="error-message">{error}</p>
+              <button className="button" onClick={handleReset}>
+                重新上传
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* 历史记录页面 */}
+        {state === 'history' && (
+          <div className="upload-analyze-container">
+            <AnalysisHistory
+              recentAnalyses={recentAnalyses}
+              onQuickReanalyze={handleQuickReanalyze}
+              onBackToUpload={handleReset}
+              onDeleteRecord={handleDeleteRecord}
+              onClearAllHistory={handleClearAllHistory}
+            />
+          </div>
+        )}
+      </main>
+
+      {/* 页脚 */}
+      <footer className="app-footer">
+        <p>
+          基于{' '}
+          <a
+            href="https://github.com/LibChecker/LibChecker-Rules"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LibChecker-Rules
+          </a>{' '}
+          规则库 | 支持识别 2800+ SDK
+        </p>
+      </footer>
+
+      {/* 导出对话框 */}
+      {showExportModal && result && (
+        <ReportExport result={result} onClose={handleCloseExport} />
+      )}
+    </div>
+  );
+}

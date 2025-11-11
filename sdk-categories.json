@@ -1,0 +1,7861 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-11-05T17:03:01.261272",
+  "description": "SDK分类映射表 - 基于规则库ID，为SDK进行分类。此文件独立于规则库存储，规则库更新时不会被覆盖。",
+  "categories": {
+    "network": {
+      "label": "网络通信",
+      "icon": "🌐",
+      "description": "网络请求、HTTP客户端、WebSocket等网络相关库"
+    },
+    "ads": {
+      "label": "广告",
+      "icon": "📢",
+      "description": "广告SDK、广告网络、广告投放平台"
+    },
+    "analytics": {
+      "label": "数据分析",
+      "icon": "📊",
+      "description": "用户分析、埋点跟踪、数据统计、事件分析"
+    },
+    "push": {
+      "label": "消息推送",
+      "icon": "📲",
+      "description": "推送通知服务、消息推送SDK"
+    },
+    "payment": {
+      "label": "支付",
+      "icon": "💳",
+      "description": "支付SDK、支付网关、支付相关服务"
+    },
+    "map": {
+      "label": "地图定位",
+      "icon": "📍",
+      "description": "地图服务、定位SDK、导航功能"
+    },
+    "social": {
+      "label": "社交分享",
+      "icon": "👥",
+      "description": "社交登录、分享SDK、社交媒体集成"
+    },
+    "video": {
+      "label": "音视频",
+      "icon": "🎥",
+      "description": "视频播放器、音频处理、直播SDK、视频编解码"
+    },
+    "image": {
+      "label": "图片处理",
+      "icon": "🖼️",
+      "description": "图片加载、图片处理、图片编辑"
+    },
+    "database": {
+      "label": "数据存储",
+      "icon": "💾",
+      "description": "数据库、本地存储、缓存库"
+    },
+    "security": {
+      "label": "安全加密",
+      "icon": "🔒",
+      "description": "加密算法、安全认证、反作弊"
+    },
+    "crash": {
+      "label": "崩溃监测",
+      "icon": "⚠️",
+      "description": "崩溃日志、错误追踪、异常监测"
+    },
+    "ai": {
+      "label": "人工智能",
+      "icon": "🤖",
+      "description": "机器学习、NLP、人脸识别、AI模型"
+    },
+    "framework": {
+      "label": "开发框架",
+      "icon": "⚙️",
+      "description": "应用框架、依赖注入、ORM框架"
+    },
+    "system": {
+      "label": "系统功能",
+      "icon": "🔧",
+      "description": "系统接口、系统工具、系统优化"
+    },
+    "other": {
+      "label": "其他",
+      "icon": "📦",
+      "description": "其他未分类的SDK"
+    }
+  },
+  "sdks": {
+    "853204BF-71F4-4AF6-A6DB-0394BAE2C515": {
+      "name": "AdColony",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "移动广告",
+        "SDK",
+        "Android"
+      ],
+      "confidence": 0.9
+    },
+    "F5D2D5E6-1234-4AF6-B6DB-1394BAE2C515": {
+      "name": "Google Analytics",
+      "category": "analytics",
+      "keywords": [
+        "analytics",
+        "firebase",
+        "google",
+        "统计",
+        "分析"
+      ]
+    },
+    "A1B2C3D4-5678-4AF6-C6DB-2394BAE2C515": {
+      "name": "WeChat",
+      "category": "social",
+      "keywords": [
+        "wechat",
+        "微信",
+        "tencent",
+        "腾讯"
+      ]
+    },
+    "B2C3D4E5-6789-4AF6-D6DB-3394BAE2C515": {
+      "name": "Alipay",
+      "category": "payment",
+      "keywords": [
+        "alipay",
+        "支付宝",
+        "alipayx",
+        "moonbridge"
+      ]
+    },
+    "C3D4E5F6-7890-4AF6-E6DB-4394BAE2C515": {
+      "name": "AMap",
+      "category": "map",
+      "keywords": [
+        "amap",
+        "高德地图",
+        "地图",
+        "定位"
+      ]
+    },
+    "37F5ED7F-46EE-456F-AE2D-7C02D1153566": {
+      "name": "号码认证服务",
+      "category": "security",
+      "keywords": [
+        "号码认证",
+        "安全校验",
+        "身份验证",
+        "运营商网关",
+        "无感知校验"
+      ],
+      "confidence": 0.85
+    },
+    "EBF98ACC-FCFD-48B7-8637-52066717CDE0": {
+      "name": "FreeType",
+      "category": "image",
+      "keywords": [
+        "字体渲染",
+        "矢量字体",
+        "位图字体",
+        "C语言",
+        "字形图像"
+      ],
+      "confidence": 0.85
+    },
+    "EC986391-3097-4EA1-9D97-996F8488D50B": {
+      "name": "Zstandard",
+      "category": "other",
+      "keywords": [
+        "无损压缩",
+        "zstd",
+        "数据压缩",
+        "压缩算法"
+      ],
+      "confidence": 0.8
+    },
+    "0374FD67-A389-4EFC-991B-724E41496520": {
+      "name": "Matrix",
+      "category": "framework",
+      "keywords": [
+        "应用性能",
+        "性能监控",
+        "框架",
+        "问题定位优化"
+      ],
+      "confidence": 0.9
+    },
+    "4B263D0B-EF3E-4114-AE94-8AF5B9B94FEE": {
+      "name": "爱加密",
+      "category": "security",
+      "keywords": [
+        "移动应用加固",
+        "加密技术",
+        "安全风险防范",
+        "破解防护",
+        "数据安全"
+      ],
+      "confidence": 0.95
+    },
+    "58F4089F-05A7-4ECE-B2BC-EC637C17B95C": {
+      "name": "Rime Core",
+      "category": "system",
+      "keywords": [
+        "输入法引擎",
+        "核心库",
+        "文字输入",
+        "系统功能"
+      ],
+      "confidence": 0.85
+    },
+    "C483A992-68A9-4E6A-B979-171B983E4391": {
+      "name": "腾讯浏览服务（TBS）",
+      "category": "framework",
+      "keywords": [
+        "网页浏览",
+        "X5内核",
+        "移动端",
+        "浏览体验"
+      ],
+      "confidence": 0.85
+    },
+    "99488042-9BD2-4A71-845D-C56880285873": {
+      "name": "FMOD",
+      "category": "video",
+      "keywords": [
+        "音频",
+        "自适应音频",
+        "音效",
+        "音频处理"
+      ],
+      "confidence": 0.85
+    },
+    "E18C1369-E9BC-49F9-AE1F-B4163869DBEA": {
+      "name": "手游安全 SDK",
+      "category": "security",
+      "keywords": [
+        "手游安全",
+        "游戏安全防护",
+        "修改器检测",
+        "安全保障",
+        "多维度防护"
+      ],
+      "confidence": 0.9
+    },
+    "1F60DEDD-88A8-4DBD-8F57-21CEEB29355B": {
+      "name": "Brotli",
+      "category": "other",
+      "keywords": [
+        "无损压缩",
+        "数据压缩",
+        "LZ77",
+        "霍夫曼编码",
+        "Google"
+      ],
+      "confidence": 0.85
+    },
+    "587512BA-F0D0-43FE-9A4A-3E57074A5201": {
+      "name": "BarHopper",
+      "category": "ai",
+      "keywords": [
+        "条形码识别",
+        "ML Kit",
+        "图像识别",
+        "AI"
+      ],
+      "confidence": 0.9
+    },
+    "23FFE549-FEED-45DF-BD74-C9F4CCA26FA3": {
+      "name": "Fcitx 5 中文插件",
+      "category": "other",
+      "keywords": [
+        "中文输入",
+        "输入法",
+        "Android插件",
+        "Fcitx 5"
+      ],
+      "confidence": 0.8
+    },
+    "1C0C7127-15F6-4ABF-932F-0409CFA4B235": {
+      "name": "SQLite",
+      "category": "database",
+      "keywords": [
+        "关系数据库",
+        "数据存储",
+        "SQLite",
+        "ACID"
+      ],
+      "confidence": 0.95
+    },
+    "DC00C803-47A6-4384-8589-1AA372AF6500": {
+      "name": "Arcsoft",
+      "category": "ai",
+      "keywords": [
+        "计算机视觉",
+        "人工智能",
+        "算法服务",
+        "软件解决方案",
+        "TOF成像器"
+      ],
+      "confidence": 0.9
+    },
+    "D91D8716-4843-4BEE-B4A6-6BB0E7D2FB2D": {
+      "name": "React Native",
+      "category": "framework",
+      "keywords": [
+        "JavaScript",
+        "原生应用",
+        "声明式组件",
+        "跨平台开发"
+      ],
+      "confidence": 0.9
+    },
+    "B53DAF77-92C3-467B-BE30-27D22AFEAFA7": {
+      "name": "MNN",
+      "category": "framework",
+      "keywords": [
+        "深度学习框架",
+        "端侧推理",
+        "模型训练",
+        "高效轻量"
+      ],
+      "confidence": 0.85
+    },
+    "FEA06702-E5FF-404D-A1E8-7998AD8BA7F0": {
+      "name": "React Native Skia",
+      "category": "framework",
+      "keywords": [
+        "React Native",
+        "Skia",
+        "2D图形",
+        "图形渲染"
+      ],
+      "confidence": 0.85
+    },
+    "AEDBB98B-B9F0-4A41-BB5C-35C04BFA2921": {
+      "name": "iApp",
+      "category": "framework",
+      "keywords": [
+        "可视化编程",
+        "手机端",
+        "开发工具",
+        "编程框架"
+      ],
+      "confidence": 0.85
+    },
+    "D5186CD9-56C0-481A-A464-8C2B56ADAA22": {
+      "name": "离线语音合成 SDK",
+      "category": "ai",
+      "keywords": [
+        "语音合成",
+        "离线",
+        "AI",
+        "文本转语音"
+      ],
+      "confidence": 0.9
+    },
+    "54F743D1-03D4-4CF6-A126-92A9C5ED8041": {
+      "name": "HiAI Foundation",
+      "category": "ai",
+      "keywords": [
+        "人工智能",
+        "模型迁移",
+        "NPU加速",
+        "异构计算"
+      ],
+      "confidence": 0.85
+    },
+    "A2D6A586-AF4E-44FB-83B0-095D137581E5": {
+      "name": "腾讯优图 SDK",
+      "category": "ai",
+      "keywords": [
+        "人脸识别",
+        "人脸防伪",
+        "内容安全",
+        "AI服务",
+        "行业解决方案"
+      ],
+      "confidence": 0.9
+    },
+    "9035FF55-F97D-4D9E-98C9-1800B7A4C9E8": {
+      "name": "Conscrypt",
+      "category": "security",
+      "keywords": [
+        "加密",
+        "TLS",
+        "安全提供程序",
+        "BoringSSL"
+      ],
+      "confidence": 0.9
+    },
+    "0539E6F0-60D8-4A21-8B93-777EFE950A9D": {
+      "name": "OpenMobileMaps",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "定位",
+        "Android",
+        "iOS",
+        "轻量级"
+      ],
+      "confidence": 0.9
+    },
+    "1CBCEAC3-A5A3-4526-977C-E33C04449B42": {
+      "name": "onnxruntime",
+      "category": "ai",
+      "keywords": [
+        "机器学习",
+        "推理",
+        "训练",
+        "跨平台"
+      ],
+      "confidence": 0.9
+    },
+    "A221BF76-BC77-4C57-8ADA-04ED24F079CA": {
+      "name": "mPaaS 社交分享",
+      "category": "social",
+      "keywords": [
+        "社交分享",
+        "多渠道分享",
+        "统一接口"
+      ],
+      "confidence": 0.9
+    },
+    "3E62B930-55DE-4D17-A948-A8D2D0ACD703": {
+      "name": "Breakpad",
+      "category": "crash",
+      "keywords": [
+        "崩溃报告",
+        "崩溃监测",
+        "客户端",
+        "服务器组件"
+      ],
+      "confidence": 0.9
+    },
+    "3489D3BA-EB43-4AF4-AFB7-18D7782E2A77": {
+      "name": "Sentry",
+      "category": "crash",
+      "keywords": [
+        "错误监控",
+        "崩溃监测",
+        "事件日志",
+        "实时聚合"
+      ],
+      "confidence": 0.85
+    },
+    "7A064D75-7D8F-49F2-8C54-4782D40645FC": {
+      "name": "Taro",
+      "category": "framework",
+      "keywords": [
+        "跨端开发",
+        "跨框架",
+        "小程序",
+        "H5",
+        "React Native"
+      ],
+      "confidence": 0.95
+    },
+    "D6A34166-22F2-4B4E-88C1-A6D65D4D9044": {
+      "name": "Lib_XUL",
+      "category": "framework",
+      "keywords": [
+        "XUL",
+        "Gecko引擎",
+        "API",
+        "应用开发"
+      ],
+      "confidence": 0.85
+    },
+    "D1F309E4-8334-4A1D-BE05-1216D07AC420": {
+      "name": "Crashlytics",
+      "category": "crash",
+      "keywords": [
+        "崩溃报告",
+        "崩溃监测",
+        "问题排查",
+        "用户影响分析"
+      ],
+      "confidence": 0.95
+    },
+    "E0018805-1F10-4089-A249-DFA19BF24B83": {
+      "name": "Agora RTC SDK",
+      "category": "video",
+      "keywords": [
+        "视频通话",
+        "语音通话",
+        "实时通信",
+        "音视频"
+      ],
+      "confidence": 0.9
+    },
+    "1822F2DA-494B-4F5D-8651-13972DABAE35": {
+      "name": "angle",
+      "category": "framework",
+      "keywords": [
+        "图形层引擎",
+        "图形渲染",
+        "跨平台",
+        "图形API转换"
+      ],
+      "confidence": 0.85
+    },
+    "5B152231-C449-45AC-8E62-7B6CBAC4A38A": {
+      "name": "libIME",
+      "category": "system",
+      "keywords": [
+        "输入法",
+        "通用输入法",
+        "库",
+        "Android"
+      ],
+      "confidence": 0.9
+    },
+    "DD630DAC-94A0-443C-AF7D-64004B698B49": {
+      "name": "gocryptsfs",
+      "category": "security",
+      "keywords": [
+        "encryption",
+        "filesystem",
+        "security",
+        "Go"
+      ],
+      "confidence": 0.85
+    },
+    "0D242852-2EAC-4C65-B912-D50B2C85EC6D": {
+      "name": "DuMix",
+      "category": "framework",
+      "keywords": [
+        "AR开发",
+        "SDK集成",
+        "一站式解决方案",
+        "AR内容分发"
+      ],
+      "confidence": 0.85
+    },
+    "F02F9528-C4CD-4199-BB23-BFA960209D4D": {
+      "name": "iconv",
+      "category": "other",
+      "keywords": [
+        "编码转换",
+        "字符编码",
+        "文本转换",
+        "内码转换"
+      ],
+      "confidence": 0.85
+    },
+    "9A10FC06-0C22-47D2-A473-A6E8BC254952": {
+      "name": "Vosk",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "离线",
+        "API",
+        "AI",
+        "多平台"
+      ],
+      "confidence": 0.85
+    },
+    "3A81F882-7FA6-44E0-ADAC-F7A7E4FF348D": {
+      "name": "AVPro Video",
+      "category": "video",
+      "keywords": [
+        "video playback",
+        "Unity plugin",
+        "multi-platform",
+        "advanced video"
+      ],
+      "confidence": 0.9
+    },
+    "ABCF87CA-4B77-4207-8B4C-EBE65548EA27": {
+      "name": "Tun2Socks",
+      "category": "network",
+      "keywords": [
+        "网络通信",
+        "网络流量",
+        "Socks4/Socks5",
+        "Shadowsocks",
+        "远程连接"
+      ],
+      "confidence": 0.9
+    },
+    "A228D644-0E73-4723-BBFA-5BBF905A49B7": {
+      "name": "Hermes JS Engine",
+      "category": "framework",
+      "keywords": [
+        "JavaScript引擎",
+        "React Native",
+        "字节码优化",
+        "快速启动"
+      ],
+      "confidence": 0.85
+    },
+    "2733A862-D941-4D4E-BE95-67AA5A3F4093": {
+      "name": "FFmpeg",
+      "category": "video",
+      "keywords": [
+        "音视频处理",
+        "解码",
+        "编码",
+        "转码",
+        "多媒体框架"
+      ],
+      "confidence": 0.9
+    },
+    "B9CAC057-3098-4840-8A14-2D18B7C92819": {
+      "name": "mPaaS",
+      "category": "framework",
+      "keywords": [
+        "移动开发平台",
+        "一站式解决方案",
+        "开发效率",
+        "降低研发成本",
+        "云到端服务"
+      ],
+      "confidence": 0.85
+    },
+    "8DF8CDC3-51A1-4BDD-B2BB-14CD3C428BFC": {
+      "name": "人像美化 SDK",
+      "category": "image",
+      "keywords": [
+        "美颜",
+        "美型",
+        "滤镜",
+        "AR贴纸",
+        "美妆"
+      ],
+      "confidence": 0.9
+    },
+    "21ABDBB7-CDC7-4D93-8043-FC5600D56D34": {
+      "name": "阿里聚安全",
+      "category": "security",
+      "keywords": [
+        "移动应用安全",
+        "安全平台",
+        "开发者工具",
+        "安全防护"
+      ],
+      "confidence": 0.9
+    },
+    "BFC29D0B-6C58-4A62-9EC4-2F716C3220D7": {
+      "name": "RenderScript",
+      "category": "framework",
+      "keywords": [
+        "高性能计算",
+        "并行计算",
+        "图像处理",
+        "Android框架"
+      ],
+      "confidence": 0.85
+    },
+    "D7D418A4-4C2E-4C84-9A93-03309CE630A8": {
+      "name": "react-native-keyboard-controller",
+      "category": "framework",
+      "keywords": [
+        "React Native",
+        "键盘管理",
+        "跨平台",
+        "UI控制"
+      ],
+      "confidence": 0.9
+    },
+    "12ABC8F8-E201-4CC0-AC84-EFE6EEC341E4": {
+      "name": "ZBar",
+      "category": "image",
+      "keywords": [
+        "条码扫描",
+        "图像识别",
+        "二维码识别",
+        "条码解码",
+        "开源套件"
+      ],
+      "confidence": 0.85
+    },
+    "F8D5DBD2-FD89-4BD7-9D4E-CD38F1B12B74": {
+      "name": "小爱 SDK",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "NLP",
+        "人工智能",
+        "小爱开放平台",
+        "一站式AI服务"
+      ],
+      "confidence": 0.9
+    },
+    "131D74BC-CCCA-47A2-AA6E-9B46E58AD38C": {
+      "name": "TagLib",
+      "category": "other",
+      "keywords": [
+        "音频",
+        "元数据",
+        "编辑",
+        "音频格式"
+      ],
+      "confidence": 0.8
+    },
+    "2625B5BA-5189-4386-9249-B037015BD402": {
+      "name": "xHook",
+      "category": "framework",
+      "keywords": [
+        "Android",
+        "ELF",
+        "PLT",
+        "hook",
+        "动态库"
+      ],
+      "confidence": 0.85
+    },
+    "6E53BF19-A08F-48D0-98A8-74CF79E192CF": {
+      "name": "Bugly",
+      "category": "crash",
+      "keywords": [
+        "质量监控",
+        "崩溃监测",
+        "问题定位",
+        "告警"
+      ],
+      "confidence": 0.85
+    },
+    "DCF7F224-974D-45FD-BBB4-3E91D1C112D1": {
+      "name": "Fcitx 5",
+      "category": "framework",
+      "keywords": [
+        "输入法框架",
+        "输入处理",
+        "快速短语模块"
+      ],
+      "confidence": 0.85
+    },
+    "B9B51F35-0313-4192-9C32-20BAFD83A9CB": {
+      "name": "FFmpegKit",
+      "category": "video",
+      "keywords": [
+        "音视频处理",
+        "FFmpeg",
+        "转码",
+        "视频编辑",
+        "多平台"
+      ],
+      "confidence": 0.95
+    },
+    "1B4F575D-9D83-42B7-8953-ED6721386F68": {
+      "name": "DnsChecker",
+      "category": "network",
+      "keywords": [
+        "DNS",
+        "域名系统",
+        "网络检查",
+        "委派质量检查"
+      ],
+      "confidence": 0.85
+    },
+    "2C146336-D9ED-480E-8459-5F2F4894F534": {
+      "name": "Xamarin",
+      "category": "framework",
+      "keywords": [
+        "跨平台开发",
+        "C#",
+        "原生应用",
+        "开发工具",
+        "共享代码"
+      ],
+      "confidence": 0.9
+    },
+    "A4C176FF-1B68-4AB6-B840-05C1EAB85659": {
+      "name": "AnyChat",
+      "category": "video",
+      "keywords": [
+        "音视频",
+        "跨平台",
+        "生态系统",
+        "解决方案",
+        "音视频能力"
+      ],
+      "confidence": 0.9
+    },
+    "5C7BF303-FB3F-43D0-BD87-C2E5CD4C1193": {
+      "name": "Flutter Pty",
+      "category": "system",
+      "keywords": [
+        "伪终端",
+        "进程创建",
+        "Flutter",
+        "Terminal",
+        "系统功能"
+      ],
+      "confidence": 0.85
+    },
+    "1B64AF08-F355-4725-9A32-B2ADCFDABCA1": {
+      "name": "QuickJS",
+      "category": "framework",
+      "keywords": [
+        "JavaScript引擎",
+        "可嵌入",
+        "ES2020",
+        "脚本执行"
+      ],
+      "confidence": 0.85
+    },
+    "3AF88EFC-244B-4F4B-B7E3-1799464DB267": {
+      "name": "C++ 共享库",
+      "category": "framework",
+      "keywords": [
+        "原生代码",
+        "C++",
+        "Android",
+        "共享库"
+      ],
+      "confidence": 0.85
+    },
+    "87D23FAD-B3D5-4D40-8D75-877CF45F4BB2": {
+      "name": "CFCA",
+      "category": "security",
+      "keywords": [
+        "安全输入",
+        "金融认证",
+        "安全控件",
+        "安全加密"
+      ],
+      "confidence": 0.9
+    },
+    "46755353-DD24-4610-B52A-056D3514EE11": {
+      "name": "Realm",
+      "category": "database",
+      "keywords": [
+        "数据存储",
+        "跨平台",
+        "实时对象",
+        "轻量级",
+        "并发"
+      ],
+      "confidence": 0.9
+    },
+    "F5DF29BC-2C9C-4AD2-BF1F-75D0B053BAFC": {
+      "name": "RUpgrade",
+      "category": "system",
+      "keywords": [
+        "应用升级",
+        "Android",
+        "iOS",
+        "插件"
+      ],
+      "confidence": 0.8
+    },
+    "A5C87088-862F-42F0-BE01-78D0E61861F6": {
+      "name": "OpenVPN",
+      "category": "security",
+      "keywords": [
+        "VPN",
+        "SSL",
+        "安全加密",
+        "远程访问"
+      ],
+      "confidence": 0.85
+    },
+    "DB3D7BC0-5A5F-481D-B29E-87B5F642855F": {
+      "name": "Mapbox GL Native",
+      "category": "map",
+      "keywords": [
+        "地图显示",
+        "矢量瓦片",
+        "交互式地图",
+        "可定制地图",
+        "OpenGL"
+      ],
+      "confidence": 0.9
+    },
+    "4622B49D-4ACA-42B3-9FCC-F82D2365B81B": {
+      "name": "Unity",
+      "category": "framework",
+      "keywords": [
+        "游戏引擎",
+        "跨平台",
+        "2D/3D",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "6CD3B14A-C75E-4451-8EAB-AC3BD931EF00": {
+      "name": "MSA SDK",
+      "category": "security",
+      "keywords": [
+        "设备标识",
+        "安全",
+        "移动终端",
+        "统一调用"
+      ],
+      "confidence": 0.85
+    },
+    "D4705797-EBDB-4B3C-83B5-789C64E1205F": {
+      "name": "Mediastreamer2",
+      "category": "video",
+      "keywords": [
+        "音视频流",
+        "语音电话",
+        "视频电话",
+        "流引擎"
+      ],
+      "confidence": 0.9
+    },
+    "7210D11F-3444-4997-9A95-FBCD69054BA8": {
+      "name": "Lynx",
+      "category": "framework",
+      "keywords": [
+        "开源框架",
+        "跨平台开发",
+        "Web技能",
+        "原生界面",
+        "移动开发"
+      ],
+      "confidence": 0.9
+    },
+    "45ECC9C6-C33B-4097-BBB2-BD308C51067C": {
+      "name": "dex2oat optimizer",
+      "category": "system",
+      "keywords": [
+        "ART优化",
+        "dex2oat",
+        "应用启动加速",
+        "系统性能提升"
+      ],
+      "confidence": 0.9
+    },
+    "C2D10BC6-8853-4253-B993-DB51861AC085": {
+      "name": "阿里云短视频 SDK",
+      "category": "video",
+      "keywords": [
+        "短视频",
+        "视频处理",
+        "音视频",
+        "视频录制",
+        "视频编辑"
+      ],
+      "confidence": 0.9
+    },
+    "2045D4BB-3978-46C8-94AC-44038E5574E8": {
+      "name": "乐播 SDK",
+      "category": "network",
+      "keywords": [
+        "投屏",
+        "镜像",
+        "网络传输",
+        "内容分发"
+      ],
+      "confidence": 0.85
+    },
+    "51CC509E-7445-4D62-AAA4-36AC45C26A78": {
+      "name": "腾讯游戏 MSDK",
+      "category": "social",
+      "keywords": [
+        "游戏服务",
+        "账号服务",
+        "好友关系链",
+        "多平台",
+        "社交组件"
+      ],
+      "confidence": 0.85
+    },
+    "4AF52222-0752-4391-B899-EE2AEF52CEB4": {
+      "name": "ARCore",
+      "category": "framework",
+      "keywords": [
+        "增强现实",
+        "AR开发",
+        "环境感知",
+        "API"
+      ],
+      "confidence": 0.9
+    },
+    "A7403BA4-6F94-49FB-B0EF-13E5AC6292D5": {
+      "name": "logging",
+      "category": "framework",
+      "keywords": [
+        "日志记录",
+        "syslog",
+        "开发库"
+      ],
+      "confidence": 0.85
+    },
+    "9C3CF6AF-0121-4E22-AEC6-74CA75C0F78A": {
+      "name": "网易云信",
+      "category": "social",
+      "keywords": [
+        "IM",
+        "音视频通话",
+        "即时通讯",
+        "社交互动"
+      ],
+      "confidence": 0.85
+    },
+    "4870FD6D-4E48-4A2F-ACBB-01BF3C1FDF45": {
+      "name": "游戏语音 GVoice",
+      "category": "network",
+      "keywords": [
+        "实时语音",
+        "语音消息",
+        "范围语音",
+        "语音识别"
+      ],
+      "confidence": 0.8
+    },
+    "2970746F-3EF9-4797-B7C0-D2BF7B2C2D9C": {
+      "name": "Termux",
+      "category": "other",
+      "keywords": [
+        "终端模拟器",
+        "Android",
+        "Linux环境",
+        "命令行工具"
+      ],
+      "confidence": 0.8
+    },
+    "BD134228-E89E-4B74-A54B-654BCD18C9C1": {
+      "name": "libusb",
+      "category": "system",
+      "keywords": [
+        "USB设备访问",
+        "跨平台",
+        "硬件接口",
+        "系统级"
+      ],
+      "confidence": 0.85
+    },
+    "24CC86AC-C4FC-412C-BA85-244CB9F0C02D": {
+      "name": "GME",
+      "category": "video",
+      "keywords": [
+        "游戏音视频",
+        "实时语音",
+        "实时视频",
+        "语音转文本"
+      ],
+      "confidence": 0.9
+    },
+    "B9F72B04-D2FF-42C4-9B50-FBF16AC55AE1": {
+      "name": "Cardboard SDK",
+      "category": "framework",
+      "keywords": [
+        "VR开发",
+        "跨平台",
+        "沉浸式体验",
+        "开源"
+      ],
+      "confidence": 0.85
+    },
+    "648D7BF1-F763-488E-88EA-8E657159C68F": {
+      "name": "Adblock Android SDK",
+      "category": "ads",
+      "keywords": [
+        "广告拦截",
+        "Adblock",
+        "Android库",
+        "WebView"
+      ],
+      "confidence": 0.85
+    },
+    "F9E7B38F-D50F-41BC-A9AE-096158B40AAB": {
+      "name": "libzip",
+      "category": "other",
+      "keywords": [
+        "zip",
+        "压缩",
+        "归档",
+        "文件操作"
+      ],
+      "confidence": 0.85
+    },
+    "8A32C25F-C130-4CAE-A840-49FD4D75E232": {
+      "name": "LiteRT",
+      "category": "ai",
+      "keywords": [
+        "AI",
+        "TensorFlow Lite",
+        "设备端",
+        "运行时",
+        "机器学习"
+      ],
+      "confidence": 0.85
+    },
+    "A56679FB-756E-4125-A383-AAD1B1AA6D64": {
+      "name": "UC 内核",
+      "category": "network",
+      "keywords": [
+        "浏览器内核",
+        "webview",
+        "H5体验",
+        "网页渲染",
+        "网络浏览"
+      ],
+      "confidence": 0.85
+    },
+    "321F7C3B-21A5-47AE-9D1E-20EFB840224B": {
+      "name": "Foxit PDF SDK",
+      "category": "other",
+      "keywords": [
+        "PDF处理",
+        "Android",
+        "PDF阅读器",
+        "文档处理"
+      ],
+      "confidence": 0.85
+    },
+    "4912BFFC-E3C2-4254-A113-0382789F15D2": {
+      "name": "SHook",
+      "category": "framework",
+      "keywords": [
+        "ART运行时",
+        "方法动态代理",
+        "内存注入",
+        "Xposed",
+        "应用脱壳"
+      ],
+      "confidence": 0.85
+    },
+    "CDF259CF-68D3-4F94-97D7-509874DF268B": {
+      "name": "TDLib",
+      "category": "framework",
+      "keywords": [
+        "跨平台",
+        "客户端构建",
+        "开发库",
+        "Telegram"
+      ],
+      "confidence": 0.85
+    },
+    "900928FD-B86B-4C72-9FDE-372EDC299B00": {
+      "name": "OpenSSL",
+      "category": "security",
+      "keywords": [
+        "TLS",
+        "密码库",
+        "安全协议",
+        "开源工具包"
+      ],
+      "confidence": 0.9
+    },
+    "D3A7DD55-A0CC-453F-8061-CADCCE16A9C3": {
+      "name": "Clash Core",
+      "category": "network",
+      "keywords": [
+        "网络隧道",
+        "代理",
+        "规则路由",
+        "Go语言"
+      ],
+      "confidence": 0.9
+    },
+    "E56E1718-0449-4028-A28C-9F912621B399": {
+      "name": "HMS Scan Kit",
+      "category": "ai",
+      "keywords": [
+        "扫码",
+        "二维码",
+        "条形码",
+        "计算机视觉",
+        "图像识别"
+      ],
+      "confidence": 0.85
+    },
+    "BE9EFE71-A992-48A3-B7B1-D0C514152B74": {
+      "name": "Weex",
+      "category": "framework",
+      "keywords": [
+        "跨平台",
+        "JavaScript",
+        "前端开发",
+        "移动应用"
+      ],
+      "confidence": 0.9
+    },
+    "4C2F3C58-23BA-4AB8-829E-ABE73365D06B": {
+      "name": "VCAP",
+      "category": "ai",
+      "keywords": [
+        "AI计算加速",
+        "移动端AI部署",
+        "跨平台AI",
+        "高性能AI平台"
+      ],
+      "confidence": 0.95
+    },
+    "F6C05AEB-42E0-4583-A0D3-412E8A4114AE": {
+      "name": "Tianmu SDK",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "横幅广告",
+        "插屏广告",
+        "视频广告",
+        "数据分析"
+      ],
+      "confidence": 0.85
+    },
+    "02F9D51A-248A-4B0F-8CE5-E3607441D63D": {
+      "name": "腾讯客户端性能分析",
+      "category": "analytics",
+      "keywords": [
+        "性能分析",
+        "多维度检测",
+        "应用性能",
+        "性能监测"
+      ],
+      "confidence": 0.85
+    },
+    "3173988A-5F37-404F-AA3E-5F8F57D4F959": {
+      "name": "AndroidUtils",
+      "category": "other",
+      "keywords": [
+        "通用代码",
+        "工具类",
+        "辅助功能",
+        "资源文件"
+      ],
+      "confidence": 0.7
+    },
+    "61B68276-3BFF-4F6E-B0E6-3C1E37F5BC37": {
+      "name": "xLua",
+      "category": "framework",
+      "keywords": [
+        "Lua",
+        "C#",
+        "脚本编程",
+        "Unity",
+        "语言扩展"
+      ],
+      "confidence": 0.85
+    },
+    "B00768EA-303C-41C8-8F9B-D5D5945B7A77": {
+      "name": "rlottie",
+      "category": "other",
+      "keywords": [
+        "矢量动画",
+        "C++库",
+        "实时渲染",
+        "艺术作品渲染"
+      ],
+      "confidence": 0.7
+    },
+    "47B06773-930B-407F-A0F0-BC4332682503": {
+      "name": "CV SDK",
+      "category": "video",
+      "keywords": [
+        "视频编辑",
+        "特效",
+        "视频处理",
+        "代码优化",
+        "包体积优化"
+      ],
+      "confidence": 0.85
+    },
+    "8DFA6B75-0DA8-4C03-924F-CD63B077E3D2": {
+      "name": "WAJ",
+      "category": "other",
+      "keywords": [
+        "网站容器格式",
+        "jubako容器格式",
+        "容器格式",
+        "网站开发"
+      ],
+      "confidence": 0.7
+    },
+    "90E6F74C-DC0E-4864-8C4E-73497BDB9465": {
+      "name": "Paddle Lite",
+      "category": "ai",
+      "keywords": [
+        "深度学习",
+        "推理框架",
+        "AI",
+        "移动端",
+        "边缘端"
+      ],
+      "confidence": 0.9
+    },
+    "F04B2BAF-71ED-487F-8CC0-035B68F6412B": {
+      "name": "Log for C++",
+      "category": "framework",
+      "keywords": [
+        "日志记录",
+        "C++",
+        "类库",
+        "系统日志",
+        "文件日志"
+      ],
+      "confidence": 0.85
+    },
+    "D1358FC0-C125-4F86-8AE2-D3ED66FEE26C": {
+      "name": "AliNNPython",
+      "category": "framework",
+      "keywords": [
+        "深度学习",
+        "框架",
+        "模型推理",
+        "端侧"
+      ],
+      "confidence": 0.9
+    },
+    "E5025ACF-ADEE-4BA9-98D7-FD4B3B22DBE5": {
+      "name": "LAME",
+      "category": "other",
+      "keywords": [
+        "MP3编码",
+        "音频编码",
+        "高质量音频"
+      ],
+      "confidence": 0.85
+    },
+    "FE88971C-0A92-4E23-BF51-09873298B5CE": {
+      "name": "Facebook SDK",
+      "category": "social",
+      "keywords": [
+        "社交集成",
+        "Facebook登录",
+        "社交分享",
+        "社交功能"
+      ],
+      "confidence": 0.95
+    },
+    "7B41A761-76E2-4C6E-B107-6F0DF0C9505A": {
+      "name": "uCrop",
+      "category": "image",
+      "keywords": [
+        "图片裁剪",
+        "图片处理",
+        "Android",
+        "图片编辑",
+        "图片库"
+      ],
+      "confidence": 0.95
+    },
+    "6910F1C7-3FA3-4D00-8067-20640281226C": {
+      "name": "Trojan-Go",
+      "category": "network",
+      "keywords": [
+        "Trojan",
+        "代理",
+        "多路复用",
+        "路由",
+        "CDN中转"
+      ],
+      "confidence": 0.85
+    },
+    "F7EDEC1B-0583-40E8-87B2-0F36CF2FB2AE": {
+      "name": "Hippy",
+      "category": "framework",
+      "keywords": [
+        "跨平台开发",
+        "应用开发框架",
+        "React",
+        "Vue",
+        "原生指令转换"
+      ],
+      "confidence": 0.9
+    },
+    "81731C38-3E65-4B3F-A8C7-47083F62E928": {
+      "name": "岳鹰全景监控",
+      "category": "analytics",
+      "keywords": [
+        "应用监控",
+        "数据分析",
+        "线上监控平台",
+        "用户行为分析"
+      ],
+      "confidence": 0.85
+    },
+    "162BDF1E-65A4-4B7B-8795-9249A031A441": {
+      "name": "libyaml",
+      "category": "other",
+      "keywords": [
+        "YAML解析器",
+        "数据序列化",
+        "配置文件处理",
+        "编程语言友好"
+      ],
+      "confidence": 0.9
+    },
+    "14B29CAB-B568-4B14-8D90-831D54776B25": {
+      "name": "libp2p",
+      "category": "network",
+      "keywords": [
+        "网络通信",
+        "IPFS",
+        "模块化",
+        "网络堆栈"
+      ],
+      "confidence": 0.9
+    },
+    "97E8ACDF-D6BB-439B-B9D4-DEA88888FE88": {
+      "name": "Steam Audio",
+      "category": "video",
+      "keywords": [
+        "空间化音频",
+        "3D音频",
+        "HRTF",
+        "游戏音频"
+      ],
+      "confidence": 0.85
+    },
+    "3E0441A8-7F7E-4A74-9FE2-32CA9053C9A3": {
+      "name": "APMInsight / 应用性能监控全链路版",
+      "category": "analytics",
+      "keywords": [
+        "应用性能监控",
+        "埋点分析",
+        "异常报警",
+        "归因分析"
+      ],
+      "confidence": 0.85
+    },
+    "D52B0B40-FF1F-40FC-906D-3AA8E7732BB1": {
+      "name": "腾讯语音识别",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "ASR",
+        "AI",
+        "语音转文字"
+      ],
+      "confidence": 0.9
+    },
+    "400C21A4-F607-4714-BEAD-05E159BD07A8": {
+      "name": "Google Map SDK",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "导航",
+        "位置服务",
+        "应用内"
+      ],
+      "confidence": 0.9
+    },
+    "626512BE-E87D-4B7E-959D-1B074197D635": {
+      "name": "小米 IoT SDK",
+      "category": "other",
+      "keywords": [
+        "智能硬件",
+        "IoT平台",
+        "设备管理",
+        "智能家居"
+      ],
+      "confidence": 0.8
+    },
+    "79D56677-3044-44DA-AD7A-75FB65B8AEEF": {
+      "name": "Donut",
+      "category": "framework",
+      "keywords": [
+        "多端框架",
+        "小程序技术",
+        "跨平台开发",
+        "多端编译",
+        "开发效率"
+      ],
+      "confidence": 0.85
+    },
+    "CDCF8855-6475-4A08-8125-F764A69A05C4": {
+      "name": "SNPE SDK",
+      "category": "ai",
+      "keywords": [
+        "深度神经网络",
+        "AI",
+        "神经处理引擎",
+        "软件加速运行时"
+      ],
+      "confidence": 0.9
+    },
+    "0DD7712A-1DB3-486F-AE0B-BE97CBB68C5B": {
+      "name": "PojavLauncher",
+      "category": "other",
+      "keywords": [
+        "游戏启动器",
+        "我的世界Java版",
+        "跨平台",
+        "Boardwalk"
+      ],
+      "confidence": 0.9
+    },
+    "00B74EAB-D3F4-4768-A325-F01E2080D5CC": {
+      "name": "Sandhook",
+      "category": "framework",
+      "keywords": [
+        "Java Hook",
+        "ART虚拟机",
+        "Android开发",
+        "进程内Hook",
+        "Java层框架"
+      ],
+      "confidence": 0.85
+    },
+    "3F3508B0-8ECC-4E93-B3F2-3E04AC966B0F": {
+      "name": "CFCA Reinforcement",
+      "category": "security",
+      "keywords": [
+        "安全加固",
+        "安全保障",
+        "防破解",
+        "数据安全",
+        "合规检测"
+      ],
+      "confidence": 0.95
+    },
+    "B0F28E7E-F328-47CF-8AF4-641766D944AE": {
+      "name": "金融级实人认证 SDK",
+      "category": "security",
+      "keywords": [
+        "实人认证",
+        "生物识别",
+        "人脸比对",
+        "身份验证"
+      ],
+      "confidence": 0.85
+    },
+    "6384A38E-37B0-4E7A-9425-E85335723780": {
+      "name": "SoundTouch",
+      "category": "video",
+      "keywords": [
+        "音频处理",
+        "节奏调整",
+        "音调调整",
+        "BPM估计",
+        "播放速度调整"
+      ],
+      "confidence": 0.85
+    },
+    "9A0B036F-3B8E-454A-B488-3F9F7C4005A1": {
+      "name": "360 加固",
+      "category": "security",
+      "keywords": [
+        "加密",
+        "加壳保护",
+        "反破解",
+        "安全防护"
+      ],
+      "confidence": 0.9
+    },
+    "8597D3CF-C63E-42D4-ACAB-C74D68D33091": {
+      "name": "zipw",
+      "category": "other",
+      "keywords": [
+        "压缩",
+        "解压缩",
+        "zip",
+        "gzip",
+        "tar"
+      ],
+      "confidence": 0.8
+    },
+    "9D470D94-15E2-4B1C-B3CD-AC974CAC0FC1": {
+      "name": "百度人脸识别",
+      "category": "ai",
+      "keywords": [
+        "人脸识别",
+        "离线识别",
+        "活体检测",
+        "人脸对比"
+      ],
+      "confidence": 0.95
+    },
+    "A8805A8D-BE58-4411-87FA-613941D32558": {
+      "name": "语音识别 SDK",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "实时识别",
+        "离线识别",
+        "语音唤醒",
+        "语义解析"
+      ],
+      "confidence": 0.9
+    },
+    "C0480A80-600A-4F7D-A475-C3F1A17B68C9": {
+      "name": "TUTK SDK",
+      "category": "network",
+      "keywords": [
+        "P2P连接",
+        "物联网",
+        "云平台",
+        "跨平台API",
+        "网络通讯"
+      ],
+      "confidence": 0.85
+    },
+    "34A26199-9F89-41C3-B9E4-5DFB03982A93": {
+      "name": "AndFix",
+      "category": "other",
+      "keywords": [
+        "热修复",
+        "错误修复",
+        "Android",
+        "在线修复"
+      ],
+      "confidence": 0.8
+    },
+    "41C148C2-23C1-4872-BC90-8316B5B76966": {
+      "name": "TopSec Reinforcement",
+      "category": "security",
+      "keywords": [
+        "应用加固",
+        "代码安全",
+        "数据安全",
+        "安全防护",
+        "运行时环境安全"
+      ],
+      "confidence": 0.95
+    },
+    "94AAC0EA-B6B1-4147-845A-E34CB4E9E36B": {
+      "name": "Ping++ SDK",
+      "category": "payment",
+      "keywords": [
+        "移动支付",
+        "支付渠道",
+        "交易管理",
+        "支付接入",
+        "开发成本"
+      ],
+      "confidence": 0.95
+    },
+    "CAB4AFB0-A0E9-4566-8793-8562CF43A755": {
+      "name": "TQUIC",
+      "category": "network",
+      "keywords": [
+        "QUIC协议",
+        "高性能",
+        "轻量级",
+        "跨平台",
+        "网络库"
+      ],
+      "confidence": 0.9
+    },
+    "679E7EE7-CFDC-4E65-BE77-2125683F4EEC": {
+      "name": "SmartAppUpdates",
+      "category": "framework",
+      "keywords": [
+        "增量更新",
+        "应用更新",
+        "Android",
+        "SDK"
+      ],
+      "confidence": 0.85
+    },
+    "E380655E-9EFB-4271-8309-1A1096E674E6": {
+      "name": "BARDUmix",
+      "category": "video",
+      "keywords": [
+        "实时音视频",
+        "RTC",
+        "视频通信",
+        "音视频服务"
+      ],
+      "confidence": 0.85
+    },
+    "D598EB22-6E89-4FF8-A1C6-C4CCF3AD56DD": {
+      "name": "IJKPlayer",
+      "category": "video",
+      "keywords": [
+        "视频播放",
+        "FFmpeg",
+        "轻量级",
+        "硬件加速解码",
+        "弹幕"
+      ],
+      "confidence": 0.95
+    },
+    "36BCDD61-C7DD-4E88-BFCC-E907A4A0228F": {
+      "name": "Crasheye",
+      "category": "crash",
+      "keywords": [
+        "崩溃监测",
+        "错误分析",
+        "质量追踪",
+        "崩溃信息",
+        "实时分析"
+      ],
+      "confidence": 0.85
+    },
+    "52626855-D3F8-466A-90E8-C640CAAAF0AA": {
+      "name": "Artemis Engine",
+      "category": "framework",
+      "keywords": [
+        "多平台",
+        "视觉小说",
+        "游戏引擎",
+        "ADV"
+      ],
+      "confidence": 0.85
+    },
+    "456BC105-5F2A-4A7C-BB85-4E8C965F031A": {
+      "name": "Qimei SDK",
+      "category": "system",
+      "keywords": [
+        "设备标识",
+        "唯一ID",
+        "终端识别",
+        "跨应用用户ID",
+        "ID找回"
+      ],
+      "confidence": 0.85
+    },
+    "8D800353-205A-4A3A-8E48-588EF2C1725D": {
+      "name": "LibSig",
+      "category": "framework",
+      "keywords": [
+        "反应式计算",
+        "C++",
+        "计算库",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "0EDE4C9F-9BB1-4DF5-9B27-DEAC5CCB447A": {
+      "name": "即构极速视频 SDK",
+      "category": "video",
+      "keywords": [
+        "音视频互动",
+        "实时通话",
+        "直播",
+        "会议"
+      ],
+      "confidence": 0.9
+    },
+    "D100E2DE-D729-4D97-A66E-8B51A090ED5B": {
+      "name": "MuPDF",
+      "category": "other",
+      "keywords": [
+        "PDF查看",
+        "XPS查看",
+        "电子书查看",
+        "轻量级文档查看"
+      ],
+      "confidence": 0.8
+    },
+    "C3B1C90C-7A7F-4938-86DB-5680932EDDE5": {
+      "name": "libdevinfo",
+      "category": "system",
+      "keywords": [
+        "设备配置",
+        "系统信息",
+        "设备数据访问"
+      ],
+      "confidence": 0.85
+    },
+    "66D2110B-94D1-413C-8C70-8D1DE223F178": {
+      "name": "Pdfium",
+      "category": "other",
+      "keywords": [
+        "PDF处理",
+        "PDF渲染",
+        "Android绑定"
+      ],
+      "confidence": 0.8
+    },
+    "17B3384C-87CB-4382-80BB-CE10CEA77E50": {
+      "name": "Jetpack DataStore",
+      "category": "database",
+      "keywords": [
+        "数据存储",
+        "键值对",
+        "协议缓冲区",
+        "异步存储"
+      ],
+      "confidence": 0.9
+    },
+    "4EF1EB69-5CCC-401B-B910-D3648400724E": {
+      "name": "Bugsnag",
+      "category": "crash",
+      "keywords": [
+        "崩溃检测",
+        "崩溃报告",
+        "诊断信息",
+        "应用崩溃"
+      ],
+      "confidence": 0.85
+    },
+    "E927365C-3C3C-4E81-A806-00A2C4DF1CC7": {
+      "name": "Rclone",
+      "category": "other",
+      "keywords": [
+        "云文件管理",
+        "云存储",
+        "文件同步",
+        "命令行程序"
+      ],
+      "confidence": 0.85
+    },
+    "5C794C79-72AD-461D-8910-9BB40ACE75B8": {
+      "name": "文字识别服务",
+      "category": "ai",
+      "keywords": [
+        "文字识别",
+        "图像识别",
+        "深度学习",
+        "语种检测"
+      ],
+      "confidence": 0.85
+    },
+    "2C4AD6CE-A131-4CC8-BCA1-CEB535225FF0": {
+      "name": "GL4ES",
+      "category": "framework",
+      "keywords": [
+        "OpenGL",
+        "GL ES",
+        "翻译库",
+        "跨平台",
+        "图形API"
+      ],
+      "confidence": 0.85
+    },
+    "F9D78474-DED0-42F4-9509-CE38E4C54A88": {
+      "name": "Yoga",
+      "category": "framework",
+      "keywords": [
+        "跨平台布局",
+        "Flexbox",
+        "UI布局引擎",
+        "界面布局"
+      ],
+      "confidence": 0.85
+    },
+    "808EBEF8-FB5B-4AD5-B9C7-9B3F2556DDA8": {
+      "name": "LibVLC",
+      "category": "video",
+      "keywords": [
+        "音视频播放",
+        "多媒体",
+        "流媒体",
+        "开源框架"
+      ],
+      "confidence": 0.9
+    },
+    "4373F630-4557-4DB6-8B6B-BCC98F27380A": {
+      "name": "Expo",
+      "category": "framework",
+      "keywords": [
+        "开发框架",
+        "Android",
+        "iOS",
+        "应用开发",
+        "原生模块库"
+      ],
+      "confidence": 0.9
+    },
+    "E25BFC4A-02F0-48D3-A311-6F893D664643": {
+      "name": "网易易盾",
+      "category": "security",
+      "keywords": [
+        "移动安全",
+        "安全加密",
+        "应用安全",
+        "安全防护"
+      ],
+      "confidence": 0.9
+    },
+    "6CC4D7E2-85A3-4D62-906E-365951864254": {
+      "name": "ML Kit",
+      "category": "ai",
+      "keywords": [
+        "机器学习",
+        "AI",
+        "设备端",
+        "移动开发"
+      ],
+      "confidence": 0.85
+    },
+    "1220EEBB-9ED4-496A-9D16-7C0BA72CB683": {
+      "name": "ZAndrolua",
+      "category": "framework",
+      "keywords": [
+        "luaC库",
+        "Posix API",
+        "系统访问",
+        "Lua"
+      ],
+      "confidence": 0.85
+    },
+    "10BB59E5-7ECC-4A76-9614-CBEF644E635C": {
+      "name": "OpenCV",
+      "category": "image",
+      "keywords": [
+        "计算机视觉",
+        "图像处理",
+        "模式识别",
+        "实时"
+      ],
+      "confidence": 0.85
+    },
+    "386D137D-F390-4C51-AD6B-AA1ADC11970C": {
+      "name": "GPUImage",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "视频处理",
+        "GPU加速",
+        "开源"
+      ],
+      "confidence": 0.85
+    },
+    "95A8278F-D130-4490-A94F-2F3A44A98AB2": {
+      "name": "RxFFmpeg",
+      "category": "video",
+      "keywords": [
+        "音视频编辑",
+        "视频剪辑",
+        "视频处理",
+        "FFmpeg",
+        "视频播放器"
+      ],
+      "confidence": 0.95
+    },
+    "EBE54595-4C08-4BC8-A7EA-B53C04115993": {
+      "name": "Godot Engine",
+      "category": "framework",
+      "keywords": [
+        "游戏开发",
+        "开源",
+        "游戏引擎",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "79D61986-2C93-47F1-A8A0-882C553266DA": {
+      "name": "百度 LBS",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "LBS",
+        "定位",
+        "地图服务",
+        "Android SDK"
+      ],
+      "confidence": 0.95
+    },
+    "18FAEDE3-BFBD-4B7D-B432-570F7024B59E": {
+      "name": "Bifrost",
+      "category": "other",
+      "keywords": [
+        "de Bruijn图",
+        "并行构建",
+        "压缩",
+        "索引"
+      ],
+      "confidence": 0.85
+    },
+    "FE56D341-7041-4AB8-AB18-F5F3D56571EF": {
+      "name": "Krisp AI 语音 SDK",
+      "category": "ai",
+      "keywords": [
+        "AI",
+        "语音处理",
+        "噪声消除",
+        "音频解决方案"
+      ],
+      "confidence": 0.85
+    },
+    "442E0269-812F-41BC-A04F-C6809F215260": {
+      "name": "腾讯云实时音视频",
+      "category": "video",
+      "keywords": [
+        "实时音视频",
+        "音视频通话",
+        "互动直播",
+        "低延时",
+        "高品质"
+      ],
+      "confidence": 0.95
+    },
+    "B39C9540-A5FF-4835-A272-7FA1CFB5B3E2": {
+      "name": "Kraken",
+      "category": "framework",
+      "keywords": [
+        "渲染引擎",
+        "W3C标准",
+        "Flutter",
+        "多端一致性",
+        "前端生态"
+      ],
+      "confidence": 0.85
+    },
+    "EC2DA2D1-1725-48FD-84B7-BDE84269B870": {
+      "name": "Pangle SDK",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "广告投放",
+        "用户增长",
+        "变现解决方案"
+      ],
+      "confidence": 0.95
+    },
+    "73B6B0AF-A961-40A7-AAE0-8F0CB218DD9A": {
+      "name": "WebM VP8/VP9",
+      "category": "video",
+      "keywords": [
+        "视频编解码",
+        "VP8",
+        "VP9",
+        "WebM",
+        "libvpx"
+      ],
+      "confidence": 0.9
+    },
+    "80788713-184B-4E23-9DEE-E69EF570BBDA": {
+      "name": "libARMavlink",
+      "category": "other",
+      "keywords": [
+        "MAVLink",
+        "Parrot",
+        "再分发",
+        "开源"
+      ],
+      "confidence": 0.85
+    },
+    "951BAD0E-83E5-44F7-83F2-7B3B6AF1C7BC": {
+      "name": "Fresco",
+      "category": "image",
+      "keywords": [
+        "图像管理",
+        "图片处理",
+        "内存优化",
+        "Android图像库"
+      ],
+      "confidence": 0.95
+    },
+    "C21B6781-45B9-4DB9-BF12-C27479D7346E": {
+      "name": "Google Ink (Sketchology)",
+      "category": "image",
+      "keywords": [
+        "手绘",
+        "手写",
+        "图像表达",
+        "软件库"
+      ],
+      "confidence": 0.8
+    },
+    "7960D630-78BD-491C-811D-70DE6471BEEE": {
+      "name": "Instabug",
+      "category": "crash",
+      "keywords": [
+        "崩溃监测",
+        "性能监控",
+        "稳定性问题",
+        "应用调试"
+      ],
+      "confidence": 0.85
+    },
+    "EB964A7C-D20D-4489-9B04-F2CC432A920E": {
+      "name": "unrar-android",
+      "category": "other",
+      "keywords": [
+        "解压缩",
+        "RAR",
+        "Java绑定",
+        "Android移植"
+      ],
+      "confidence": 0.8
+    },
+    "A400F3F7-308C-4CC6-9F9C-3512F8ED0D69": {
+      "name": "Symphony CPU 运行时库",
+      "category": "ai",
+      "keywords": [
+        "深度神经网络",
+        "AI加速",
+        "SNPE",
+        "运行时库"
+      ],
+      "confidence": 0.95
+    },
+    "A1B20B90-5953-4D62-ABB9-98F4916B4E41": {
+      "name": "数美 SDK",
+      "category": "security",
+      "keywords": [
+        "设备风险保护",
+        "反欺诈",
+        "人工智能",
+        "设备指纹",
+        "安全防护"
+      ],
+      "confidence": 0.85
+    },
+    "B670C354-BD62-41EB-9FEF-D50E0208EC40": {
+      "name": "Jetpack Camera",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "相机功能",
+        "开发库",
+        "兼容性",
+        "开发者体验"
+      ],
+      "confidence": 0.85
+    },
+    "00224167-5F35-4613-9EE1-C7E89EDC8DB9": {
+      "name": "Limbo",
+      "category": "other",
+      "keywords": [
+        "Android模拟器",
+        "QEMU",
+        "硬件仿真",
+        "多架构支持"
+      ],
+      "confidence": 0.85
+    },
+    "607E600C-B3B2-4C55-BCDB-C827C02703C7": {
+      "name": "Chaquopy",
+      "category": "framework",
+      "keywords": [
+        "Python集成",
+        "Android开发",
+        "跨语言开发",
+        "Python环境"
+      ],
+      "confidence": 0.9
+    },
+    "BB4F25C0-45FE-4F91-9F59-75212252D698": {
+      "name": "PAG",
+      "category": "video",
+      "keywords": [
+        "动效渲染",
+        "跨平台",
+        "视频编辑",
+        "UI动画",
+        "贴纸动画"
+      ],
+      "confidence": 0.85
+    },
+    "C783F12C-0776-411A-B45D-0CAA39E620CD": {
+      "name": "腾讯灯塔 DataTalk",
+      "category": "analytics",
+      "keywords": [
+        "数据可视化",
+        "增强分析",
+        "AI分析",
+        "数据洞察"
+      ],
+      "confidence": 0.85
+    },
+    "67C464F3-DD4F-40A6-B85C-3747E78812DD": {
+      "name": "HMS Video Kit HDR Vivid",
+      "category": "video",
+      "keywords": [
+        "视频处理",
+        "HDR Vivid",
+        "视频播放",
+        "视频分享",
+        "视频图像"
+      ],
+      "confidence": 0.85
+    },
+    "621584E6-9D95-4B4A-8443-B7B6E1E64572": {
+      "name": "libYUV",
+      "category": "image",
+      "keywords": [
+        "yuv",
+        "图像处理",
+        "数据转换",
+        "裁剪",
+        "缩放"
+      ],
+      "confidence": 0.9
+    },
+    "4DA6B46D-5F11-4012-8BA7-0528573B36DD": {
+      "name": "jLottie",
+      "category": "video",
+      "keywords": [
+        "Lottie",
+        "动画",
+        "播放器",
+        "动态渲染",
+        "JavaScript"
+      ],
+      "confidence": 0.85
+    },
+    "03E0B89A-55F3-480E-9DDF-87EF69ADDA5C": {
+      "name": "腾讯云 HTTPDNS",
+      "category": "network",
+      "keywords": [
+        "HTTPDNS",
+        "域名解析",
+        "DNS服务器",
+        "域名劫持",
+        "跨网访问"
+      ],
+      "confidence": 0.9
+    },
+    "8692B788-BDE7-4038-854D-E81F96EF763C": {
+      "name": "lib-encrypt",
+      "category": "security",
+      "keywords": [
+        "AES加密",
+        "MD5计算",
+        "进制转化",
+        "安全加密"
+      ],
+      "confidence": 0.9
+    },
+    "C4C2566A-FDCD-4B4A-A5DB-AE94EB7396D0": {
+      "name": "Faceunity Nama SDK",
+      "category": "video",
+      "keywords": [
+        "人脸跟踪",
+        "视频特效",
+        "多平台集成",
+        "开发包"
+      ],
+      "confidence": 0.85
+    },
+    "30BB7F40-1A7F-490E-B4F6-AF1492AF1C84": {
+      "name": "sing-box",
+      "category": "network",
+      "keywords": [
+        "代理",
+        "网络",
+        "通用代理",
+        "网络通信"
+      ],
+      "confidence": 0.85
+    },
+    "3A2D8C47-1A1B-45B4-9F73-5FD53AA5D807": {
+      "name": "1DS",
+      "category": "analytics",
+      "keywords": [
+        "数据收集",
+        "遥测",
+        "数据分析",
+        "跨平台"
+      ],
+      "confidence": 0.85
+    },
+    "5CF6CB35-3233-4D59-B4CE-DBC0CE104CBB": {
+      "name": "LibJPEG",
+      "category": "image",
+      "keywords": [
+        "JPEG",
+        "图像编码",
+        "图像解码",
+        "图像转码"
+      ],
+      "confidence": 0.9
+    },
+    "A668BF64-C8D9-4CE6-A94E-CD1FF857C99E": {
+      "name": "android-tree-sitter",
+      "category": "framework",
+      "keywords": [
+        "代码解析",
+        "Java绑定",
+        "tree-sitter",
+        "AndroidIDE"
+      ],
+      "confidence": 0.85
+    },
+    "0039ABEC-E965-4359-A1B3-693DD9AE1805": {
+      "name": "libchrome",
+      "category": "framework",
+      "keywords": [
+        "通用实用程序库",
+        "Chromium项目",
+        "代码共享",
+        "开发框架",
+        "基础组件"
+      ],
+      "confidence": 0.85
+    },
+    "D2922464-3822-4B70-A806-B55793108D7C": {
+      "name": "libheif",
+      "category": "image",
+      "keywords": [
+        "HEIF",
+        "AVIF",
+        "图像编解码",
+        "图像文件格式"
+      ],
+      "confidence": 0.9
+    },
+    "B9A1B809-C028-47F2-BF77-E71F5A62282B": {
+      "name": "Naga Reinforcement",
+      "category": "security",
+      "keywords": [
+        "应用加固",
+        "安全保护",
+        "全生命周期安全",
+        "安全缺陷防护"
+      ],
+      "confidence": 0.9
+    },
+    "69AE3E0C-D143-4874-95D2-AC5E0051A691": {
+      "name": "Executorch",
+      "category": "ai",
+      "keywords": [
+        "模型部署",
+        "PyTorch",
+        "安卓平台",
+        "AI模型"
+      ],
+      "confidence": 0.85
+    },
+    "577D7D6C-B154-4884-93F4-CA919259BB2A": {
+      "name": "Expo SQLite",
+      "category": "database",
+      "keywords": [
+        "SQLite",
+        "数据库",
+        "存储",
+        "Expo"
+      ],
+      "confidence": 0.9
+    },
+    "26FBEA10-B48A-406B-BF17-4428664F5D54": {
+      "name": "Rust",
+      "category": "other",
+      "keywords": [
+        "安全性",
+        "内存管理",
+        "并行处理",
+        "系统级编程"
+      ],
+      "confidence": 0.85
+    },
+    "C945AB38-89BC-4E60-ABFA-01DE57341A14": {
+      "name": "Unreal Engine",
+      "category": "framework",
+      "keywords": [
+        "游戏引擎",
+        "游戏开发",
+        "开发框架",
+        "Epic Games"
+      ],
+      "confidence": 0.9
+    },
+    "FFA204C8-030B-4C4E-ABAA-5CC5376CF23D": {
+      "name": "bspatch",
+      "category": "other",
+      "keywords": [
+        "增量补丁",
+        "应用更新",
+        "bspatch",
+        "补丁库"
+      ],
+      "confidence": 0.9
+    },
+    "46F0DFDA-DBAA-45F5-838F-CFEC31D0C10A": {
+      "name": "PLDroidPlayer",
+      "category": "video",
+      "keywords": [
+        "视频播放",
+        "音视频",
+        "播放器",
+        "跨平台",
+        "定制化"
+      ],
+      "confidence": 0.9
+    },
+    "B19118B2-31D3-4463-9811-2F8C71DDA373": {
+      "name": "GIFLIB",
+      "category": "image",
+      "keywords": [
+        "GIF",
+        "图像提取",
+        "图像处理",
+        "图形应用"
+      ],
+      "confidence": 0.85
+    },
+    "F53F1DE9-6ACD-44F7-B71E-E9A8ED63F4A0": {
+      "name": "Mozilla NSS",
+      "category": "security",
+      "keywords": [
+        "安全服务",
+        "SSL",
+        "TLS",
+        "PKCS",
+        "加密协议"
+      ],
+      "confidence": 0.9
+    },
+    "9714D30D-7EAB-4DBA-BC89-6A03192A39A7": {
+      "name": "腾讯云短视频 SDK",
+      "category": "video",
+      "keywords": [
+        "视频生成",
+        "视频上传",
+        "视频处理",
+        "视频分发",
+        "视频播放"
+      ],
+      "confidence": 0.85
+    },
+    "7494560B-FCCE-46D6-8210-8398CD284F82": {
+      "name": "百度应用加固",
+      "category": "security",
+      "keywords": [
+        "代码加密",
+        "完整性校验",
+        "反注入",
+        "反调试",
+        "安全能力"
+      ],
+      "confidence": 0.95
+    },
+    "36FA6306-177D-46B8-BA66-6FD2C7A01897": {
+      "name": "librtmp",
+      "category": "network",
+      "keywords": [
+        "RTMP",
+        "网络通信",
+        "视频流",
+        "JNI"
+      ],
+      "confidence": 0.85
+    },
+    "96C62FC5-DBC7-4E41-B755-21790B6C3C4A": {
+      "name": "Log4a",
+      "category": "framework",
+      "keywords": [
+        "日志收集",
+        "高性能",
+        "mmap",
+        "Android框架"
+      ],
+      "confidence": 0.85
+    },
+    "1B6E2410-05BD-4B92-89FF-B05170BCD1AA": {
+      "name": "融云 IM SDK",
+      "category": "social",
+      "keywords": [
+        "IM",
+        "即时通讯",
+        "社交",
+        "群聊",
+        "音视频通话"
+      ],
+      "confidence": 0.85
+    },
+    "182A86D4-E423-40DA-A3C5-B4CBD36AF368": {
+      "name": "HWCPipe",
+      "category": "other",
+      "keywords": [
+        "GPU性能",
+        "性能分析",
+        "性能优化",
+        "性能计数器"
+      ],
+      "confidence": 0.75
+    },
+    "1BE3D863-E863-45EC-91F6-360F7D923376": {
+      "name": "TVM",
+      "category": "framework",
+      "keywords": [
+        "深度学习",
+        "编译器",
+        "端到端编译",
+        "硬件后端"
+      ],
+      "confidence": 0.85
+    },
+    "B30AE591-CE42-491A-AC9D-11B8E43E2EE6": {
+      "name": "Megazord",
+      "category": "framework",
+      "keywords": [
+        "Rust组件",
+        "代码打包",
+        ".so文件",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "3C2CBBF2-6FB8-4B2D-8F9C-559FB5CC671E": {
+      "name": "aterminal",
+      "category": "system",
+      "keywords": [
+        "终端模拟器",
+        "Android",
+        "libvterm",
+        "命令行"
+      ],
+      "confidence": 0.85
+    },
+    "6E8B57B1-5F50-4CAA-88FA-3CE51B27F421": {
+      "name": "QuickJS Binding",
+      "category": "framework",
+      "keywords": [
+        "JavaScript引擎",
+        "Android绑定",
+        "开发框架",
+        "轻量级"
+      ],
+      "confidence": 0.85
+    },
+    "80E008DF-1291-4AB1-A977-3C90A43D65C9": {
+      "name": "Leptonica",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "图像分析",
+        "开源库",
+        "教学导向"
+      ],
+      "confidence": 0.9
+    },
+    "3B221A67-D50B-46A5-BD8C-FA01456C21DD": {
+      "name": "vivo 网游联运 SDK",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "账号登录",
+        "实名认证",
+        "统一服务"
+      ],
+      "confidence": 0.85
+    },
+    "37E2E329-1422-440C-8451-4A37E419177E": {
+      "name": "OvenPlayer",
+      "category": "video",
+      "keywords": [
+        "播放器",
+        "音视频",
+        "LLHLS",
+        "WebRTC",
+        "媒体服务"
+      ],
+      "confidence": 0.9
+    },
+    "6F4F9877-D043-422B-B679-C3B6E46FEF4D": {
+      "name": "AppSealing",
+      "category": "security",
+      "keywords": [
+        "应用安全",
+        "防篡改",
+        "RASP",
+        "安全防护",
+        "云端安全"
+      ],
+      "confidence": 0.9
+    },
+    "CDF463E8-7225-4535-8A6F-F91C26DB3018": {
+      "name": "正版曲库直通车",
+      "category": "video",
+      "keywords": [
+        "音乐资源",
+        "版权曲库",
+        "音视频播放",
+        "多端使用"
+      ],
+      "confidence": 0.85
+    },
+    "345DD6BE-3748-4FF9-9016-29AD74963D6A": {
+      "name": "FinClip",
+      "category": "framework",
+      "keywords": [
+        "小程序容器",
+        "App集成",
+        "数字化转型",
+        "开发框架",
+        "业务响应"
+      ],
+      "confidence": 0.85
+    },
+    "4C62DC31-0466-487C-8E2B-176C12F3CFC1": {
+      "name": "金山云短视频编辑 SDK",
+      "category": "video",
+      "keywords": [
+        "短视频编辑",
+        "视频合成",
+        "特效滤镜",
+        "音视频处理"
+      ],
+      "confidence": 0.9
+    },
+    "22E4673B-C518-4B19-9F50-1F337A07A873": {
+      "name": "日志服务 SLS",
+      "category": "analytics",
+      "keywords": [
+        "日志分析",
+        "数据采集",
+        "实时分析",
+        "可视化",
+        "监控告警"
+      ],
+      "confidence": 0.85
+    },
+    "E240642F-78A6-4721-B9D6-9A4713811993": {
+      "name": "梆梆安全",
+      "category": "security",
+      "keywords": [
+        "安全风险",
+        "加固加密",
+        "攻击防范",
+        "移动应用安全",
+        "防破解"
+      ],
+      "confidence": 0.85
+    },
+    "D0778DEA-0123-4E29-AF44-B5E95BDDC786": {
+      "name": "Quack",
+      "category": "framework",
+      "keywords": [
+        "Java",
+        "JavaScript",
+        "引擎绑定",
+        "Duktape",
+        "QuickJS"
+      ],
+      "confidence": 0.85
+    },
+    "0B345AD9-9338-4F4B-ADB2-B163D075C63A": {
+      "name": "MobileGlues",
+      "category": "framework",
+      "keywords": [
+        "OpenGL ES",
+        "图形渲染",
+        "GL实现",
+        "Minecraft"
+      ],
+      "confidence": 0.85
+    },
+    "AEE08FB1-C1C7-455E-AED5-E5B8BFB52DBC": {
+      "name": "ArkUI-X",
+      "category": "framework",
+      "keywords": [
+        "UI框架",
+        "多平台开发",
+        "可视化界面",
+        "组件布局",
+        "实时预览"
+      ],
+      "confidence": 0.9
+    },
+    "4CA775FF-C215-4140-B184-191E24CB9D4C": {
+      "name": "Google AdMob",
+      "category": "ads",
+      "keywords": [
+        "广告平台",
+        "移动广告",
+        "应用创收",
+        "Google AdMob"
+      ],
+      "confidence": 0.95
+    },
+    "0CC5126B-1719-4240-B541-821C7F62087A": {
+      "name": "tracepath",
+      "category": "network",
+      "keywords": [
+        "网络诊断",
+        "ping",
+        "traceroute",
+        "tcp connect",
+        "域名检测"
+      ],
+      "confidence": 0.9
+    },
+    "B80A5E33-882B-479D-AAEA-F0E8C16B8B4E": {
+      "name": "WireGuard",
+      "category": "network",
+      "keywords": [
+        "VPN",
+        "加密",
+        "网络通信",
+        "跨平台"
+      ],
+      "confidence": 0.85
+    },
+    "C22A7F22-1E61-4C4D-9556-EDD69285CBCB": {
+      "name": "Intelligent Video Encoding Engine",
+      "category": "video",
+      "keywords": [
+        "视频编码",
+        "H.264",
+        "H.265",
+        "AV1",
+        "AI编码"
+      ],
+      "confidence": 0.95
+    },
+    "5C466086-DBB2-495D-8F82-58EE37130CC8": {
+      "name": "腾讯云通信 SDK",
+      "category": "social",
+      "keywords": [
+        "即时通讯",
+        "聊天",
+        "群组",
+        "富媒体消息",
+        "IM"
+      ],
+      "confidence": 0.85
+    },
+    "1C224B74-F0E6-46B2-9EDD-3DDA1576ECEB": {
+      "name": "LayaAir",
+      "category": "framework",
+      "keywords": [
+        "游戏引擎",
+        "2D/3D",
+        "开源",
+        "多平台发布"
+      ],
+      "confidence": 0.85
+    },
+    "94300278-0654-48D9-B447-7419E6C6752B": {
+      "name": "DartCV",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "计算机视觉",
+        "OpenCV",
+        "Dart",
+        "Flutter"
+      ],
+      "confidence": 0.9
+    },
+    "798832B0-8725-415C-BFCB-D89EBA5492CD": {
+      "name": "Virocore",
+      "category": "framework",
+      "keywords": [
+        "AR/VR",
+        "沉浸式",
+        "开发框架",
+        "Android",
+        "构建工具"
+      ],
+      "confidence": 0.85
+    },
+    "0DE42D03-A0FC-4314-913B-0782A2DA89F6": {
+      "name": "BHook",
+      "category": "framework",
+      "keywords": [
+        "Android",
+        "PLT hook",
+        "hook框架",
+        "字节跳动"
+      ],
+      "confidence": 0.85
+    },
+    "FE932D91-3B7A-4F6B-9EEF-EBC9A5607028": {
+      "name": "Google WOFF2",
+      "category": "other",
+      "keywords": [
+        "WOFF2",
+        "压缩算法",
+        "解压缩",
+        "C++实现"
+      ],
+      "confidence": 0.8
+    },
+    "2DB234BA-EC81-4B8F-9D64-2FC5CF2C7330": {
+      "name": "WebP",
+      "category": "image",
+      "keywords": [
+        "WebP",
+        "图片处理",
+        "图像格式",
+        "图片压缩"
+      ],
+      "confidence": 0.9
+    },
+    "84AB15B9-561F-450F-B6A9-A83F0A3C032E": {
+      "name": "阿里移动热修复",
+      "category": "other",
+      "keywords": [
+        "热修复",
+        "移动热修复",
+        "Android",
+        "iOS",
+        "在线修复"
+      ],
+      "confidence": 0.75
+    },
+    "D9FD1DFA-F704-4266-B9CA-1F82F5B880F9": {
+      "name": "Cognitive Services Speech SDK",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "语音合成",
+        "AI语音服务",
+        "语音功能"
+      ],
+      "confidence": 0.85
+    },
+    "536B0B34-C4E8-4E27-8387-5CFBE4F9818D": {
+      "name": "Sofire",
+      "category": "security",
+      "keywords": [
+        "安全风控",
+        "威胁检测",
+        "设备指纹",
+        "黑卡检测",
+        "AI分析"
+      ],
+      "confidence": 0.9
+    },
+    "C65BB325-CB06-46A4-BD26-C1E35AB48E03": {
+      "name": "nmmp",
+      "category": "security",
+      "keywords": [
+        "dex文件保护",
+        "反编译防护",
+        "字节码转换",
+        "Android安全"
+      ],
+      "confidence": 0.85
+    },
+    "6B0AE013-270E-4F93-BD03-8B371D1B7986": {
+      "name": "traceroute",
+      "category": "network",
+      "keywords": [
+        "traceroute",
+        "跨平台",
+        "网络诊断",
+        "路由路径",
+        "传输延迟"
+      ],
+      "confidence": 0.9
+    },
+    "9BCC2176-AB92-444B-A9A4-B3939D607362": {
+      "name": "MediaPipe LLM Inference",
+      "category": "ai",
+      "keywords": [
+        "LLM Inference",
+        "设备端运行",
+        "生成文本",
+        "自然语言处理",
+        "生成式AI"
+      ],
+      "confidence": 0.85
+    },
+    "A68EDEFD-2546-4786-AEE5-61C695D87AD0": {
+      "name": "OpenTok",
+      "category": "video",
+      "keywords": [
+        "实时语音",
+        "视频通话",
+        "跨平台",
+        "高质量"
+      ],
+      "confidence": 0.95
+    },
+    "3D48CEEF-8233-421E-85E9-6943B0CCB2EA": {
+      "name": "LibMpv",
+      "category": "video",
+      "keywords": [
+        "媒体播放",
+        "音视频",
+        "编解码器",
+        "字幕"
+      ],
+      "confidence": 0.9
+    },
+    "412158E6-C860-43DA-839A-7F16BCB43965": {
+      "name": "ShadowHook",
+      "category": "framework",
+      "keywords": [
+        "hook",
+        "函数拦截",
+        "开发框架",
+        "调试工具"
+      ],
+      "confidence": 0.85
+    },
+    "33C2D734-5E73-4B89-9F1A-7F941133D2FC": {
+      "name": "DexPatch",
+      "category": "framework",
+      "keywords": [
+        "动态部署",
+        "热修复",
+        "线上故障",
+        "动态化方案"
+      ],
+      "confidence": 0.85
+    },
+    "68944C21-9EFA-4B69-9F56-023676BDF6CF": {
+      "name": "HDiffPatch",
+      "category": "other",
+      "keywords": [
+        "diff",
+        "patch",
+        "binary files",
+        "directories"
+      ],
+      "confidence": 0.85
+    },
+    "CDC68B92-6B5D-440E-837A-2CF354D68471": {
+      "name": "腾讯云实时音视频 SDK",
+      "category": "video",
+      "keywords": [
+        "实时音视频",
+        "音视频通话",
+        "互动直播",
+        "低延时",
+        "高品质"
+      ],
+      "confidence": 0.9
+    },
+    "373C0B20-210C-4F42-9C66-0A3C13C7BB96": {
+      "name": "GlideWebpDecoder",
+      "category": "image",
+      "keywords": [
+        "WebP",
+        "图像解码",
+        "图像显示",
+        "Glide集成",
+        "图片处理"
+      ],
+      "confidence": 0.95
+    },
+    "4FD31734-31F8-4FAB-B6DB-5B98ACB0ADD3": {
+      "name": "米大师",
+      "category": "payment",
+      "keywords": [
+        "虚拟支付",
+        "支付平台",
+        "支付渠道",
+        "Q币",
+        "微信支付"
+      ],
+      "confidence": 0.9
+    },
+    "4C9B1408-8139-4BE2-AAD9-CAEA666E3E3B": {
+      "name": "Logan",
+      "category": "system",
+      "keywords": [
+        "日志系统",
+        "大前端",
+        "美团点评",
+        "系统功能"
+      ],
+      "confidence": 0.7
+    },
+    "90E071CD-011F-4338-9F9A-343BDE59DB11": {
+      "name": "Firebase Cloud Messaging",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "跨平台",
+        "FCM",
+        "云消息传递",
+        "Google"
+      ],
+      "confidence": 0.95
+    },
+    "92C44EB7-8BC2-4693-AC66-22FAC6CA8279": {
+      "name": "libdrc",
+      "category": "other",
+      "keywords": [
+        "逆向工程",
+        "开源库",
+        "New BSD协议",
+        "开发者社区"
+      ],
+      "confidence": 0.85
+    },
+    "7178CF3A-BFA0-4593-8D46-325A45904895": {
+      "name": "React Native Reanimated",
+      "category": "framework",
+      "keywords": [
+        "React Native",
+        "动画",
+        "交互",
+        "UI线程"
+      ],
+      "confidence": 0.85
+    },
+    "9B679884-4D19-408E-88DB-1F15B2EFF1D7": {
+      "name": "高德地图 SDK",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "定位",
+        "地理编码",
+        "离线地图",
+        "地图交互"
+      ],
+      "confidence": 0.95
+    },
+    "7DFB5A3D-6CC5-4325-8BA2-5457B36CB256": {
+      "name": "腾讯云直播 SDK",
+      "category": "video",
+      "keywords": [
+        "直播",
+        "音视频",
+        "视频流",
+        "分发服务"
+      ],
+      "confidence": 0.9
+    },
+    "A3D30556-15BA-4C00-92CB-06600F1C5909": {
+      "name": "WCDB",
+      "category": "database",
+      "keywords": [
+        "数据库",
+        "SQLite",
+        "数据存储",
+        "移动数据库"
+      ],
+      "confidence": 0.9
+    },
+    "E4A2090D-4D0B-4785-B929-A9F7371C5C5F": {
+      "name": "libpng",
+      "category": "image",
+      "keywords": [
+        "PNG",
+        "图像文件",
+        "读取",
+        "创建",
+        "操作"
+      ],
+      "confidence": 0.85
+    },
+    "084B58C5-B3E0-44EC-964C-0F12D2661DA8": {
+      "name": "Oboe",
+      "category": "video",
+      "keywords": [
+        "音频处理",
+        "低延迟",
+        "C++库",
+        "Android",
+        "高性能"
+      ],
+      "confidence": 0.85
+    },
+    "FA18CAE1-44C9-4D58-B9D6-C3F36E8BCA7D": {
+      "name": "react-native-gesture-handler",
+      "category": "framework",
+      "keywords": [
+        "React Native",
+        "手势处理",
+        "声明式API",
+        "原生触摸"
+      ],
+      "confidence": 0.9
+    },
+    "7F37FA38-598E-4380-AB0B-9A4E71E266A8": {
+      "name": "旷视 SDK",
+      "category": "ai",
+      "keywords": [
+        "人脸检测",
+        "属性分析",
+        "计算机视觉",
+        "AI"
+      ],
+      "confidence": 0.9
+    },
+    "C0D6B04F-8DB8-4929-A4A3-3099169AF1DA": {
+      "name": "hsynz",
+      "category": "network",
+      "keywords": [
+        "增量更新",
+        "同步算法",
+        "HTTP(S)",
+        "rsync",
+        "大文件同步"
+      ],
+      "confidence": 0.9
+    },
+    "CED7C7BB-83B4-4494-B3D9-E93A9A11A383": {
+      "name": "XNet",
+      "category": "framework",
+      "keywords": [
+        "物联网",
+        "SDK",
+        "腾讯云",
+        "开发框架",
+        "设备对接"
+      ],
+      "confidence": 0.85
+    },
+    "1270A84D-6BE9-4270-B533-4053C9441144": {
+      "name": "Wukong",
+      "category": "framework",
+      "keywords": [
+        "动态卡片",
+        "渲染引擎",
+        "跨端",
+        "UI定制化",
+        "Native"
+      ],
+      "confidence": 0.85
+    },
+    "A30B7FF4-9477-4775-B670-FF04260D390F": {
+      "name": "Polyv HTML5 Player",
+      "category": "video",
+      "keywords": [
+        "音视频直播",
+        "web集成",
+        "直播SDK",
+        "HTML5 Player"
+      ],
+      "confidence": 0.9
+    },
+    "A9267174-64DA-48A4-84A8-DA8E8A26FB56": {
+      "name": "AR Engine",
+      "category": "ai",
+      "keywords": [
+        "增强现实",
+        "AR算法",
+        "计算机视觉",
+        "运动跟踪",
+        "环境跟踪"
+      ],
+      "confidence": 0.85
+    },
+    "18E020F8-BBAD-4598-A785-2C242B811AEE": {
+      "name": "KOOM",
+      "category": "crash",
+      "keywords": [
+        "OOM",
+        "内存溢出",
+        "性能优化",
+        "崩溃解决"
+      ],
+      "confidence": 0.85
+    },
+    "AD40CF2D-0585-477C-B774-97D9BB11283D": {
+      "name": "离线语音合成",
+      "category": "ai",
+      "keywords": [
+        "语音合成",
+        "离线语音",
+        "文字转语音",
+        "AI语音"
+      ],
+      "confidence": 0.85
+    },
+    "EFA57622-1833-4C51-8520-69B72A704A3E": {
+      "name": "Argon2",
+      "category": "security",
+      "keywords": [
+        "密码哈希",
+        "安全加密",
+        "Android",
+        "密码存储"
+      ],
+      "confidence": 0.9
+    },
+    "0CA405CA-9D3B-4DFF-B1C3-E1C72E52F989": {
+      "name": "ZWrapper",
+      "category": "image",
+      "keywords": [
+        "ImageProvider",
+        "PDF",
+        "Flutter",
+        "图像绘制",
+        "小部件"
+      ],
+      "confidence": 0.85
+    },
+    "DEA72298-C9F0-444D-8AD1-53A5F2BDF006": {
+      "name": "Unity Mono",
+      "category": "framework",
+      "keywords": [
+        "脚本后端",
+        "JIT编译",
+        "运行时",
+        "Unity"
+      ],
+      "confidence": 0.85
+    },
+    "BF2E2488-27E3-43DA-B40C-D34207E9CC45": {
+      "name": "librtlsdr",
+      "category": "other",
+      "keywords": [
+        "RTL2832U",
+        "SDR",
+        "软件无线电",
+        "硬件接口"
+      ],
+      "confidence": 0.85
+    },
+    "17F76580-F89F-4470-A0C2-8A3AAFDF1A12": {
+      "name": "xnn",
+      "category": "ai",
+      "keywords": [
+        "预测API",
+        "Caffe",
+        "MXNET",
+        "Python",
+        "C++"
+      ],
+      "confidence": 0.9
+    },
+    "E663C8A8-8104-4104-ABA0-3EE7F680F43E": {
+      "name": "perf",
+      "category": "system",
+      "keywords": [
+        "系统性能",
+        "内核计数器",
+        "perf_event_open",
+        "代码跟踪"
+      ],
+      "confidence": 0.85
+    },
+    "807841F8-5FC8-4DBB-B526-30F640902436": {
+      "name": "AppGallery Connect APM",
+      "category": "analytics",
+      "keywords": [
+        "性能管理",
+        "APM",
+        "崩溃分析",
+        "性能监控"
+      ],
+      "confidence": 0.85
+    },
+    "5A230F18-8DA8-482B-B7FC-32697654F9ED": {
+      "name": "MapLibre Native",
+      "category": "map",
+      "keywords": [
+        "地图视图",
+        "矢量地图",
+        "交互式地图",
+        "Android地图库"
+      ],
+      "confidence": 0.95
+    },
+    "BE73C154-2F71-436D-AD79-98A314438153": {
+      "name": "Juicebox SDK",
+      "category": "database",
+      "keywords": [
+        "分布式存储",
+        "机密存储",
+        "PIN验证",
+        "数据恢复"
+      ],
+      "confidence": 0.85
+    },
+    "FF0376C6-52F3-4CED-99BB-E801A8C0A82C": {
+      "name": "HCL2",
+      "category": "other",
+      "keywords": [
+        "C语言",
+        "HCL2",
+        "解析库",
+        "配置解析"
+      ],
+      "confidence": 0.7
+    },
+    "5959E9A4-C567-44EB-BA0B-9E8035564A3D": {
+      "name": "Sangfor",
+      "category": "security",
+      "keywords": [
+        "安全接入",
+        "双域隔离",
+        "数据加密",
+        "安全沙箱",
+        "移动办公安全"
+      ],
+      "confidence": 0.9
+    },
+    "6E7DC595-3F06-43F9-AF52-4A1252E1900E": {
+      "name": "xmCore",
+      "category": "framework",
+      "keywords": [
+        "android架构",
+        "快速开发",
+        "Dagger2",
+        "RxJava",
+        "MVVM"
+      ],
+      "confidence": 0.85
+    },
+    "173EB821-67A2-49CE-A994-B1B2DC72AC1C": {
+      "name": "TapSDK",
+      "category": "other",
+      "keywords": [
+        "开发者服务",
+        "游戏运营",
+        "数据提升",
+        "TapTap平台"
+      ],
+      "confidence": 0.75
+    },
+    "63BC7C87-1386-4F3B-ADC7-12C2B6E5218A": {
+      "name": "Ren'Py",
+      "category": "other",
+      "keywords": [
+        "视觉小说引擎",
+        "交互式故事",
+        "文字图像声音",
+        "跨平台"
+      ],
+      "confidence": 0.85
+    },
+    "7B8E14F7-CD66-427B-BF09-11F878AFB53A": {
+      "name": "brltty",
+      "category": "other",
+      "keywords": [
+        "盲文显示器",
+        "视障辅助",
+        "屏幕访问",
+        "语音功能"
+      ],
+      "confidence": 0.85
+    },
+    "9F019E8A-6716-43B6-AB82-70418B286C8C": {
+      "name": "libtcc",
+      "category": "framework",
+      "keywords": [
+        "C编译器",
+        "编译",
+        "跨平台",
+        "动态编译"
+      ],
+      "confidence": 0.85
+    },
+    "71464FA3-A55F-4FCE-A805-340482102A77": {
+      "name": "Jetpack Graphics",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "图形工具",
+        "降低延迟",
+        "Android平台"
+      ],
+      "confidence": 0.85
+    },
+    "C0FC76F7-D905-4BEE-A93D-BB69A6961760": {
+      "name": "小米游戏 SDK",
+      "category": "ads",
+      "keywords": [
+        "游戏推广",
+        "分发服务",
+        "游戏接入",
+        "小米平台"
+      ],
+      "confidence": 0.85
+    },
+    "63691E6A-DCE7-40BF-8B19-681E03CDCA26": {
+      "name": "MediaInfoLib",
+      "category": "video",
+      "keywords": [
+        "音视频处理",
+        "媒体信息",
+        "视频文件",
+        "音频文件",
+        "标签数据"
+      ],
+      "confidence": 0.85
+    },
+    "A9BA6EC0-0C38-4185-BD58-00F006506430": {
+      "name": "Bmob 后端云",
+      "category": "database",
+      "keywords": [
+        "数据存储",
+        "后端云服务",
+        "移动应用后端",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "2223209B-1831-4C74-8318-C6F883B6508C": {
+      "name": "CRI ADX2 Unity 插件",
+      "category": "video",
+      "keywords": [
+        "声音系统",
+        "Unity插件",
+        "游戏开发",
+        "音频编辑"
+      ],
+      "confidence": 0.85
+    },
+    "89323A0E-4DE5-4460-9FF8-65EB9D76E662": {
+      "name": "思必驰",
+      "category": "ai",
+      "keywords": [
+        "语音交互",
+        "AI",
+        "语音赋能",
+        "DUI平台"
+      ],
+      "confidence": 0.85
+    },
+    "9B5C90D9-CAB3-4CAB-9409-141EE1AB46FF": {
+      "name": "React Native Screens",
+      "category": "framework",
+      "keywords": [
+        "React Native",
+        "导航容器",
+        "原生组件",
+        "React Navigation依赖"
+      ],
+      "confidence": 0.85
+    },
+    "DAA626BA-CBC2-4265-B2C7-145D8527EBAA": {
+      "name": "信鸽推送",
+      "category": "push",
+      "keywords": [
+        "推送服务",
+        "消息推送",
+        "开发者工具",
+        "免费推送"
+      ],
+      "confidence": 0.95
+    },
+    "683A4EB1-24B4-4984-9773-65AF0C79F5F6": {
+      "name": "protobuf",
+      "category": "framework",
+      "keywords": [
+        "结构化数据",
+        "序列化",
+        "反序列化",
+        "Google"
+      ],
+      "confidence": 0.85
+    },
+    "6F757DB6-5C9A-48C1-B336-2231B91B860A": {
+      "name": "TanX",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "流量交易",
+        "阿里妈妈",
+        "交易方式"
+      ],
+      "confidence": 0.9
+    },
+    "8D914C0F-1A8B-439D-A889-98CFED32BF9C": {
+      "name": "Folly",
+      "category": "framework",
+      "keywords": [
+        "C++库",
+        "开源",
+        "Facebook",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "179A242E-CEF9-4A6E-9AFB-053C8DD21E67": {
+      "name": "Lofelt SDK",
+      "category": "other",
+      "keywords": [
+        "触觉效果",
+        "音频分析",
+        "自动生成",
+        "内容创作",
+        "设备适配"
+      ],
+      "confidence": 0.85
+    },
+    "6C3F6178-153B-47D8-89B0-63B7A6A620DB": {
+      "name": "Liblouis",
+      "category": "other",
+      "keywords": [
+        "盲文翻译",
+        "开源",
+        "文本处理",
+        "C语言库"
+      ],
+      "confidence": 0.8
+    },
+    "2EF501B8-5C13-4BA6-82C2-771B75773FE3": {
+      "name": "pngquant-android",
+      "category": "image",
+      "keywords": [
+        "图片处理",
+        "PNG压缩",
+        "Java绑定",
+        "图片优化"
+      ],
+      "confidence": 0.9
+    },
+    "E1F7D99B-94FA-402B-B688-438004629839": {
+      "name": "libaria2",
+      "category": "network",
+      "keywords": [
+        "下载",
+        "网络",
+        "C库",
+        "aria2"
+      ],
+      "confidence": 0.85
+    },
+    "3C4F8E5B-3FD2-43C2-B546-26A20C6AE7FB": {
+      "name": "HardCoder",
+      "category": "framework",
+      "keywords": [
+        "系统通信",
+        "底层硬件资源",
+        "性能优化",
+        "机型适配",
+        "功能拓展"
+      ],
+      "confidence": 0.85
+    },
+    "AA531A14-8838-4224-BA7E-5C89B324F765": {
+      "name": "Adjust SDK",
+      "category": "analytics",
+      "keywords": [
+        "用户行为分析",
+        "归因跟踪",
+        "数据收集",
+        "事件追踪"
+      ],
+      "confidence": 0.9
+    },
+    "7E830C8A-4C39-4B64-9326-E8C8F924EDC4": {
+      "name": "opencore-amr",
+      "category": "video",
+      "keywords": [
+        "音频编码",
+        "AMR",
+        "AAC",
+        "FDK AAC",
+        "音视频处理"
+      ],
+      "confidence": 0.9
+    },
+    "F1CE2C68-4325-4C5D-BCF4-9BF4C96C3C50": {
+      "name": "cJSON",
+      "category": "other",
+      "keywords": [
+        "JSON解析器",
+        "ANSI C",
+        "超轻量级",
+        "数据解析"
+      ],
+      "confidence": 0.85
+    },
+    "121FA107-3AD6-4737-8395-537D28426859": {
+      "name": "Filament",
+      "category": "other",
+      "keywords": [
+        "渲染引擎",
+        "实时渲染",
+        "物理渲染",
+        "图形渲染"
+      ],
+      "confidence": 0.8
+    },
+    "00083EA7-A677-4B70-8BAC-9DAB6B02B14D": {
+      "name": "React Native MMKV",
+      "category": "database",
+      "keywords": [
+        "键值存储",
+        "React Native",
+        "高效存储",
+        "移动开发",
+        "JS绑定"
+      ],
+      "confidence": 0.9
+    },
+    "217F616F-2643-44F9-8E28-75FCFD6B5944": {
+      "name": "opus-jni",
+      "category": "video",
+      "keywords": [
+        "Opus",
+        "JNI",
+        "音频编码",
+        "音视频处理",
+        "编解码器"
+      ],
+      "confidence": 0.85
+    },
+    "2D095A00-45F7-4F0B-A519-618B52C3ABB0": {
+      "name": "游密",
+      "category": "network",
+      "keywords": [
+        "实时通讯",
+        "云服务",
+        "开发者解决方案",
+        "即时通讯"
+      ],
+      "confidence": 0.85
+    },
+    "4992BA64-D546-4AF2-8FE5-DBB3EC8A8166": {
+      "name": "LSPatch",
+      "category": "framework",
+      "keywords": [
+        "APK修改",
+        "dex插入",
+        "so插入",
+        "重打包"
+      ],
+      "confidence": 0.85
+    },
+    "3882968C-CA05-42C8-B7BE-315AF61BCDF4": {
+      "name": "EasyAR",
+      "category": "framework",
+      "keywords": [
+        "AR",
+        "增强现实",
+        "开发框架",
+        "3D建模"
+      ],
+      "confidence": 0.85
+    },
+    "14CE8B11-CB8C-4E98-8618-6278028B08F8": {
+      "name": "Android 游戏开发工具包帧率调整",
+      "category": "framework",
+      "keywords": [
+        "游戏开发",
+        "帧率调整",
+        "工具包",
+        "Swappy"
+      ],
+      "confidence": 0.85
+    },
+    "8369CDF8-A953-4BEE-B16C-1C7660F20AA7": {
+      "name": "Live2D Cubism SDK",
+      "category": "other",
+      "keywords": [
+        "2D模型渲染",
+        "Live2D",
+        "Cubism",
+        "动画模型"
+      ],
+      "confidence": 0.85
+    },
+    "E8CB8812-B1CB-49DF-BFE6-942F880DE2D6": {
+      "name": "BoostMultiDex",
+      "category": "framework",
+      "keywords": [
+        "多DEX加载",
+        "Android开发",
+        "低版本优化",
+        "SDK工具"
+      ],
+      "confidence": 0.85
+    },
+    "BDC68E02-AA8B-4833-8FA0-EA4F077170FC": {
+      "name": "腾讯云手游安全",
+      "category": "security",
+      "keywords": [
+        "手游安全",
+        "反外挂",
+        "手游加固",
+        "安全防护",
+        "安全检测"
+      ],
+      "confidence": 0.9
+    },
+    "CDD4693B-7BB1-42FD-B179-0561C7A0784B": {
+      "name": "GameMaker Studio",
+      "category": "framework",
+      "keywords": [
+        "游戏开发",
+        "2D游戏",
+        "开发环境",
+        "游戏引擎"
+      ],
+      "confidence": 0.85
+    },
+    "A01020C3-DC89-4A2D-BF16-4555010E57D7": {
+      "name": "UniRapidJson",
+      "category": "framework",
+      "keywords": [
+        "Unity",
+        "JSON",
+        "RapidJSON",
+        "解析",
+        "序列化"
+      ],
+      "confidence": 0.75
+    },
+    "C69C9F73-9F4B-43CD-AE19-12406ECD76DF": {
+      "name": "CWAC AndDown",
+      "category": "framework",
+      "keywords": [
+        "Markdown",
+        "实用程序库",
+        "文本处理",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "C0F457AF-CE75-406F-A7B0-10420B92B99C": {
+      "name": "libsense",
+      "category": "system",
+      "keywords": [
+        "Raspberry Pi",
+        "Sense HAT",
+        "C/C++ API",
+        "硬件交互"
+      ],
+      "confidence": 0.85
+    },
+    "8909EB42-3C99-4182-9901-1F7BBB4438B1": {
+      "name": "国密套件",
+      "category": "security",
+      "keywords": [
+        "国密",
+        "安全特性",
+        "Java Provider",
+        "安全加密"
+      ],
+      "confidence": 0.95
+    },
+    "080918F0-FE0D-46B8-B7B2-5FADF9728617": {
+      "name": "Tesseract",
+      "category": "ai",
+      "keywords": [
+        "OCR",
+        "光学字符识别",
+        "图像识别",
+        "计算机视觉"
+      ],
+      "confidence": 0.9
+    },
+    "16666484-E80F-4FDA-90AE-C30B56986B79": {
+      "name": "zlib",
+      "category": "other",
+      "keywords": [
+        "数据压缩",
+        "无损压缩",
+        "通用库",
+        "数据处理"
+      ],
+      "confidence": 0.8
+    },
+    "FF34BC89-E46F-4D3A-A9BF-628A439F22FD": {
+      "name": "OpenH264",
+      "category": "video",
+      "keywords": [
+        "视频编解码",
+        "H.264",
+        "编解码器库",
+        "实时应用"
+      ],
+      "confidence": 0.95
+    },
+    "0B6837CF-202D-403D-A0AF-4436D35C607D": {
+      "name": "腾讯游戏 GCloud",
+      "category": "other",
+      "keywords": [
+        "游戏中台",
+        "研发效能",
+        "技术预研",
+        "产品化服务"
+      ],
+      "confidence": 0.8
+    },
+    "25A7B970-2FAB-4818-A900-94BC2F5BE876": {
+      "name": "LibJS",
+      "category": "system",
+      "keywords": [
+        "JavaScript引擎",
+        "SerenityOS",
+        "运行时",
+        "系统组件"
+      ],
+      "confidence": 0.85
+    },
+    "D7145350-1302-48E1-9E47-2097ED5818DB": {
+      "name": "ENet",
+      "category": "network",
+      "keywords": [
+        "网络通信",
+        "UDP",
+        "可靠数据包传递",
+        "网络层"
+      ],
+      "confidence": 0.9
+    },
+    "B68DB390-F7D8-4CB9-9F4B-F08B1EDD674A": {
+      "name": "烈焰弹幕使",
+      "category": "video",
+      "keywords": [
+        "弹幕",
+        "视频",
+        "解析",
+        "绘制",
+        "引擎"
+      ],
+      "confidence": 0.85
+    },
+    "52C76B85-4E0A-4D49-BC8B-717B59F7ADD8": {
+      "name": "网易易盾智能反外挂",
+      "category": "security",
+      "keywords": [
+        "反外挂",
+        "游戏安全",
+        "设备检测",
+        "防作弊",
+        "模拟器检测"
+      ],
+      "confidence": 0.9
+    },
+    "2BE524AA-7BE2-48BB-B344-E8B4C10AAD1D": {
+      "name": "SQLCipher",
+      "category": "security",
+      "keywords": [
+        "数据库加密",
+        "SQLite扩展",
+        "AES加密",
+        "安全存储"
+      ],
+      "confidence": 0.9
+    },
+    "E13B329F-EB77-4E17-81B3-9F98E450C840": {
+      "name": "J2V8",
+      "category": "framework",
+      "keywords": [
+        "Java绑定",
+        "V8引擎",
+        "性能优化",
+        "原始类型访问"
+      ],
+      "confidence": 0.85
+    },
+    "A71F8A7D-AFC4-46D6-BAFE-B17D5D129DFD": {
+      "name": "Jetpack Media",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "media",
+        "媒体共享",
+        "控件",
+        "开发框架"
+      ],
+      "confidence": 0.9
+    },
+    "536DF2F8-A2A8-46F9-BFD5-6A5B036D3558": {
+      "name": "HevSocks5Tunnel",
+      "category": "network",
+      "keywords": [
+        "Socks5",
+        "代理",
+        "隧道",
+        "Unix",
+        "网络通信"
+      ],
+      "confidence": 0.95
+    },
+    "DFD495B3-032A-4EB8-881E-FAE6DD38AA61": {
+      "name": "react-native-svg",
+      "category": "image",
+      "keywords": [
+        "SVG",
+        "React Native",
+        "React Web",
+        "图像渲染"
+      ],
+      "confidence": 0.85
+    },
+    "4C0FB7C4-89E5-4E12-9094-ABF1A8C4F352": {
+      "name": "python-for-android",
+      "category": "framework",
+      "keywords": [
+        "Python打包",
+        "Android应用",
+        "APK打包",
+        "AAB打包"
+      ],
+      "confidence": 0.85
+    },
+    "476393FE-F249-42F8-A8AE-5F57D91C3582": {
+      "name": "zipalign",
+      "category": "system",
+      "keywords": [
+        "APK优化",
+        "对齐工具",
+        "内存优化",
+        "mmap"
+      ],
+      "confidence": 0.85
+    },
+    "C2C6A45A-A85B-4C8D-9FED-1B7B84A6D97D": {
+      "name": "wgs2gcj",
+      "category": "map",
+      "keywords": [
+        "坐标转换",
+        "WGS84",
+        "GCJ02",
+        "地理坐标",
+        "坐标系转换"
+      ],
+      "confidence": 0.85
+    },
+    "445F3A88-EFAD-459E-A9E2-8E9F492D6936": {
+      "name": "PJSIP",
+      "category": "network",
+      "keywords": [
+        "SIP协议",
+        "RTP",
+        "NAT穿透",
+        "多媒体通信",
+        "开源库"
+      ],
+      "confidence": 0.85
+    },
+    "048E2A92-9A21-41BC-A5A2-016192AB1F52": {
+      "name": "Fcitx 5 Lua",
+      "category": "other",
+      "keywords": [
+        "输入法框架",
+        "Lua支持",
+        "插件加载",
+        "Fcitx 5"
+      ],
+      "confidence": 0.8
+    },
+    "D306D2C6-CBE3-4211-967B-C9430CD4A9CA": {
+      "name": "WebP 编解码器",
+      "category": "image",
+      "keywords": [
+        "WebP",
+        "图像编解码",
+        "图片处理",
+        "图像压缩"
+      ],
+      "confidence": 0.9
+    },
+    "A12D8557-3D31-4E33-8895-0591490E0B55": {
+      "name": "PDFium",
+      "category": "image",
+      "keywords": [
+        "PDF渲染",
+        "PDF处理",
+        "开源",
+        "Chrome引擎"
+      ],
+      "confidence": 0.8
+    },
+    "6350ECA8-45AF-4E86-808C-134880E6C87C": {
+      "name": "实人认证 SDK",
+      "category": "security",
+      "keywords": [
+        "身份认证",
+        "生物特征",
+        "风险识别",
+        "动态认证"
+      ],
+      "confidence": 0.85
+    },
+    "13C1DDF8-77BA-420E-854E-6CDB6CE2ACD2": {
+      "name": "MongoDB",
+      "category": "database",
+      "keywords": [
+        "数据存储",
+        "MongoDB",
+        "BSON",
+        "文档数据库"
+      ],
+      "confidence": 0.9
+    },
+    "43C175E5-D6D9-444E-BA1D-FD718EAD3F8C": {
+      "name": "Sonic",
+      "category": "ai",
+      "keywords": [
+        "语音合成",
+        "TTS",
+        "流式语音",
+        "ANSI C库"
+      ],
+      "confidence": 0.85
+    },
+    "A817A52C-73FA-4072-8E1E-84442F63E8B6": {
+      "name": "libjpeg-turbo",
+      "category": "image",
+      "keywords": [
+        "JPEG编解码",
+        "图像压缩",
+        "图像解压缩",
+        "SIMD加速"
+      ],
+      "confidence": 0.9
+    },
+    "047188A1-7E63-47CB-90FB-033180D89676": {
+      "name": "GCanvas",
+      "category": "framework",
+      "keywords": [
+        "跨平台",
+        "图形2D",
+        "WebGL",
+        "OpenGL ES",
+        "画布解决方案"
+      ],
+      "confidence": 0.85
+    },
+    "9E5311E7-8F55-4988-BE84-6AFD18ED70FB": {
+      "name": "MediaPipe Tasks",
+      "category": "ai",
+      "keywords": [
+        "机器学习",
+        "AI",
+        "模型部署",
+        "计算机视觉"
+      ],
+      "confidence": 0.9
+    },
+    "107614AB-92EE-4681-BF7E-EAF85EB5F45C": {
+      "name": "libhfyuv",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "YUV转换",
+        "YUV缩放",
+        "颜色空间转换"
+      ],
+      "confidence": 0.85
+    },
+    "6ED982AA-B4C2-4710-B0ED-97D9C627D6D7": {
+      "name": "Opus",
+      "category": "video",
+      "keywords": [
+        "音频编解码",
+        "语音传输",
+        "网络音频",
+        "交互式音频"
+      ],
+      "confidence": 0.85
+    },
+    "6C3A7724-3A83-401A-B00C-46CE22C0DE44": {
+      "name": "videodec",
+      "category": "video",
+      "keywords": [
+        "视频解码",
+        "H.264",
+        "C语言库",
+        "通用API",
+        "多平台"
+      ],
+      "confidence": 0.9
+    },
+    "BAC4586F-EBD9-4C52-979E-804573C5E7C1": {
+      "name": "U-Game 金融风控组件",
+      "category": "security",
+      "keywords": [
+        "金融风控",
+        "反作弊",
+        "安全监控",
+        "SecurityEnvSDK"
+      ],
+      "confidence": 0.85
+    },
+    "0EC5EBE1-FAB6-44D2-8669-3CBB9AE952C9": {
+      "name": "Epic",
+      "category": "framework",
+      "keywords": [
+        "AOP Hook",
+        "运行时插桩",
+        "Java方法拦截",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "541E93F2-94FD-410E-A01A-FC437D531CAE": {
+      "name": "移动统计分析",
+      "category": "analytics",
+      "keywords": [
+        "统计分析",
+        "用户行为分析",
+        "数据采集",
+        "业务监测",
+        "App稳定性监控"
+      ],
+      "confidence": 0.85
+    },
+    "921BF876-7F05-4749-819D-6E39C171F1B5": {
+      "name": "XQUIC",
+      "category": "network",
+      "keywords": [
+        "QUIC",
+        "HTTP/3",
+        "网络传输",
+        "客户端服务端"
+      ],
+      "confidence": 0.9
+    },
+    "FBAFB2B5-3418-41F7-802E-E0BE8D746279": {
+      "name": "FreeReflection",
+      "category": "framework",
+      "keywords": [
+        "反射",
+        "Android P",
+        "动态类操作",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "90BE8F04-7A27-49A5-A080-EBF046E0BB2B": {
+      "name": "AIUI",
+      "category": "ai",
+      "keywords": [
+        "语音交互",
+        "AI",
+        "语音识别",
+        "自然语言处理"
+      ],
+      "confidence": 0.9
+    },
+    "7D3374C1-484B-4B64-A642-C7CF92BED74E": {
+      "name": "LWJGL",
+      "category": "framework",
+      "keywords": [
+        "Java库",
+        "跨平台",
+        "原生API",
+        "图形",
+        "音频"
+      ],
+      "confidence": 0.85
+    },
+    "6A182DF7-14B1-4AC9-8747-3DC02153EAE3": {
+      "name": "Gio",
+      "category": "framework",
+      "keywords": [
+        "跨平台",
+        "GUI",
+        "Go语言",
+        "即时模式",
+        "多平台支持"
+      ],
+      "confidence": 0.9
+    },
+    "4787CC13-BFB2-43C3-8FD4-2D8D930D4E52": {
+      "name": "Fcitx 5 for Android",
+      "category": "system",
+      "keywords": [
+        "输入法",
+        "Android插件",
+        "Fcitx 5",
+        "系统输入"
+      ],
+      "confidence": 0.85
+    },
+    "3193AA06-E864-4E97-A694-F304F744E97C": {
+      "name": "ExoPlayer",
+      "category": "video",
+      "keywords": [
+        "媒体播放",
+        "Android",
+        "音视频",
+        "应用级"
+      ],
+      "confidence": 0.95
+    },
+    "D599117F-8741-4044-8A08-F0E039E26CC9": {
+      "name": "ApngDrawable",
+      "category": "image",
+      "keywords": [
+        "APNG",
+        "图像解码",
+        "Android",
+        "图像库"
+      ],
+      "confidence": 0.9
+    },
+    "AFFDAB45-1BC3-47E2-B344-DE2B94EDD5A4": {
+      "name": "银联 SDK",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "银联",
+        "在线支付",
+        "支付工具",
+        "多种支付方式"
+      ],
+      "confidence": 0.9
+    },
+    "C42C6BCB-7E49-42D6-8C5B-092226AF8D00": {
+      "name": "腾讯地图 SDK",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "定位",
+        "LBS",
+        "位置服务",
+        "Android"
+      ],
+      "confidence": 0.95
+    },
+    "ADDF0B59-1355-4B43-AC19-109A80BAC28A": {
+      "name": "MobileIMSDK",
+      "category": "framework",
+      "keywords": [
+        "IM",
+        "通信层",
+        "移动端",
+        "框架"
+      ],
+      "confidence": 0.85
+    },
+    "FBBEA24A-9DC8-4B71-80A2-34203D59D4F8": {
+      "name": "MindSpore Lite",
+      "category": "ai",
+      "keywords": [
+        "AI引擎",
+        "全场景智能应用",
+        "端到端解决方案",
+        "AI能力"
+      ],
+      "confidence": 0.9
+    },
+    "5D0E9F9D-B1A1-41E1-AB81-5210D6A38A01": {
+      "name": "屹通 SDK",
+      "category": "other",
+      "keywords": [
+        "银行业",
+        "金融科技",
+        "软件开发",
+        "信息服务"
+      ],
+      "confidence": 0.65
+    },
+    "F53F4149-0DFA-4CD1-A5A0-6B6112332B63": {
+      "name": "cocos2d-x",
+      "category": "framework",
+      "keywords": [
+        "游戏引擎",
+        "开源",
+        "C++",
+        "跨平台",
+        "多语言"
+      ],
+      "confidence": 0.9
+    },
+    "DEDDFAC6-C824-4AF1-AF95-A835CA0DB8C1": {
+      "name": "Trust Wallet Core",
+      "category": "payment",
+      "keywords": [
+        "区块链",
+        "钱包",
+        "跨平台",
+        "加密货币",
+        "资产"
+      ],
+      "confidence": 0.85
+    },
+    "59A2F7BC-48B4-4499-992A-348400AFFDD3": {
+      "name": "Stretch",
+      "category": "framework",
+      "keywords": [
+        "Flexbox",
+        "布局",
+        "Rust",
+        "高性能",
+        "移动设备"
+      ],
+      "confidence": 0.85
+    },
+    "DE857982-E94B-40A5-BC41-BA87740B34E1": {
+      "name": "同盾设备指纹",
+      "category": "security",
+      "keywords": [
+        "设备指纹",
+        "身份识别",
+        "安全验证",
+        "反欺诈"
+      ],
+      "confidence": 0.85
+    },
+    "F85868EC-FAC5-4632-A0A5-350B24F7C2E5": {
+      "name": "U4 内核",
+      "category": "other",
+      "keywords": [
+        "浏览器内核",
+        "webview",
+        "H5体验",
+        "浏览体验"
+      ],
+      "confidence": 0.85
+    },
+    "C138B97E-877F-48E2-921D-4162BF4AB818": {
+      "name": "小米应用检查更新 SDK",
+      "category": "push",
+      "keywords": [
+        "应用更新",
+        "推送",
+        "版本检查",
+        "CDN服务"
+      ],
+      "confidence": 0.85
+    },
+    "D8459B8A-96A2-43AA-930D-EF1EB61E9413": {
+      "name": "Java 的 Torrent 库",
+      "category": "other",
+      "keywords": [
+        "torrent",
+        "P2P",
+        "Java",
+        "libtorrent"
+      ],
+      "confidence": 0.85
+    },
+    "86F918AF-D3F1-4A78-85C9-6C18242C84E7": {
+      "name": "LiquidFun",
+      "category": "other",
+      "keywords": [
+        "物理模拟",
+        "流体模拟",
+        "软体模拟",
+        "Box2D扩展"
+      ],
+      "confidence": 0.8
+    },
+    "51F81121-A04D-4D17-B0AA-72BEA1C5C89D": {
+      "name": "微博 SDK",
+      "category": "social",
+      "keywords": [
+        "微博分享",
+        "社交授权",
+        "API调用",
+        "第三方应用",
+        "授权登录"
+      ],
+      "confidence": 0.9
+    },
+    "7F02BB86-6A46-4602-A155-8470A821A9D1": {
+      "name": "Google VR SDK",
+      "category": "framework",
+      "keywords": [
+        "VR",
+        "DayDream",
+        "Cardboard",
+        "虚拟现实",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "BE74F172-C481-42AE-A493-7B781372B51E": {
+      "name": "libmpeg2",
+      "category": "video",
+      "keywords": [
+        "mpeg",
+        "解码器",
+        "视频处理",
+        "音视频解码"
+      ],
+      "confidence": 0.9
+    },
+    "7356B77B-73C3-42DF-BC76-08D1F9BE2342": {
+      "name": "JusTalk Cloud",
+      "category": "video",
+      "keywords": [
+        "音视频通讯",
+        "云平台",
+        "移动通讯"
+      ],
+      "confidence": 0.9
+    },
+    "346F3D3B-688D-4E5C-9A37-576CD70BDB0D": {
+      "name": "腾讯移动分析",
+      "category": "analytics",
+      "keywords": [
+        "数据分析",
+        "用户行为",
+        "数据统计",
+        "用户画像",
+        "数据可视化"
+      ],
+      "confidence": 0.85
+    },
+    "A88C9063-58CA-43EC-9603-7C297E792450": {
+      "name": "libGDX",
+      "category": "framework",
+      "keywords": [
+        "游戏开发",
+        "跨平台",
+        "OpenGL(ES)",
+        "Java",
+        "开发框架"
+      ],
+      "confidence": 0.95
+    },
+    "5D371535-E819-48FC-8E33-607F74C079CB": {
+      "name": "Android Crazy Linker",
+      "category": "framework",
+      "keywords": [
+        "NDK",
+        "链接器",
+        "Native Development Kit",
+        "Android"
+      ],
+      "confidence": 0.85
+    },
+    "32B428B8-97F7-4D9D-9175-A07035F85337": {
+      "name": "Burst",
+      "category": "framework",
+      "keywords": [
+        "编译器",
+        "代码优化",
+        "IL转换",
+        "原生代码"
+      ],
+      "confidence": 0.8
+    },
+    "52E43EAA-1603-443A-8DFC-2B8C35C69BC8": {
+      "name": "AndroLua",
+      "category": "framework",
+      "keywords": [
+        "脚本语言",
+        "Lua",
+        "安卓开发",
+        "轻量级"
+      ],
+      "confidence": 0.85
+    },
+    "0468116C-ED2F-4558-B6B6-C6BF6F3C1687": {
+      "name": "DexKit",
+      "category": "framework",
+      "keywords": [
+        "dex解析",
+        "混淆查找",
+        "C++",
+        "运行时解析"
+      ],
+      "confidence": 0.85
+    },
+    "195E06E2-6D1D-4322-8BA6-38D6E9522533": {
+      "name": "libavif",
+      "category": "image",
+      "keywords": [
+        "图像编解码",
+        "AVIF格式",
+        "图片处理",
+        "图像文件"
+      ],
+      "confidence": 0.9
+    },
+    "7A5C672A-C54A-4699-A07C-62EDB5AE4CAA": {
+      "name": "团结引擎",
+      "category": "framework",
+      "keywords": [
+        "游戏引擎",
+        "开发框架",
+        "Unity",
+        "小游戏解决方案"
+      ],
+      "confidence": 0.9
+    },
+    "2227696E-A553-4496-BCAE-6CA8D07A9D28": {
+      "name": "PlayerSDK",
+      "category": "video",
+      "keywords": [
+        "播放器",
+        "音视频",
+        "高效播放",
+        "媒体库"
+      ],
+      "confidence": 0.9
+    },
+    "D17AD2FF-2744-4638-B7E9-F9B339679760": {
+      "name": "XD",
+      "category": "framework",
+      "keywords": [
+        "2D图形库",
+        "p8g",
+        "Precessing",
+        "图形渲染"
+      ],
+      "confidence": 0.85
+    },
+    "DC0C8104-6FBA-47A4-A926-C3C4CBBFB2C3": {
+      "name": "Butu QR SDK",
+      "category": "image",
+      "keywords": [
+        "二维码",
+        "扫码",
+        "图像识别",
+        "集成SDK"
+      ],
+      "confidence": 0.85
+    },
+    "125383A9-140E-4146-986F-8D3BD2FF2A73": {
+      "name": "中国无线营销联盟通用 SDK",
+      "category": "ads",
+      "keywords": [
+        "广告监测",
+        "曝光",
+        "点击",
+        "广告数据"
+      ],
+      "confidence": 0.85
+    },
+    "9197F912-C3F3-4672-AB8C-AA931F5D7EC7": {
+      "name": "crashpad",
+      "category": "crash",
+      "keywords": [
+        "崩溃报告系统",
+        "Crashpad",
+        "错误报告",
+        "崩溃监测"
+      ],
+      "confidence": 0.9
+    },
+    "F81DC466-2845-422B-AD4F-29ED68FF6B61": {
+      "name": "AntiFakerAndroidChecker",
+      "category": "security",
+      "keywords": [
+        "模拟器检测",
+        "DeviceID",
+        "防刷",
+        "安全验证",
+        "Android设备"
+      ],
+      "confidence": 0.85
+    },
+    "9F8A3FAA-4C0A-4E82-A590-288AD525C796": {
+      "name": "Easy Mobile",
+      "category": "framework",
+      "keywords": [
+        "Unity包",
+        "多合一",
+        "游戏功能",
+        "广告",
+        "应用内购买"
+      ],
+      "confidence": 0.85
+    },
+    "990B401F-AD96-4AC8-B21B-FF5228BF3B06": {
+      "name": "Isar Database",
+      "category": "database",
+      "keywords": [
+        "数据库",
+        "Flutter",
+        "全文检索",
+        "ACID",
+        "异步多线程"
+      ],
+      "confidence": 0.95
+    },
+    "A557C181-6B4E-4528-BC3C-EC1263D03E91": {
+      "name": "GaiaX",
+      "category": "framework",
+      "keywords": [
+        "动态模板引擎",
+        "跨平台",
+        "移动端",
+        "卡片渲染",
+        "动态化"
+      ],
+      "confidence": 0.85
+    },
+    "6C892DAC-8F63-4FE8-8D7C-5849DBCBC135": {
+      "name": "极光认证 SDK",
+      "category": "security",
+      "keywords": [
+        "认证",
+        "身份验证",
+        "安全登录",
+        "运营商网关"
+      ],
+      "confidence": 0.9
+    },
+    "AEF9680F-4A43-4EDC-A5B8-8119D23BCD21": {
+      "name": "Flutter",
+      "category": "framework",
+      "keywords": [
+        "开源",
+        "用户界面工具包",
+        "跨平台",
+        "本地编译"
+      ],
+      "confidence": 0.9
+    },
+    "72DDCF09-26D6-4549-B02C-0D83D7F3C2A1": {
+      "name": "libSDL",
+      "category": "framework",
+      "keywords": [
+        "跨平台",
+        "开发库",
+        "图形硬件访问",
+        "游戏开发",
+        "多媒体"
+      ],
+      "confidence": 0.85
+    },
+    "0266FDBA-CE71-4987-A407-21EC0CDDF58B": {
+      "name": "xCrash",
+      "category": "crash",
+      "keywords": [
+        "崩溃捕获",
+        "Java崩溃",
+        "native崩溃",
+        "ANR捕获"
+      ],
+      "confidence": 0.95
+    },
+    "340BC3DF-C6B4-444C-B80B-0532C7AB8EB6": {
+      "name": "MMKV",
+      "category": "database",
+      "keywords": [
+        "键值对存储",
+        "数据存储",
+        "高效存储",
+        "移动存储",
+        "跨平台"
+      ],
+      "confidence": 0.9
+    },
+    "A908E94C-73FC-4CD8-9742-097C210C34A5": {
+      "name": "RootBeer",
+      "category": "security",
+      "keywords": [
+        "root检查",
+        "root权限检测",
+        "安全库",
+        "设备安全"
+      ],
+      "confidence": 0.85
+    },
+    "F60B169A-3504-4DC4-B5BC-53AFABD7B613": {
+      "name": "WebRTC",
+      "category": "network",
+      "keywords": [
+        "实时通信",
+        "音视频传输",
+        "Web标准",
+        "P2P通信"
+      ],
+      "confidence": 0.85
+    },
+    "38199767-88A0-43AA-8157-D0BB35205906": {
+      "name": "实时音视频",
+      "category": "video",
+      "keywords": [
+        "实时音视频",
+        "音视频通信",
+        "语音通话",
+        "视频通话",
+        "互动直播"
+      ],
+      "confidence": 0.9
+    },
+    "35FCE9EF-1DE6-47E3-BD55-C27CC9ABF649": {
+      "name": "PairIP",
+      "category": "security",
+      "keywords": [
+        "应用保护",
+        "防盗版",
+        "安全服务",
+        "Google Play"
+      ],
+      "confidence": 0.85
+    },
+    "8B333B52-3E1E-4638-8223-5B2036031CAB": {
+      "name": "环信 IM",
+      "category": "social",
+      "keywords": [
+        "即时通讯",
+        "单聊",
+        "群聊",
+        "实时音视频",
+        "社交互动"
+      ],
+      "confidence": 0.85
+    },
+    "EC9B9DE6-B76F-45A6-9CA8-E998925181D5": {
+      "name": "libdeflate",
+      "category": "other",
+      "keywords": [
+        "压缩",
+        "解压缩",
+        "DEFLATE",
+        "快速"
+      ],
+      "confidence": 0.85
+    },
+    "6B4B743C-CA84-4712-BEE8-2CA76907D17A": {
+      "name": "闪验 SDK",
+      "category": "security",
+      "keywords": [
+        "手机号获取",
+        "运营商整合",
+        "账号体系",
+        "注册效率",
+        "身份验证"
+      ],
+      "confidence": 0.85
+    },
+    "F0185A7A-5565-42AB-9783-615FB3D4B26F": {
+      "name": "星火认知大模型",
+      "category": "ai",
+      "keywords": [
+        "认知智能",
+        "大模型",
+        "语言理解",
+        "自然对话"
+      ],
+      "confidence": 0.95
+    },
+    "85F5C7D6-D22A-4F3D-A02A-ED6D791ADAB3": {
+      "name": "LibCurl",
+      "category": "network",
+      "keywords": [
+        "URL传输",
+        "HTTP",
+        "FTP",
+        "网络协议",
+        "客户端库"
+      ],
+      "confidence": 0.9
+    },
+    "66E8AEBE-A783-48F6-B537-06E3225411CF": {
+      "name": "Node.js",
+      "category": "framework",
+      "keywords": [
+        "JavaScript运行时",
+        "后端开发",
+        "异步I/O",
+        "C++实现"
+      ],
+      "confidence": 0.9
+    },
+    "BA7BB8EE-5B00-4444-AEC3-3D011D7B6FD1": {
+      "name": "RenderScript Intrinsics Replacement Toolkit",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "模糊",
+        "混合",
+        "调整大小",
+        "RenderScript Intrinsics"
+      ],
+      "confidence": 0.95
+    },
+    "6E6DC0C8-E57A-417E-830B-242E597E2F7B": {
+      "name": "cocos2d-cpp",
+      "category": "framework",
+      "keywords": [
+        "2D游戏引擎",
+        "C++ 14",
+        "便携式",
+        "多平台"
+      ],
+      "confidence": 0.9
+    },
+    "2A04354C-73FA-4718-8A52-2284C01043B7": {
+      "name": "腾讯流量联盟",
+      "category": "ads",
+      "keywords": [
+        "广告联盟",
+        "流量变现",
+        "移动广告",
+        "应用广告"
+      ],
+      "confidence": 0.85
+    },
+    "9EF05C5D-5AB3-493B-AED6-E525239E200A": {
+      "name": "Rive",
+      "category": "framework",
+      "keywords": [
+        "UI构建",
+        "动画",
+        "互动性",
+        "状态动画",
+        "图形开发"
+      ],
+      "confidence": 0.85
+    },
+    "1272C69F-B7DB-4CEF-A509-827110BEB08E": {
+      "name": "腾讯灯塔 SDK",
+      "category": "analytics",
+      "keywords": [
+        "大数据分析",
+        "数据资产",
+        "数据中台",
+        "业务分析",
+        "数据管理"
+      ],
+      "confidence": 0.9
+    },
+    "32AE99F0-176D-4129-BFE8-00B28058ED2C": {
+      "name": "Speex",
+      "category": "video",
+      "keywords": [
+        "音频压缩",
+        "语音编码",
+        "开源",
+        "编解码器",
+        "互联网应用"
+      ],
+      "confidence": 0.85
+    },
+    "12EB7324-9094-4BB7-9134-048F16D7006E": {
+      "name": "LibOMP",
+      "category": "framework",
+      "keywords": [
+        "OpenMP",
+        "并行计算",
+        "多线程",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "D656C0C1-8EBD-4BE3-AFA2-492B89C2B690": {
+      "name": "个推",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "智能推送",
+        "场景推送",
+        "用户活跃度",
+        "粘性提升"
+      ],
+      "confidence": 0.9
+    },
+    "1F5FAAD5-0BA2-4723-ACF2-4478BF1F02FE": {
+      "name": "Android NDK GIF",
+      "category": "image",
+      "keywords": [
+        "GIF",
+        "图片处理",
+        "NDK",
+        "Android",
+        "aar"
+      ],
+      "confidence": 0.85
+    },
+    "7920F0B3-BA37-460B-BB47-60C5CD0D3890": {
+      "name": "react-native-sqlite-storage",
+      "category": "database",
+      "keywords": [
+        "SQLite",
+        "React Native",
+        "本地存储",
+        "数据存储",
+        "数据库"
+      ],
+      "confidence": 0.9
+    },
+    "1DA090EF-5D34-40A8-B236-6173A544A2DD": {
+      "name": "智能小程序",
+      "category": "framework",
+      "keywords": [
+        "小程序",
+        "开发框架",
+        "跨平台",
+        "即点即用"
+      ],
+      "confidence": 0.85
+    },
+    "BD48F750-82F6-45D1-B5E3-6BF428DD4A65": {
+      "name": "Google Play Games plugin for Unity",
+      "category": "social",
+      "keywords": [
+        "游戏开发",
+        "Google Play Games",
+        "Unity集成",
+        "社交互动"
+      ],
+      "confidence": 0.85
+    },
+    "733CFFBA-B703-4F89-8AE1-120393EFA72A": {
+      "name": "Bluestar",
+      "category": "image",
+      "keywords": [
+        "图像转换",
+        "base64编码",
+        "Node.js",
+        "网页嵌入"
+      ],
+      "confidence": 0.9
+    },
+    "9BF5AA4B-551A-4CCC-B385-C88959734D80": {
+      "name": "Mars",
+      "category": "network",
+      "keywords": [
+        "网络通信",
+        "跨平台",
+        "跨业务",
+        "基础组件"
+      ],
+      "confidence": 0.85
+    },
+    "8ABA39CA-89C9-427F-BAC1-B7DA834C95B1": {
+      "name": "rhttp",
+      "category": "network",
+      "keywords": [
+        "HTTP请求",
+        "Rust",
+        "Flutter",
+        "网络通信"
+      ],
+      "confidence": 0.85
+    },
+    "C033018D-6D44-4A38-B502-2DEC3466E57D": {
+      "name": "Izuko",
+      "category": "other",
+      "keywords": [
+        "Absinthe",
+        "Izuko",
+        "SDK支持"
+      ],
+      "confidence": 0.5
+    },
+    "5EC1D41C-F0E8-4DAA-BCDC-A07452514D9D": {
+      "name": "vad",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "语义理解",
+        "对话管理",
+        "TTS",
+        "语音唤醒"
+      ],
+      "confidence": 0.85
+    },
+    "366990BF-D467-4788-AB96-33B9FBEBBD2D": {
+      "name": "Minilzo",
+      "category": "other",
+      "keywords": [
+        "轻量级",
+        "LZO库",
+        "数据压缩",
+        "集成"
+      ],
+      "confidence": 0.85
+    },
+    "D8B1C164-EFEA-4BF3-A8AC-72AE696812C9": {
+      "name": "AndroidPhotoFilters",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "图片效果",
+        "图像编辑",
+        "图片媒体"
+      ],
+      "confidence": 0.95
+    },
+    "FD94D683-06BD-43D9-BD9F-01D8CE95C9D7": {
+      "name": "讯飞 SDK",
+      "category": "ai",
+      "keywords": [
+        "智能交互",
+        "语音识别",
+        "自然语言处理",
+        "人机交互",
+        "AI解决方案"
+      ],
+      "confidence": 0.85
+    },
+    "7FFE81B1-B407-4E2C-A596-0B61439C8F68": {
+      "name": "NativeAudio",
+      "category": "video",
+      "keywords": [
+        "音频处理",
+        "Unity插件",
+        "NativeCode",
+        "音视频"
+      ],
+      "confidence": 0.85
+    },
+    "2F51BB0C-D198-4E42-A842-7086CD9DA8DF": {
+      "name": "ObjectBox",
+      "category": "database",
+      "keywords": [
+        "数据库",
+        "持久化数据",
+        "移动数据库",
+        "边缘数据库",
+        "数据存储"
+      ],
+      "confidence": 0.9
+    },
+    "4737E81A-1002-4334-BFEB-F9402F8539C8": {
+      "name": "腾讯移动推送",
+      "category": "push",
+      "keywords": [
+        "推送服务",
+        "消息推送",
+        "高抵达率",
+        "用户标签",
+        "保活服务"
+      ],
+      "confidence": 0.95
+    },
+    "A12B9EAD-53B7-45AA-A497-FAF56CEC0EBD": {
+      "name": "Zucchini",
+      "category": "other",
+      "keywords": [
+        "补丁生成",
+        "二进制更新",
+        "高效传输",
+        "库"
+      ],
+      "confidence": 0.85
+    },
+    "8FF1DB89-B3F2-42F0-9189-78CA39D8F79F": {
+      "name": "RePublic",
+      "category": "other",
+      "keywords": [
+        "安卓",
+        "Hidden Api",
+        "绕过限制",
+        "系统API"
+      ],
+      "confidence": 0.85
+    },
+    "7D5DB1D5-25C5-4DE1-92F2-369F8A6B61F9": {
+      "name": "OPPO 安全检测 SDK",
+      "category": "security",
+      "keywords": [
+        "安全检测",
+        "恶意URL检测",
+        "隐私安全",
+        "应用加固"
+      ],
+      "confidence": 0.9
+    },
+    "5D16B0EC-7E26-40E2-9684-DD2E031A9A4C": {
+      "name": "Lame-For-Unity",
+      "category": "video",
+      "keywords": [
+        "音频转换",
+        "Wav转MP3",
+        "Unity3D",
+        "语音压缩"
+      ],
+      "confidence": 0.85
+    },
+    "AF656F1C-7364-4330-B279-11E0346BC6D6": {
+      "name": "Xray Core",
+      "category": "network",
+      "keywords": [
+        "网络代理",
+        "v2ray-core",
+        "开放平台",
+        "代理工具"
+      ],
+      "confidence": 0.85
+    },
+    "85A6B8E4-F6D1-4A5C-AB49-FE7264B13AED": {
+      "name": "LibRaw",
+      "category": "image",
+      "keywords": [
+        "RAW文件",
+        "图像读取",
+        "图像处理",
+        "摄影数据处理"
+      ],
+      "confidence": 0.85
+    },
+    "1057A9DD-4798-42E5-9269-FCB25C14F2B5": {
+      "name": "CRI Sofdec2 Unity 插件",
+      "category": "video",
+      "keywords": [
+        "视频解码",
+        "视频回放",
+        "音视频处理",
+        "Unity插件"
+      ],
+      "confidence": 0.9
+    },
+    "A1A3EEA4-18EE-4FC7-AA2D-B04005E480AB": {
+      "name": "TNN",
+      "category": "framework",
+      "keywords": [
+        "神经网络推理",
+        "高性能",
+        "轻量级",
+        "跨平台",
+        "模型压缩"
+      ],
+      "confidence": 0.85
+    },
+    "9DA11233-CD6B-4F63-9ABD-BA84A77749C8": {
+      "name": "高德 SDK",
+      "category": "map",
+      "keywords": [
+        "地图显示",
+        "地理编码",
+        "兴趣点搜索",
+        "离线地图",
+        "地图交互"
+      ],
+      "confidence": 0.95
+    },
+    "A6A77DDF-94A8-4B4D-8268-AFEFAE2F8883": {
+      "name": "BurstLinker",
+      "category": "image",
+      "keywords": [
+        "GIF编码",
+        "图片处理",
+        "Android",
+        "编码器"
+      ],
+      "confidence": 0.85
+    },
+    "ACC7D227-058A-4272-BF1F-EA73E7A61D8F": {
+      "name": "AndroidP7zip",
+      "category": "other",
+      "keywords": [
+        "压缩",
+        "提取",
+        "7zip",
+        "Android库"
+      ],
+      "confidence": 0.85
+    },
+    "E8E71511-DEAD-4F5D-9A31-1953E14B8FD5": {
+      "name": "Cello",
+      "category": "framework",
+      "keywords": [
+        "C语言",
+        "高级编程",
+        "运行时系统",
+        "库"
+      ],
+      "confidence": 0.85
+    },
+    "D6E03529-9258-477A-837E-6F29B5591603": {
+      "name": "PhotoProcessing",
+      "category": "image",
+      "keywords": [
+        "图片处理",
+        "NDK",
+        "照片处理",
+        "示例"
+      ],
+      "confidence": 0.85
+    },
+    "40E38F03-A532-4DBA-8F79-BF30067A8B59": {
+      "name": "libfuse",
+      "category": "other",
+      "keywords": [
+        "用户空间文件系统",
+        "FUSE",
+        "文件系统通信",
+        "Linux内核"
+      ],
+      "confidence": 0.85
+    },
+    "86B612B1-D702-405B-AEAC-8E6D5ABE528E": {
+      "name": "Naver Map",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "Flutter",
+        "跨平台",
+        "定位"
+      ],
+      "confidence": 0.9
+    },
+    "7074F60A-7A91-4EDA-87CB-5BD032FC6E9C": {
+      "name": "Broadcast SDK for Android",
+      "category": "video",
+      "keywords": [
+        "音视频处理",
+        "直播服务",
+        "内容分发",
+        "流媒体平台"
+      ],
+      "confidence": 0.9
+    },
+    "7744424D-1021-4FCD-B7A8-BCF355EF8176": {
+      "name": "quiche",
+      "category": "network",
+      "keywords": [
+        "QUIC",
+        "HTTP/3",
+        "传输协议",
+        "网络通信"
+      ],
+      "confidence": 0.9
+    },
+    "E8A37A2B-24E5-460D-9818-587FACC551E8": {
+      "name": "AndroidLame",
+      "category": "video",
+      "keywords": [
+        "mp3编码",
+        "音频处理",
+        "Lame",
+        "Android"
+      ],
+      "confidence": 0.85
+    },
+    "A72EEE9E-22AD-4543-925B-9C2681D51C1A": {
+      "name": "glog",
+      "category": "other",
+      "keywords": [
+        "日志库",
+        "C++",
+        "日志记录",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "12E2BBBB-864B-4973-AE44-F9DDC58C1662": {
+      "name": "Java Native Access",
+      "category": "framework",
+      "keywords": [
+        "Java",
+        "Native Access",
+        "JNI",
+        "本地库访问"
+      ],
+      "confidence": 0.85
+    },
+    "8DAB4AB6-D34E-49EB-BDF6-B81FA2305D72": {
+      "name": "CZXing",
+      "category": "image",
+      "keywords": [
+        "条码识别",
+        "二维码识别",
+        "图像解码",
+        "ZXing移植",
+        "ZBar移植"
+      ],
+      "confidence": 0.85
+    },
+    "AA4E0C41-A50C-48C3-B707-9FA8D2641592": {
+      "name": "HashLips Art Engine",
+      "category": "image",
+      "keywords": [
+        "生成艺术",
+        "canvas API",
+        "Node.js",
+        "图像生成"
+      ],
+      "confidence": 0.85
+    },
+    "41140436-280D-44FD-B75F-587CFCBB2606": {
+      "name": "智齿客服 SDK",
+      "category": "other",
+      "keywords": [
+        "客服",
+        "聊天功能",
+        "App集成",
+        "访客端"
+      ],
+      "confidence": 0.85
+    },
+    "0F7FA946-08DC-400B-A880-C19C06591C81": {
+      "name": "Sodium",
+      "category": "security",
+      "keywords": [
+        "加密",
+        "安全",
+        "加密库",
+        "便携",
+        "现代"
+      ],
+      "confidence": 0.9
+    },
+    "61344149-BA7D-4021-A3F1-81A89CE11365": {
+      "name": "eID SDK",
+      "category": "security",
+      "keywords": [
+        "eID",
+        "安全芯片",
+        "TEE",
+        "NFC",
+        "国密资质"
+      ],
+      "confidence": 0.85
+    },
+    "E9AD44DF-7029-41EA-B4A2-E3A6E7DE5099": {
+      "name": "OPPO 广告 SDK",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "商业价值",
+        "用户链接",
+        "场景化"
+      ],
+      "confidence": 0.9
+    },
+    "F5B2BAD9-203D-4FC1-BDE8-D16CB9EC16B0": {
+      "name": "Google’s Drive API v3",
+      "category": "ai",
+      "keywords": [
+        "OCR",
+        "光学字符识别",
+        "AI",
+        "计算机视觉"
+      ],
+      "confidence": 0.85
+    },
+    "105C339E-D88A-4059-A7D3-1EF735754F8A": {
+      "name": "Cronet",
+      "category": "network",
+      "keywords": [
+        "网络堆栈",
+        "网络请求",
+        "Chromium",
+        "网络优化",
+        "吞吐量"
+      ],
+      "confidence": 0.9
+    },
+    "83638A81-BA2C-49B3-8660-173D776BE3B1": {
+      "name": "OpenAL",
+      "category": "video",
+      "keywords": [
+        "音频API",
+        "OpenAL",
+        "跨平台音频",
+        "音频处理"
+      ],
+      "confidence": 0.85
+    },
+    "05DD0AC9-FFD8-4DFC-A357-D298C1A5E5AA": {
+      "name": "APKiD",
+      "category": "other",
+      "keywords": [
+        "APK分析",
+        "编译器识别",
+        "打包器识别",
+        "混淆器识别"
+      ],
+      "confidence": 0.85
+    },
+    "B334257F-BB1F-4C47-86C4-E6DABD0DD94A": {
+      "name": "imebra",
+      "category": "other",
+      "keywords": [
+        "DICOM",
+        "医疗设备",
+        "C++库",
+        "数据传输"
+      ],
+      "confidence": 0.8
+    },
+    "671C1791-490F-46E9-B7E6-25795AC91B80": {
+      "name": "Un7zip",
+      "category": "other",
+      "keywords": [
+        "7z解压",
+        "LZMA SDK",
+        "压缩包处理",
+        "文件解压"
+      ],
+      "confidence": 0.85
+    },
+    "2F03856E-38EB-4454-9B73-57208572CC83": {
+      "name": "liboctopus",
+      "category": "framework",
+      "keywords": [
+        "数据结构",
+        "JSON转换",
+        "C++",
+        "序列化器",
+        "解析器"
+      ],
+      "confidence": 0.85
+    },
+    "5294F31F-63A8-4EF0-927F-687A07E958DB": {
+      "name": "Pine",
+      "category": "framework",
+      "keywords": [
+        "hook框架",
+        "动态拦截",
+        "Java方法",
+        "运行时"
+      ],
+      "confidence": 0.9
+    },
+    "DCB6F4A9-47B2-4E91-907A-85632B0DDE38": {
+      "name": "Dobby",
+      "category": "framework",
+      "keywords": [
+        "Hook",
+        "框架",
+        "多平台",
+        "多架构",
+        "轻量级"
+      ],
+      "confidence": 0.9
+    },
+    "30346584-02AC-44BF-B3D4-75AAC9974F91": {
+      "name": "x264",
+      "category": "video",
+      "keywords": [
+        "视频编码",
+        "H.264",
+        "AVC",
+        "视频处理",
+        "自由软件库"
+      ],
+      "confidence": 0.85
+    },
+    "FE3DFB64-17B0-4763-8F0D-518BC31EF2AF": {
+      "name": "BoringSSL",
+      "category": "security",
+      "keywords": [
+        "加密",
+        "TLS",
+        "安全协议",
+        "原生库",
+        "OpenSSL"
+      ],
+      "confidence": 0.9
+    },
+    "E9987D74-17B7-41BC-8048-8E5793A2A0B3": {
+      "name": "ZXing",
+      "category": "image",
+      "keywords": [
+        "条形码识别",
+        "二维码处理",
+        "图像处理",
+        "开源库",
+        "Java实现"
+      ],
+      "confidence": 0.95
+    },
+    "C50203D1-FEE4-430D-B944-C34E25CBDC28": {
+      "name": "Golang",
+      "category": "other",
+      "keywords": [
+        "编程语言",
+        "开源",
+        "Google",
+        "构建软件"
+      ],
+      "confidence": 0.85
+    },
+    "3B354D22-BE6D-4DB3-9956-EABC72AC7789": {
+      "name": "ncnn",
+      "category": "framework",
+      "keywords": [
+        "神经网络",
+        "计算框架",
+        "手机端",
+        "高性能"
+      ],
+      "confidence": 0.9
+    },
+    "89DDCEC0-08E6-4C9A-AB16-3ADAEF427726": {
+      "name": "美摄 SDK",
+      "category": "video",
+      "keywords": [
+        "视频拍摄",
+        "视频编辑",
+        "视音频处理",
+        "美颜滤镜",
+        "特效贴纸"
+      ],
+      "confidence": 0.85
+    },
+    "C8705221-684A-4444-8B66-4F2EFE48C1CE": {
+      "name": "LSPlant",
+      "category": "framework",
+      "keywords": [
+        "Android",
+        "ART",
+        "Hook",
+        "框架"
+      ],
+      "confidence": 0.85
+    },
+    "5F8DC25F-CB00-4A98-9505-2E71DF93990B": {
+      "name": "OpenCC",
+      "category": "other",
+      "keywords": [
+        "中文简繁转换",
+        "词汇转换",
+        "异体字转换",
+        "地区用词转换"
+      ],
+      "confidence": 0.85
+    },
+    "006609E7-14D5-4D14-B703-8FCCE8ACDF90": {
+      "name": "数字联盟可信 ID SDK",
+      "category": "security",
+      "keywords": [
+        "可信ID",
+        "防篡改",
+        "设备识别",
+        "安全验证",
+        "反造假"
+      ],
+      "confidence": 0.85
+    },
+    "6575B2B8-E7AF-4A25-9705-B27CB81014B2": {
+      "name": "Vorbis",
+      "category": "video",
+      "keywords": [
+        "音频编码",
+        "音乐编码",
+        "音频格式",
+        "MPEG音频层3",
+        "通用音频编码"
+      ],
+      "confidence": 0.85
+    },
+    "75F0D24D-BEFC-49ED-9121-A8D2C7B4C454": {
+      "name": "jsenv",
+      "category": "framework",
+      "keywords": [
+        "JavaScript运行环境",
+        "快应用框架",
+        "运行时",
+        "开发框架依赖"
+      ],
+      "confidence": 0.85
+    },
+    "D2ADC9EF-C5C8-4A2A-9A9C-44DBA38C1CA2": {
+      "name": "阿里云语音服务 SDK（NLSClinet）",
+      "category": "ai",
+      "keywords": [
+        "语音识别",
+        "自然语言理解",
+        "语音合成",
+        "语音服务"
+      ],
+      "confidence": 0.85
+    },
+    "18B2C3E2-6045-4934-84A6-585162A72B81": {
+      "name": "React Native App Utils",
+      "category": "other",
+      "keywords": [
+        "React Native",
+        "Utils",
+        "后台服务",
+        "通知事件处理"
+      ],
+      "confidence": 0.85
+    },
+    "156FAC36-D34E-4047-B446-11D17631E083": {
+      "name": "ion",
+      "category": "system",
+      "keywords": [
+        "内存管理",
+        "内存分配",
+        "共享内存",
+        "零拷贝",
+        "CMA"
+      ],
+      "confidence": 0.85
+    },
+    "91FD576B-7C65-472D-A7A9-C80B3E1DCDF8": {
+      "name": "腾讯特效 SDK",
+      "category": "video",
+      "keywords": [
+        "美颜特效",
+        "音视频处理",
+        "实时特效",
+        "视频SDK",
+        "AI支撑"
+      ],
+      "confidence": 0.85
+    },
+    "F616A164-6FA7-4D84-A9BB-0431CB14AA31": {
+      "name": "AppLovin",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "营销平台",
+        "用户获取",
+        "游戏发行"
+      ],
+      "confidence": 0.85
+    },
+    "15ABBE99-3F06-4667-8F5F-785DB4AABCA3": {
+      "name": "DCloud",
+      "category": "other",
+      "keywords": [
+        "压缩",
+        "解压缩",
+        "DEFLATE",
+        "数据压缩"
+      ],
+      "confidence": 0.8
+    },
+    "19EDD276-6123-4BDF-B64E-08241BA1EAA6": {
+      "name": "libauth",
+      "category": "security",
+      "keywords": [
+        "Bitcoin",
+        "Bitcoin Cash",
+        "Bitauth",
+        "JavaScript库",
+        "安全加密"
+      ],
+      "confidence": 0.85
+    },
+    "EA41B40E-4DC4-458D-B679-7FC3CCBAE83E": {
+      "name": "aria2",
+      "category": "network",
+      "keywords": [
+        "下载",
+        "网络处理",
+        "资源下载",
+        "网络通信"
+      ],
+      "confidence": 0.85
+    },
+    "321E12B3-92AD-437A-8D83-22E3700106DD": {
+      "name": "EasyProtector",
+      "category": "security",
+      "keywords": [
+        "安全检测",
+        "root检测",
+        "模拟器检测",
+        "调试检测",
+        "Xposed检测"
+      ],
+      "confidence": 0.9
+    },
+    "1AFA927D-8D38-43B2-A7A2-FEB16EC7E606": {
+      "name": "阿里云游戏盾",
+      "category": "security",
+      "keywords": [
+        "DDoS防护",
+        "CC防护",
+        "IP隐藏",
+        "加密连接",
+        "多机房部署"
+      ],
+      "confidence": 0.9
+    },
+    "8F78B845-1C47-4154-A80B-3C3F8C436DF4": {
+      "name": "HUAWEI WebView",
+      "category": "system",
+      "keywords": [
+        "WebView",
+        "集成Web页面",
+        "网页渲染",
+        "系统组件"
+      ],
+      "confidence": 0.9
+    },
+    "B0717AFB-AACD-43F6-856E-0BC3EFDC9349": {
+      "name": "StackBlur",
+      "category": "image",
+      "keywords": [
+        "图像处理",
+        "位图",
+        "模糊效果",
+        "Android库"
+      ],
+      "confidence": 0.9
+    },
+    "4758E42D-12CA-4F33-B4E8-DE8D6E08F22F": {
+      "name": "7-Zip",
+      "category": "other",
+      "keywords": [
+        "压缩",
+        "解压缩",
+        "Java绑定",
+        "跨平台",
+        "7-Zip"
+      ],
+      "confidence": 0.7
+    },
+    "5D4A2933-1F8F-499A-B6D8-64E997C22827": {
+      "name": "V8",
+      "category": "framework",
+      "keywords": [
+        "v8运行时库",
+        "JavaScript引擎",
+        "gem分发",
+        "源代码二进制"
+      ],
+      "confidence": 0.85
+    },
+    "E72AC9BB-9047-4F7E-8672-FBFFB216EC39": {
+      "name": "Wlib",
+      "category": "framework",
+      "keywords": [
+        "C#",
+        ".NET",
+        "ArcGIS Engine",
+        "基础库",
+        "控件库"
+      ],
+      "confidence": 0.85
+    },
+    "A7631C83-E878-4BC4-9A98-1610D2FD4929": {
+      "name": "Wwise",
+      "category": "other",
+      "keywords": [
+        "音频中间件",
+        "互动音频",
+        "声音引擎",
+        "游戏开发"
+      ],
+      "confidence": 0.8
+    },
+    "2AD28C43-0C72-403C-AE25-6498058C4BA6": {
+      "name": "zxing-cpp",
+      "category": "image",
+      "keywords": [
+        "条码处理",
+        "图像处理",
+        "C++",
+        "开源",
+        "多格式条码"
+      ],
+      "confidence": 0.85
+    },
+    "686359AE-7C26-4D25-8706-C66EE1A9E400": {
+      "name": "ACRA",
+      "category": "crash",
+      "keywords": [
+        "异常捕获",
+        "上下文数据",
+        "崩溃监测",
+        "后端发送"
+      ],
+      "confidence": 0.85
+    },
+    "87EEFC4A-749B-4E72-9551-54F7B5908C9D": {
+      "name": "android-gif-drawable",
+      "category": "image",
+      "keywords": [
+        "GIF",
+        "图片显示",
+        "动画",
+        "Android"
+      ],
+      "confidence": 0.9
+    },
+    "1681548C-A280-472E-9303-159A5E75C278": {
+      "name": "libmonochrome",
+      "category": "system",
+      "keywords": [
+        "Chromium",
+        "Chrome",
+        "Webview",
+        "共享库",
+        "系统组件"
+      ],
+      "confidence": 0.85
+    },
+    "EEC3C5FF-7C20-4BA9-9601-A43B855F79F6": {
+      "name": "Threadfix",
+      "category": "security",
+      "keywords": [
+        "安全漏洞",
+        "风险识别",
+        "数据集中",
+        "安全测试",
+        "漏洞管理"
+      ],
+      "confidence": 0.85
+    },
+    "E27178C2-CEB3-41FD-9074-497F80545C4B": {
+      "name": "Android-TiffBitmapFactory",
+      "category": "image",
+      "keywords": [
+        "Tiff图像",
+        "图像打开",
+        "图像保存",
+        "Android库"
+      ],
+      "confidence": 0.9
+    },
+    "7472135B-CA2C-4ADE-985C-8EEE9972EAD7": {
+      "name": "MACE",
+      "category": "framework",
+      "keywords": [
+        "AI计算框架",
+        "移动端",
+        "神经网络",
+        "异构计算",
+        "跨平台"
+      ],
+      "confidence": 0.85
+    },
+    "53E1B4D6-5346-409E-B810-4742C3BC7FF6": {
+      "name": "React Native Vision Camera",
+      "category": "video",
+      "keywords": [
+        "摄像头",
+        "视频捕捉",
+        "照片捕捉",
+        "帧处理",
+        "二维码扫描"
+      ],
+      "confidence": 0.9
+    },
+    "99C32AA3-A7E7-4444-A763-D904AD28A7BF": {
+      "name": "pcre2",
+      "category": "other",
+      "keywords": [
+        "正则表达式",
+        "模式匹配",
+        "文本处理",
+        "C函数库"
+      ],
+      "confidence": 0.85
+    },
+    "E08F84EE-D944-4517-B6E6-04B0E6C5BE91": {
+      "name": "Linphone",
+      "category": "network",
+      "keywords": [
+        "VoIP",
+        "网络通话",
+        "互联网通信",
+        "SDK开发"
+      ],
+      "confidence": 0.9
+    },
+    "F2A2D33E-B485-4D8D-8D30-8F232F734FCC": {
+      "name": "滴滴 SDK",
+      "category": "other",
+      "keywords": [
+        "滴滴出行",
+        "打车服务",
+        "出行集成"
+      ],
+      "confidence": 0.85
+    },
+    "F24ED8C8-755E-4397-AADB-D4E7A9BC151F": {
+      "name": "天翼账号认证",
+      "category": "security",
+      "keywords": [
+        "账号认证",
+        "本机号码识别",
+        "一键登录",
+        "身份验证"
+      ],
+      "confidence": 0.85
+    },
+    "9DE4399E-7B16-453E-8913-39849EE55FD1": {
+      "name": "dart2cpp",
+      "category": "other",
+      "keywords": [
+        "代码转换",
+        "Dart转C++",
+        "转换器",
+        "实验性",
+        "原型"
+      ],
+      "confidence": 0.85
+    },
+    "A95F8558-AA0C-458D-9E22-F1DC8C463D18": {
+      "name": "火山引擎云手机 SDK",
+      "category": "video",
+      "keywords": [
+        "云手机",
+        "音视频传输",
+        "串流技术",
+        "云服务"
+      ],
+      "confidence": 0.85
+    },
+    "C45F5E79-D24E-4778-9F6D-72B224B9FAFD": {
+      "name": "FrameSequence",
+      "category": "image",
+      "keywords": [
+        "帧序列",
+        "图像封装",
+        "Android",
+        "动画帧"
+      ],
+      "confidence": 0.85
+    },
+    "6CC802EB-9186-4CAD-8ED6-7420815FD495": {
+      "name": "招商银行 SDK",
+      "category": "security",
+      "keywords": [
+        "支付密码安全",
+        "安全输入键盘",
+        "安全加密",
+        "支付集成"
+      ],
+      "confidence": 0.85
+    },
+    "2CE09116-1182-48A4-8E88-71BD7DFD0E2A": {
+      "name": "Tinker",
+      "category": "framework",
+      "keywords": [
+        "热更新",
+        "Android",
+        "dex更新",
+        "资源更新"
+      ],
+      "confidence": 0.85
+    },
+    "14A524DE-4B4E-47CF-BB77-37E9BCD5FAEA": {
+      "name": "HUAWEI Ads Kit",
+      "category": "ads",
+      "keywords": [
+        "广告服务",
+        "流量变现",
+        "广告主",
+        "个性化营销",
+        "商业广告"
+      ],
+      "confidence": 0.9
+    },
+    "9ABA41D7-B390-4463-8D67-6936469CE2FF": {
+      "name": "VirtualApp",
+      "category": "framework",
+      "keywords": [
+        "沙盒",
+        "虚拟机",
+        "插件化",
+        "多开",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "E50EE803-C917-4491-BEEC-8B762D29A4AD": {
+      "name": "快手广告 SDK",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "信息流广告",
+        "快手广告",
+        "广告SDK"
+      ],
+      "confidence": 0.9
+    },
+    "152C27BD-B16C-46CF-BB78-9061EB0DB0F9": {
+      "name": "Neptune",
+      "category": "framework",
+      "keywords": [
+        "插件化",
+        "动态加载",
+        "开发框架",
+        "业务模块"
+      ],
+      "confidence": 0.85
+    },
+    "61F10B5A-CE86-4A74-84FB-FBCA22C3A801": {
+      "name": "Mira",
+      "category": "framework",
+      "keywords": [
+        "插件服务",
+        "热更新",
+        "模块化开发",
+        "首包体积优化",
+        "插件闭环服务"
+      ],
+      "confidence": 0.85
+    },
+    "681FE79B-481E-4927-85F7-3EB21CFFDDF2": {
+      "name": "AppAuth",
+      "category": "security",
+      "keywords": [
+        "OAuth 2.0",
+        "OpenID Connect",
+        "身份验证",
+        "授权",
+        "客户端SDK"
+      ],
+      "confidence": 0.85
+    },
+    "53E31EB8-9DB5-4B9A-ACE6-35C270EA9FB2": {
+      "name": "Jetpack Car",
+      "category": "map",
+      "keywords": [
+        "导航",
+        "地图",
+        "兴趣点",
+        "Android Auto",
+        "Android Automotive OS"
+      ],
+      "confidence": 0.9
+    },
+    "88269B1E-863C-45A3-892B-8D9BC8597589": {
+      "name": "Jetpack Test",
+      "category": "framework",
+      "keywords": [
+        "Android测试",
+        "Jetpack",
+        "测试工具",
+        "单元测试"
+      ],
+      "confidence": 0.85
+    },
+    "41534F7F-505B-4DFA-8298-0BE7DECAE255": {
+      "name": "Jetpack Slice",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "界面元素",
+        "模板化",
+        "应用外显示"
+      ],
+      "confidence": 0.85
+    },
+    "EFD95ADE-EADB-42FB-9F96-57D47F62FF4F": {
+      "name": "Jetpack Compose",
+      "category": "framework",
+      "keywords": [
+        "界面开发",
+        "Android",
+        "Kotlin API",
+        "原生界面",
+        "简化开发"
+      ],
+      "confidence": 0.85
+    },
+    "744E2A7B-9603-4C80-B0FE-7B9ECC46704E": {
+      "name": "Jetpack Glance",
+      "category": "framework",
+      "keywords": [
+        "UI布局",
+        "Jetpack Compose",
+        "声明式API",
+        "远程表面构建"
+      ],
+      "confidence": 0.95
+    },
+    "A062F89B-0339-484C-B688-BD0FB2B9D76B": {
+      "name": "Jetpack Credentials",
+      "category": "security",
+      "keywords": [
+        "用户凭据",
+        "安全登录",
+        "统一访问",
+        "通行密钥",
+        "安全存储"
+      ],
+      "confidence": 0.85
+    },
+    "01DC5EBE-E044-4D3C-9DF1-63DE842BFCAD": {
+      "name": "极光联盟",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "效果广告",
+        "互动广告",
+        "智能触达",
+        "VaaS"
+      ],
+      "confidence": 0.9
+    },
+    "22158F9A-6EBB-4576-8168-B43D45139665": {
+      "name": "ShareSDK",
+      "category": "social",
+      "keywords": [
+        "社交平台",
+        "第三方登录",
+        "分享",
+        "好友列表操作"
+      ],
+      "confidence": 0.9
+    },
+    "9D42B5B7-B14E-4ABB-91EE-9F3E2C602540": {
+      "name": "极光推送",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "App推送",
+        "多平台支持",
+        "web控制台",
+        "统计分析"
+      ],
+      "confidence": 0.95
+    },
+    "FD6B295F-6973-4D71-96E2-4EE19545FE26": {
+      "name": "快应用",
+      "category": "other",
+      "keywords": [
+        "应用形态",
+        "无需安装",
+        "流畅体验",
+        "轻量级应用"
+      ],
+      "confidence": 0.8
+    },
+    "07BCD6B3-C777-4763-9D3F-8821DD843828": {
+      "name": "LeakCanary",
+      "category": "framework",
+      "keywords": [
+        "内存泄漏检测",
+        "Android库",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "312F75F3-7E21-4BA3-916C-A65E6F91CBD0": {
+      "name": "uni-app",
+      "category": "framework",
+      "keywords": [
+        "跨平台开发",
+        "Vue.js",
+        "多平台发布",
+        "前端框架"
+      ],
+      "confidence": 0.9
+    },
+    "07051EC8-DA7A-4835-8FC0-9DCDC023F995": {
+      "name": "EasyPermissions",
+      "category": "framework",
+      "keywords": [
+        "权限管理",
+        "Android M",
+        "系统权限",
+        "开发库"
+      ],
+      "confidence": 0.85
+    },
+    "6BCFD489-A6D0-4734-B333-CA57F61810F1": {
+      "name": "Persona 身份验证",
+      "category": "security",
+      "keywords": [
+        "身份验证",
+        "安全平台",
+        "身份管理",
+        "安全验证"
+      ],
+      "confidence": 0.85
+    },
+    "06FF1408-F21D-4CB9-A17F-580FD7FF2220": {
+      "name": "AnyThink SDK",
+      "category": "ads",
+      "keywords": [
+        "广告聚合",
+        "广告变现",
+        "广告收益",
+        "移动广告"
+      ],
+      "confidence": 0.95
+    },
+    "12333A87-EEA8-41C6-9C05-659D5940955E": {
+      "name": "小红书分享 SDK",
+      "category": "social",
+      "keywords": [
+        "分享",
+        "社交",
+        "开放平台",
+        "客户端"
+      ],
+      "confidence": 0.9
+    },
+    "588664E5-1834-46A2-98BC-0250368B82C1": {
+      "name": "小米广告 SDK",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "广告形式",
+        "客户端集成",
+        "MIUI系统",
+        "非MIUI系统"
+      ],
+      "confidence": 0.95
+    },
+    "97E1B16A-3E83-4B73-B83B-DBC5E4C18A4E": {
+      "name": "HMS Health Kit",
+      "category": "system",
+      "keywords": [
+        "健康数据",
+        "数据存储",
+        "开放平台",
+        "运动健康",
+        "硬件连接"
+      ],
+      "confidence": 0.85
+    },
+    "E0C8FE87-E520-4AB5-BA6D-AD6BB65E529E": {
+      "name": "HMS Core",
+      "category": "framework",
+      "keywords": [
+        "端云开放能力",
+        "应用开发",
+        "服务合集",
+        "华为终端云服务"
+      ],
+      "confidence": 0.85
+    },
+    "C342A1C6-F940-4F92-B9FB-B914BBCBC3F6": {
+      "name": "Huawei DTM",
+      "category": "analytics",
+      "keywords": [
+        "动态标签管理",
+        "事件跟踪",
+        "数据监控",
+        "第三方分析平台"
+      ],
+      "confidence": 0.85
+    },
+    "3406FD64-324C-4D40-B501-5FD47528ACFC": {
+      "name": "华为账号服务",
+      "category": "security",
+      "keywords": [
+        "账号登录",
+        "授权",
+        "安全",
+        "快速登录"
+      ],
+      "confidence": 0.85
+    },
+    "10CA26F9-71FF-44D0-B7B3-BAF32A39448F": {
+      "name": "Huawei Push",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "推送通道",
+        "云端到终端",
+        "实时推送",
+        "用户终端应用"
+      ],
+      "confidence": 0.95
+    },
+    "DBF958D8-E13F-43F8-8F6A-ED6E94A2FDF0": {
+      "name": "HMS Video Kit",
+      "category": "video",
+      "keywords": [
+        "视频播放",
+        "HDR Vivid",
+        "视频处理",
+        "视频编辑",
+        "视频托管"
+      ],
+      "confidence": 0.9
+    },
+    "71666E6C-81C3-4F73-AD2B-8E16229BFE13": {
+      "name": "HUAWEI CaaS Engine",
+      "category": "video",
+      "keywords": [
+        "视频通话",
+        "视频源",
+        "开放接口",
+        "开发者服务"
+      ],
+      "confidence": 0.9
+    },
+    "90565FE6-999B-42E5-BDEE-A140F89497F6": {
+      "name": "HMS Update",
+      "category": "system",
+      "keywords": [
+        "应用升级",
+        "版本更新",
+        "自升级",
+        "系统更新"
+      ],
+      "confidence": 0.85
+    },
+    "CBF5BE97-7FB5-4DD7-87CB-B35C4DBF6C02": {
+      "name": "移动应用推广 SDK",
+      "category": "ads",
+      "keywords": [
+        "应用推广",
+        "广告SDK",
+        "Android",
+        "百度"
+      ],
+      "confidence": 0.85
+    },
+    "49DAAC63-786C-434F-A4C4-3896FF4CDD1F": {
+      "name": "百度云推送",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "实时消息",
+        "长连接",
+        "云端",
+        "客户端应用"
+      ],
+      "confidence": 0.95
+    },
+    "4FE38981-D17E-470C-BDFD-6CE6D7D2CA3C": {
+      "name": "AboutLibraries",
+      "category": "other",
+      "keywords": [
+        "依赖管理",
+        "许可证展示",
+        "Gradle依赖",
+        "编译时收集",
+        "依赖可视化"
+      ],
+      "confidence": 0.85
+    },
+    "CFBD87F5-E5BE-4759-B59E-8B8BEC1C06FF": {
+      "name": "开普勒 SDK",
+      "category": "payment",
+      "keywords": [
+        "交易组件",
+        "支付",
+        "购物体验",
+        "流量合作"
+      ],
+      "confidence": 0.85
+    },
+    "2DE0FA14-7F76-43EE-9EA0-72AA91298712": {
+      "name": "友盟推送",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "精准推送",
+        "用户粘性",
+        "App活跃度",
+        "消息推送平台"
+      ],
+      "confidence": 0.95
+    },
+    "5D68FADA-9577-4DF6-BB72-8E4BCC72F0A4": {
+      "name": "U-Share 社会化分享",
+      "category": "social",
+      "keywords": [
+        "社会化分享",
+        "第三方登录",
+        "多平台分享",
+        "集成"
+      ],
+      "confidence": 0.95
+    },
+    "18A5E6C3-71D4-4AF7-9A9F-48F0A07BAACE": {
+      "name": "Bilibili Oauth SDK",
+      "category": "security",
+      "keywords": [
+        "OAuth 2.0",
+        "授权",
+        "第三方应用",
+        "用户信息访问"
+      ],
+      "confidence": 0.85
+    },
+    "B0F41589-ADF6-4825-AB50-15AF27FB44B4": {
+      "name": "Google Play Core",
+      "category": "framework",
+      "keywords": [
+        "Google Play",
+        "应用商店",
+        "运行时接口",
+        "开发库"
+      ],
+      "confidence": 0.85
+    },
+    "3875CCD5-A4CD-4F61-BDC2-FD7313957987": {
+      "name": "Google Sign-In",
+      "category": "social",
+      "keywords": [
+        "Google登录",
+        "第三方登录",
+        "社交账号",
+        "身份验证"
+      ],
+      "confidence": 0.9
+    },
+    "4B1BF101-0F4C-40BB-94CE-7CB875A2613B": {
+      "name": "Google Play Service",
+      "category": "framework",
+      "keywords": [
+        "开发框架",
+        "Google服务集成",
+        "地图",
+        "社交分享",
+        "平台更新"
+      ],
+      "confidence": 0.85
+    },
+    "3450E137-1017-479C-A718-425E3A781274": {
+      "name": "OSS Licenses Gradle Plugin",
+      "category": "other",
+      "keywords": [
+        "Gradle插件",
+        "许可证管理",
+        "依赖扫描",
+        "编译时处理"
+      ],
+      "confidence": 0.85
+    },
+    "B182018B-F6AF-4D8A-9EA9-FCDCF2B5614D": {
+      "name": "Process Phoenix",
+      "category": "framework",
+      "keywords": [
+        "应用重启",
+        "进程管理",
+        "应用进程",
+        "工具类"
+      ],
+      "confidence": 0.85
+    },
+    "BCE9B7C2-BA58-4960-A25F-321A8E0B347D": {
+      "name": "欢太账号授权 SDK",
+      "category": "system",
+      "keywords": [
+        "账号授权",
+        "OAuth2.0",
+        "用户登录",
+        "欢太账号"
+      ],
+      "confidence": 0.85
+    },
+    "15655B50-46D4-4A3A-9E3B-4BD8F17BBDD2": {
+      "name": "AgentWeb",
+      "category": "framework",
+      "keywords": [
+        "WebView",
+        "Android",
+        "开发库",
+        "轻量",
+        "灵活"
+      ],
+      "confidence": 0.85
+    },
+    "48529F59-FCC1-4DDE-A579-01C50A41B8AB": {
+      "name": "Nebula SDK",
+      "category": "framework",
+      "keywords": [
+        "Hybrid",
+        "插件化",
+        "JSAPI",
+        "WebView",
+        "H5App"
+      ],
+      "confidence": 0.85
+    },
+    "8848C2EE-9A94-43DB-84FA-DBF80C6A57DB": {
+      "name": "mPaaS 扫一扫",
+      "category": "image",
+      "keywords": [
+        "扫码",
+        "图像识别",
+        "条形码识别",
+        "图片处理"
+      ],
+      "confidence": 0.85
+    },
+    "B0053AEB-C673-49EF-BD71-A7C7B71A3932": {
+      "name": "支付宝 SDK",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "支付宝",
+        "交易",
+        "支付接口"
+      ],
+      "confidence": 0.95
+    },
+    "CF7F80B8-7928-479C-8522-B44574755552": {
+      "name": "AndPermission",
+      "category": "system",
+      "keywords": [
+        "权限管理",
+        "Android权限",
+        "权限请求",
+        "权限检查"
+      ],
+      "confidence": 0.85
+    },
+    "76EBC737-8F52-41AF-A5D5-6F399EB75C7B": {
+      "name": "百川电商 SDK - 授权",
+      "category": "security",
+      "keywords": [
+        "授权",
+        "用户同意",
+        "媒体使用",
+        "数据访问"
+      ],
+      "confidence": 0.85
+    },
+    "998F9398-BBD4-4941-8B1A-33694F024B9A": {
+      "name": "阿里移动推送",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "移动推送",
+        "用户连接",
+        "活跃度提升"
+      ],
+      "confidence": 0.9
+    },
+    "A42C82E8-79FB-4D79-BBDA-E0C4AC85D025": {
+      "name": "GMP Push SDK",
+      "category": "push",
+      "keywords": [
+        "push",
+        "消息推送",
+        "端触达",
+        "通知"
+      ],
+      "confidence": 0.95
+    },
+    "8F9AC002-736C-498F-B8E8-D8A6ACC1E722": {
+      "name": "TapTap 开发者服务",
+      "category": "other",
+      "keywords": [
+        "开发者服务",
+        "游戏开发",
+        "运营维护",
+        "成本降低",
+        "整合服务"
+      ],
+      "confidence": 0.8
+    },
+    "48EDA1EA-9320-4CEE-8E18-6E4258E565D0": {
+      "name": "XPopup",
+      "category": "framework",
+      "keywords": [
+        "弹窗",
+        "动画",
+        "UI组件",
+        "自定义设计"
+      ],
+      "confidence": 0.85
+    },
+    "4510E761-EE07-442D-BEB3-2AAAE12F26E0": {
+      "name": "AndroidUtilCode",
+      "category": "framework",
+      "keywords": [
+        "工具类库",
+        "安卓开发",
+        "开发效率",
+        "常用函数"
+      ],
+      "confidence": 0.85
+    },
+    "A0A12107-8560-49B9-A47E-8012BEFC71E1": {
+      "name": "android-crop",
+      "category": "image",
+      "keywords": [
+        "图像裁剪",
+        "图片处理",
+        "Android库",
+        "AOSP"
+      ],
+      "confidence": 0.9
+    },
+    "7F95A4F6-AFD2-451D-B835-1B969E7A53A4": {
+      "name": "MiPush",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "系统级通道",
+        "全平台通用",
+        "稳定可靠",
+        "高效推送"
+      ],
+      "confidence": 0.95
+    },
+    "36606EE7-9765-46EB-B404-A6247BE84F37": {
+      "name": "小米账号开放平台",
+      "category": "security",
+      "keywords": [
+        "账号授权",
+        "OAuth 2.0",
+        "登录服务",
+        "身份验证"
+      ],
+      "confidence": 0.9
+    },
+    "EBF5C2BE-B1F8-4F2E-92DF-37A14FC14F4B": {
+      "name": "BeiZi SDK",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "流量管理",
+        "聚合广告",
+        "收入优化"
+      ],
+      "confidence": 0.9
+    },
+    "8DB2576B-2109-4C16-8065-A7CD7EE17A73": {
+      "name": "移动号码认证",
+      "category": "security",
+      "keywords": [
+        "号码认证",
+        "一键登录",
+        "本机号码校验",
+        "身份验证"
+      ],
+      "confidence": 0.85
+    },
+    "7A1FA075-C2BB-4ECE-BB66-392D016F86C5": {
+      "name": "Audience Network SDK",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "插页式广告",
+        "Facebook广告",
+        "应用广告"
+      ],
+      "confidence": 0.9
+    },
+    "5F5487B2-6B16-4C3A-A2BD-8FA9AD794CFF": {
+      "name": "Flipper",
+      "category": "other",
+      "keywords": [
+        "应用调试",
+        "移动应用调试",
+        "插件API",
+        "可视化控制",
+        "跨平台调试"
+      ],
+      "confidence": 0.85
+    },
+    "DA771D36-4047-46ED-93D6-5F2794211BBF": {
+      "name": "神策分析 SDK",
+      "category": "analytics",
+      "keywords": [
+        "用户行为分析",
+        "数据采集",
+        "数据建模",
+        "用户精细化运营",
+        "私有化部署"
+      ],
+      "confidence": 0.9
+    },
+    "ECB6258A-58F4-4760-92F9-BB6E155B4372": {
+      "name": "一键登录和本机号码校验",
+      "category": "security",
+      "keywords": [
+        "号码认证",
+        "本机号码校验",
+        "通信授权",
+        "安全登录"
+      ],
+      "confidence": 0.85
+    },
+    "B65CC95E-D0B0-4B0C-9573-FB2E674FB395": {
+      "name": "Google Play Billing",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "结算系统",
+        "数字商品",
+        "订阅服务",
+        "API集成"
+      ],
+      "confidence": 0.95
+    },
+    "E1784B0F-3AEA-4F4D-870C-52899393C09F": {
+      "name": "Dropbox Core SDK for Java",
+      "category": "network",
+      "keywords": [
+        "Java库",
+        "Dropbox API",
+        "HTTP通信",
+        "云存储"
+      ],
+      "confidence": 0.85
+    },
+    "9B662043-8617-46F1-A04E-4B647DA08D47": {
+      "name": "ZXing Android Embedded",
+      "category": "image",
+      "keywords": [
+        "条形码扫描",
+        "图像解码",
+        "图像处理",
+        "ZXing"
+      ],
+      "confidence": 0.9
+    },
+    "73C8750C-42CB-4E42-A58E-B87C36F97E09": {
+      "name": "防水墙",
+      "category": "security",
+      "keywords": [
+        "业务安全",
+        "反欺诈",
+        "AI技术",
+        "风控",
+        "反爬虫"
+      ],
+      "confidence": 0.85
+    },
+    "00366AB5-CE1E-4647-BEB5-4B1F87D998DA": {
+      "name": "腾讯开放平台",
+      "category": "other",
+      "keywords": [
+        "腾讯开放平台",
+        "Tencent",
+        "核心服务",
+        "技术沉淀"
+      ],
+      "confidence": 0.85
+    },
+    "13ED49B9-4B45-45F6-8ACC-8476DA0F1591": {
+      "name": " 人脸核身 SDK",
+      "category": "security",
+      "keywords": [
+        "身份验证",
+        "活体检测",
+        "证件OCR",
+        "安全审核",
+        "用户身份核实"
+      ],
+      "confidence": 0.85
+    },
+    "3F275A1F-A5E0-48A6-83FF-9344FE5D612D": {
+      "name": "PictureSelector",
+      "category": "image",
+      "keywords": [
+        "图片选择",
+        "图片处理",
+        "裁剪",
+        "压缩",
+        "相册"
+      ],
+      "confidence": 0.85
+    },
+    "E0112746-0E48-4149-83C2-BFBDE6669CAD": {
+      "name": "Unity Ads",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "变现",
+        "游戏",
+        "SDK"
+      ],
+      "confidence": 0.9
+    },
+    "F381AD7D-A1BF-4241-9AA6-2D9CE6504B14": {
+      "name": "快手开放平台",
+      "category": "video",
+      "keywords": [
+        "短视频",
+        "直播",
+        "音视频",
+        "开放平台"
+      ],
+      "confidence": 0.8
+    },
+    "5C60DF6E-5E9D-4BA3-A6AE-4A3ED4EBE63C": {
+      "name": "IronSource",
+      "category": "ads",
+      "keywords": [
+        "广告变现",
+        "广告平台",
+        "收入优化",
+        "用户增长",
+        "广告集成"
+      ],
+      "confidence": 0.95
+    },
+    "64925281-D4E0-4DF4-88E4-07BF3C8A3979": {
+      "name": "Qigsaw",
+      "category": "framework",
+      "keywords": [
+        "动态组件化",
+        "Android App Bundles",
+        "动态分发插件",
+        "模块化开发"
+      ],
+      "confidence": 0.85
+    },
+    "E43C0CDE-82F3-4A7A-BE14-0F71DBEC3D4E": {
+      "name": "翼支付",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "缴费",
+        "消费场景",
+        "便民服务"
+      ],
+      "confidence": 0.85
+    },
+    "796255FC-8DA3-4D75-BB6A-75DFA7732925": {
+      "name": "Flutter InAppWebView Plugin",
+      "category": "system",
+      "keywords": [
+        "WebView",
+        "Flutter",
+        "内联WebView",
+        "应用内浏览器"
+      ],
+      "confidence": 0.85
+    },
+    "8B8A8971-8E8C-4BA8-9DCE-FADC7FE6C6D5": {
+      "name": "Dexter",
+      "category": "framework",
+      "keywords": [
+        "权限请求",
+        "Android库",
+        "运行时权限",
+        "权限管理"
+      ],
+      "confidence": 0.85
+    },
+    "88100132-7F93-4FF0-9684-D6616FC99B05": {
+      "name": "Auth0 SDK",
+      "category": "security",
+      "keywords": [
+        "身份认证",
+        "授权",
+        "访问控制",
+        "用户管理"
+      ],
+      "confidence": 0.9
+    },
+    "D876CF90-7507-41B2-BAC1-87AC7063E45C": {
+      "name": "DataFinder",
+      "category": "analytics",
+      "keywords": [
+        "用户行为分析",
+        "数据价值挖掘",
+        "增长促进",
+        "分析模型"
+      ],
+      "confidence": 0.9
+    },
+    "09D0DE2C-5866-4F23-B42D-5C66E876A3AD": {
+      "name": "抖音 SDK",
+      "category": "social",
+      "keywords": [
+        "抖音登录",
+        "抖音授权",
+        "分享至抖音",
+        "社交分享"
+      ],
+      "confidence": 0.9
+    },
+    "FA5EF076-DB47-4EE8-B12B-14E84B24B92C": {
+      "name": "Sense",
+      "category": "framework",
+      "keywords": [
+        "Activity",
+        "实例片段",
+        "复用",
+        "开发框架"
+      ],
+      "confidence": 0.9
+    },
+    "EF139912-D54A-4C26-9031-62BB8786263F": {
+      "name": "Matisse",
+      "category": "image",
+      "keywords": [
+        "图片选择",
+        "视频选择",
+        "图片视频选择器",
+        "媒体选择"
+      ],
+      "confidence": 0.85
+    },
+    "BC4E048D-F5F3-43D0-9826-6F198312457F": {
+      "name": "FlutterBoost",
+      "category": "framework",
+      "keywords": [
+        "Flutter集成",
+        "混合开发",
+        "页面映射",
+        "Flutter插件"
+      ],
+      "confidence": 0.9
+    },
+    "EE413937-691A-4614-A5E5-3692719E30C0": {
+      "name": "Stripe SDK",
+      "category": "payment",
+      "keywords": [
+        "支付处理",
+        "支付信息收集",
+        "支付API",
+        "自定义支付",
+        "支付体验"
+      ],
+      "confidence": 0.95
+    },
+    "5FB95D44-3E64-4674-9ABA-B2653814FE4A": {
+      "name": "vivo Push",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "系统级",
+        "活跃留存",
+        "稳定推送",
+        "开发者运营"
+      ],
+      "confidence": 0.95
+    },
+    "D10C56EE-7F64-46B6-A0D0-EAD6D26C896B": {
+      "name": "腾讯广告 SDK",
+      "category": "ads",
+      "keywords": [
+        "广告投放",
+        "广告展示",
+        "营销技术",
+        "行业数据"
+      ],
+      "confidence": 0.9
+    },
+    "6F71830B-9FC3-42AC-AD25-63EA3CB0FAAF": {
+      "name": "Mtop SDK",
+      "category": "network",
+      "keywords": [
+        "RPC",
+        "网关",
+        "网络通信",
+        "无线优化",
+        "安全策略"
+      ],
+      "confidence": 0.85
+    },
+    "8E4023AE-94AE-4EFB-A23F-DAD3EA2E53E4": {
+      "name": "VirtualAPK",
+      "category": "framework",
+      "keywords": [
+        "插件化",
+        "Android",
+        "框架",
+        "开发工具"
+      ],
+      "confidence": 0.9
+    },
+    "9D13D66F-BE96-46A6-9560-15213505320B": {
+      "name": "RePlugin",
+      "category": "framework",
+      "keywords": [
+        "插件化",
+        "Android",
+        "开发框架",
+        "全面兼容"
+      ],
+      "confidence": 0.85
+    },
+    "8EE5A226-7511-42CD-985A-DA4418BB5355": {
+      "name": "Jetpack Room",
+      "category": "database",
+      "keywords": [
+        "SQLite",
+        "数据库",
+        "持久性库",
+        "抽象层",
+        "数据存储"
+      ],
+      "confidence": 0.9
+    },
+    "E345D252-9789-480A-8D3A-1316A09D142D": {
+      "name": "Jetpack ShareTarget",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "向后兼容性",
+        "快捷方式",
+        "共享目标"
+      ],
+      "confidence": 0.85
+    },
+    "B4610D43-D1A3-46C1-A55B-CDE665E18CEA": {
+      "name": "Jetpack Core",
+      "category": "framework",
+      "keywords": [
+        "Android开发框架",
+        "组件库",
+        "API支持",
+        "旧设备兼容"
+      ],
+      "confidence": 0.9
+    },
+    "C41E9B74-F8B5-4F97-BCBB-875F610DD3F1": {
+      "name": "Jetpack PDF",
+      "category": "framework",
+      "keywords": [
+        "PDF查看",
+        "Jetpack",
+        "Android库",
+        "文档查看"
+      ],
+      "confidence": 0.85
+    },
+    "C13DA049-9065-40F2-8F53-CB67AE354AFB": {
+      "name": "Jetpack Browser",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "浏览器",
+        "网页显示",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "42C6F59C-5ABB-442C-A5A1-4638A9BE329D": {
+      "name": "Jetpack WorkManager",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "后台任务调度",
+        "持久性工作",
+        "Android开发",
+        "后台处理"
+      ],
+      "confidence": 0.9
+    },
+    "D2A17366-5160-4179-BCEC-F88A566BA8DC": {
+      "name": "Jetpack AppCompat",
+      "category": "framework",
+      "keywords": [
+        "兼容性",
+        "Material Design",
+        "API支持",
+        "开发框架"
+      ],
+      "confidence": 0.9
+    },
+    "FC311A7B-E1A4-4572-8AD1-5F78F6731244": {
+      "name": "nubia Push",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "通知服务",
+        "系统推送"
+      ],
+      "confidence": 0.95
+    },
+    "CD33B7D3-71A4-45F9-89E5-619B033ACD16": {
+      "name": "Android Beacon Library",
+      "category": "map",
+      "keywords": [
+        "信标",
+        "Beacon",
+        "定位",
+        "API"
+      ],
+      "confidence": 0.85
+    },
+    "63E5EB4A-A85F-4DE3-8071-DD5A2DAAD667": {
+      "name": "Eclipse Paho Android Service",
+      "category": "network",
+      "keywords": [
+        "MQTT",
+        "Android",
+        "Java",
+        "客户端库",
+        "网络通信"
+      ],
+      "confidence": 0.9
+    },
+    "C26CD53D-F567-4E7D-8CC7-F5182A0BFA56": {
+      "name": "LiveKit",
+      "category": "video",
+      "keywords": [
+        "实时视频",
+        "音频",
+        "视频通话",
+        "直播"
+      ],
+      "confidence": 0.85
+    },
+    "2686F06A-BFC3-415D-83BA-AC3E31C579D5": {
+      "name": "王卡 SDK",
+      "category": "other",
+      "keywords": [
+        "王卡识别",
+        "免流提示",
+        "身份感知",
+        "上网卡识别"
+      ],
+      "confidence": 0.85
+    },
+    "FC4C9BE5-5B43-45B4-B80A-F0FB083CD01A": {
+      "name": "PdfViewPager",
+      "category": "other",
+      "keywords": [
+        "PDF渲染",
+        "Android小部件",
+        "文档查看",
+        "远程URL下载"
+      ],
+      "confidence": 0.85
+    },
+    "151210C1-4C13-4F17-B997-DFECC0B60E1E": {
+      "name": "FileDownloader",
+      "category": "network",
+      "keywords": [
+        "文件下载",
+        "Android",
+        "下载引擎",
+        "稳定高效",
+        "灵活易用"
+      ],
+      "confidence": 0.95
+    },
+    "5D594020-2C91-44FD-9C47-5C898F430A7B": {
+      "name": "美洽客服 SDK",
+      "category": "other",
+      "keywords": [
+        "在线客服",
+        "客户沟通",
+        "客服系统",
+        "客户服务"
+      ],
+      "confidence": 0.85
+    },
+    "632FA09C-6AAB-40FB-AC62-4EE9710CC51A": {
+      "name": "HMS Audio Kit",
+      "category": "video",
+      "keywords": [
+        "音频播放",
+        "音频编解码",
+        "HMS Core",
+        "音频服务",
+        "音视频能力"
+      ],
+      "confidence": 0.85
+    },
+    "D6334CD5-54FC-4E27-8E48-A228C094FBC9": {
+      "name": "AppGallery Connect",
+      "category": "framework",
+      "keywords": [
+        "全生命周期服务",
+        "开发工具",
+        "多终端",
+        "应用发布"
+      ],
+      "confidence": 0.85
+    },
+    "D8DFF9EA-7CC2-4BBA-8F5A-6D4C5B83DDA9": {
+      "name": "百度地图 SDK",
+      "category": "map",
+      "keywords": [
+        "地图",
+        "定位服务",
+        "Android",
+        "精准定位",
+        "定位接口"
+      ],
+      "confidence": 0.9
+    },
+    "CA6A8B37-6359-4E6B-AE7B-B4439579BAB4": {
+      "name": "Android-Job",
+      "category": "framework",
+      "keywords": [
+        "后台任务",
+        "延迟作业",
+        "JobScheduler",
+        "GcmNetworkManager",
+        "AlarmManager"
+      ],
+      "confidence": 0.85
+    },
+    "E16F3713-3EC7-4943-8658-9F76240ED52C": {
+      "name": "Firebase",
+      "category": "other",
+      "keywords": [
+        "分析",
+        "数据库",
+        "消息传递",
+        "崩溃报告"
+      ],
+      "confidence": 0.85
+    },
+    "FA665B35-8580-4349-B941-DDE3EDC0EF6E": {
+      "name": "Firebase Analytics",
+      "category": "analytics",
+      "keywords": [
+        "数据分析",
+        "用户行为分析",
+        "应用数据",
+        "Google Analytics"
+      ],
+      "confidence": 0.95
+    },
+    "F1C7CB28-7CA0-457A-90AB-23CC8C33DEEF": {
+      "name": "Google Play Legacy Photo Picker",
+      "category": "image",
+      "keywords": [
+        "照片选择器",
+        "图片处理",
+        "Google Play服务",
+        "设备兼容性"
+      ],
+      "confidence": 0.85
+    },
+    "15B49681-431F-48B0-A947-13FD28E246C4": {
+      "name": "Google Analytics",
+      "category": "analytics",
+      "keywords": [
+        "用户行为分析",
+        "数据收集",
+        "数据报告",
+        "用户互动"
+      ],
+      "confidence": 0.95
+    },
+    "DB8527EC-15FD-4053-9703-48DEDCC137CB": {
+      "name": "Google Cast",
+      "category": "video",
+      "keywords": [
+        "音视频流",
+        "媒体控制",
+        "电视投射",
+        "音频视频",
+        "Google Cast"
+      ],
+      "confidence": 0.85
+    },
+    "2D40A03D-B93C-4C16-B0DF-207F839C5E33": {
+      "name": "Play Asset Delivery",
+      "category": "system",
+      "keywords": [
+        "资源交付",
+        "游戏资源",
+        "自动更新",
+        "增量修补",
+        "扩展文件替代"
+      ],
+      "confidence": 0.85
+    },
+    "D98B4F90-5D1D-4732-AAA3-AE9FE070520C": {
+      "name": "PCDN SDK",
+      "category": "network",
+      "keywords": [
+        "P2P加速",
+        "点播",
+        "直播",
+        "内容分发"
+      ],
+      "confidence": 0.85
+    },
+    "A93770C1-071F-4ADB-A894-36284EE6B38B": {
+      "name": "Meizu Push",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "实时推送",
+        "通知",
+        "用户互动"
+      ],
+      "confidence": 0.9
+    },
+    "FB976598-FA59-4A97-B792-32405AD68505": {
+      "name": "OPPO Push",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "系统级通道",
+        "ColorOS",
+        "稳定高效"
+      ],
+      "confidence": 0.95
+    },
+    "A370F8D4-75E5-4731-9189-A0665FD411AF": {
+      "name": "PayPal Android SDK",
+      "category": "payment",
+      "keywords": [
+        "支付",
+        "PayPal",
+        "集成",
+        "移动应用"
+      ],
+      "confidence": 0.95
+    },
+    "F8F4CEB9-4BEF-4486-AEA6-80E492AB4E4E": {
+      "name": "GrapheneOS Sandboxed Google Play",
+      "category": "security",
+      "keywords": [
+        "沙箱",
+        "权限控制",
+        "安全隔离",
+        "Google Play兼容层"
+      ],
+      "confidence": 0.85
+    },
+    "ACFAD405-9457-45FC-AFFC-938202C497F8": {
+      "name": "Mapbox Maps SDK",
+      "category": "map",
+      "keywords": [
+        "地图显示",
+        "矢量瓦片",
+        "地图样式",
+        "OpenGL渲染",
+        "交互式地图"
+      ],
+      "confidence": 0.95
+    },
+    "442A032D-FA70-46EF-A55C-5AB6B9BF771C": {
+      "name": "网易云通信 SDK",
+      "category": "network",
+      "keywords": [
+        "IM",
+        "即时通讯",
+        "网络通信",
+        "实时语音视频"
+      ],
+      "confidence": 0.85
+    },
+    "BDDF8BDA-550A-44DE-83EF-9111EF333690": {
+      "name": "Jetpack WebKit",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "WebView",
+        "Android",
+        "拖放功能"
+      ],
+      "confidence": 0.85
+    },
+    "1987147A-53F5-4C2B-8913-C56CF3C84BA6": {
+      "name": "Jetpack Lifecycle",
+      "category": "framework",
+      "keywords": [
+        "生命周期管理",
+        "组件生命周期",
+        "Android开发",
+        "Jetpack",
+        "状态变化响应"
+      ],
+      "confidence": 0.95
+    },
+    "64206E9E-3C56-4D79-BFBE-9E24C03A6544": {
+      "name": "Jetpack App Startup",
+      "category": "framework",
+      "keywords": [
+        "应用启动",
+        "组件初始化",
+        "Jetpack",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "7B1DA564-ADCF-437B-891E-203CBFF847BE": {
+      "name": "File Provider",
+      "category": "framework",
+      "keywords": [
+        "文件共享",
+        "ContentProvider",
+        "安全分享",
+        "content://Uri"
+      ],
+      "confidence": 0.85
+    },
+    "79A51827-3838-43F5-8EF6-3BDB6496AC6D": {
+      "name": "Jetpack Camera2",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "相机控制",
+        "Android相机",
+        "图像采集",
+        "设备配置"
+      ],
+      "confidence": 0.85
+    },
+    "93CDCEA9-4BE0-4CE2-A055-9483970751E6": {
+      "name": "Apache Cordova",
+      "category": "framework",
+      "keywords": [
+        "跨平台开发",
+        "移动开发",
+        "HTML5",
+        "开源框架"
+      ],
+      "confidence": 0.9
+    },
+    "8E4EE35F-2A5D-49B5-9ED5-979787F33260": {
+      "name": "H5P.Android",
+      "category": "framework",
+      "keywords": [
+        "HTML5",
+        "Android",
+        "开发框架",
+        "WebView"
+      ],
+      "confidence": 0.85
+    },
+    "349AC6A4-7A3A-4FEF-96BC-F719A3E32DC4": {
+      "name": "Shizuku",
+      "category": "system",
+      "keywords": [
+        "系统API",
+        "adb",
+        "root特权",
+        "应用权限",
+        "系统功能扩展"
+      ],
+      "confidence": 0.85
+    },
+    "F2614AC3-328A-496D-B15A-948965F76E7C": {
+      "name": "ReToast",
+      "category": "system",
+      "keywords": [
+        "Toast修复",
+        "Android组件",
+        "系统UI",
+        "bug修复"
+      ],
+      "confidence": 0.85
+    },
+    "F50B9838-9F52-46BF-AB88-FA6101B9D27F": {
+      "name": "AndroidAutoSize",
+      "category": "framework",
+      "keywords": [
+        "屏幕适配",
+        "Android",
+        "开发框架",
+        "低成本"
+      ],
+      "confidence": 0.9
+    },
+    "356E5FB0-AD25-47E7-A528-CD75E06ACA6D": {
+      "name": "share_plus",
+      "category": "social",
+      "keywords": [
+        "分享",
+        "社交",
+        "Flutter插件",
+        "内容共享"
+      ],
+      "confidence": 0.9
+    },
+    "2A4CB04C-0710-4BFF-AA14-F9BEA71D3055": {
+      "name": "Picasso",
+      "category": "image",
+      "keywords": [
+        "图片处理",
+        "图片下载",
+        "缓存",
+        "Android",
+        "图片加载"
+      ],
+      "confidence": 0.95
+    },
+    "C1D3CC0E-F98B-4454-97E6-EC2F5C02B6E7": {
+      "name": "七鱼 SDK",
+      "category": "other",
+      "keywords": [
+        "在线客服",
+        "智能客服",
+        "消息沟通",
+        "工单系统",
+        "客户管理"
+      ],
+      "confidence": 0.85
+    },
+    "E848DA37-070B-4C3C-B045-FA3532E96C95": {
+      "name": "OkDownload",
+      "category": "network",
+      "keywords": [
+        "下载",
+        "网络",
+        "引擎",
+        "高性能"
+      ],
+      "confidence": 0.85
+    },
+    "51A3D61E-5A43-48A2-B4E3-4A4C2E36393F": {
+      "name": "HMS Core AAID",
+      "category": "push",
+      "keywords": [
+        "推送服务",
+        "AAID",
+        "设备标识",
+        "令牌",
+        "异步获取"
+      ],
+      "confidence": 0.85
+    },
+    "1B848681-7168-40BE-BA7E-D81ED3314BA0": {
+      "name": "HMS Business Touch Kit",
+      "category": "social",
+      "keywords": [
+        "商家服务号",
+        "用户互动",
+        "服务分发",
+        "营销工具"
+      ],
+      "confidence": 0.85
+    },
+    "8C79BA2A-76BD-4435-AADC-E7129E672674": {
+      "name": "HMS ML Kit",
+      "category": "ai",
+      "keywords": [
+        "机器学习",
+        "AI应用",
+        "机器学习能力",
+        "AI"
+      ],
+      "confidence": 0.9
+    },
+    "6F8997BA-230E-4ADE-9656-0EC8D6102C9C": {
+      "name": "HMS Analytics Kit",
+      "category": "analytics",
+      "keywords": [
+        "用户行为分析",
+        "数据采集",
+        "数据分析",
+        "数据管理"
+      ],
+      "confidence": 0.9
+    },
+    "B3773373-FCFC-4083-ADCD-978C02A647EC": {
+      "name": "Huawei Ads SDK",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "流量变现",
+        "广告收益",
+        "精准广告"
+      ],
+      "confidence": 0.95
+    },
+    "9C96A104-3E7A-4F93-AEC8-DD963B794489": {
+      "name": "Pump",
+      "category": "network",
+      "keywords": [
+        "下载库",
+        "多任务下载",
+        "多线程",
+        "断点下载",
+        "Http缓存"
+      ],
+      "confidence": 0.9
+    },
+    "747FD7A4-6BBE-43F5-83ED-F4AA541C6601": {
+      "name": "Xpref",
+      "category": "database",
+      "keywords": [
+        "数据存储",
+        "SharedPreferences",
+        "跨进程",
+        "键值对"
+      ],
+      "confidence": 0.85
+    },
+    "9E59DB84-1D8D-4011-988F-E2341A4D2E17": {
+      "name": "荣耀推送服务",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "实时推送",
+        "长连接",
+        "应用通知"
+      ],
+      "confidence": 0.95
+    },
+    "A275EB7F-4451-4E4D-A879-6F80511AD7F5": {
+      "name": "Audience Network",
+      "category": "ads",
+      "keywords": [
+        "广告",
+        "Facebook",
+        "移动媒体",
+        "盈利"
+      ],
+      "confidence": 0.9
+    },
+    "FEA7C635-3676-44A4-9B56-E942EE4DE707": {
+      "name": "DRouter",
+      "category": "framework",
+      "keywords": [
+        "路由框架",
+        "组件通信",
+        "平台化解耦",
+        "页面路由",
+        "服务获取"
+      ],
+      "confidence": 0.9
+    },
+    "EF340F57-EA5F-4993-B9AB-022FF7D8E8A2": {
+      "name": "欢太账号 OAuth 授权 SDK",
+      "category": "security",
+      "keywords": [
+        "OAuth授权",
+        "账号登录",
+        "身份验证",
+        "安全访问"
+      ],
+      "confidence": 0.85
+    },
+    "C98A1116-EE82-436A-9E86-7F284DC8790E": {
+      "name": "FloatingX",
+      "category": "system",
+      "keywords": [
+        "悬浮窗",
+        "系统浮窗",
+        "应用内浮窗",
+        "自定义动画",
+        "位置保存"
+      ],
+      "confidence": 0.85
+    },
+    "FED839E5-84EE-48F1-9EE0-8ED7EBF5006F": {
+      "name": "CodeLocator",
+      "category": "other",
+      "keywords": [
+        "Android工具集",
+        "Android SDK",
+        "Android Studio插件",
+        "开发辅助工具"
+      ],
+      "confidence": 0.8
+    },
+    "7EF986AF-4D68-4DCE-971F-11ABD7BA2810": {
+      "name": "Android BLE Scanner Compat library",
+      "category": "network",
+      "keywords": [
+        "BLE",
+        "蓝牙扫描",
+        "Android",
+        "网络通信"
+      ],
+      "confidence": 0.9
+    },
+    "0EA939B4-805A-4D08-9C68-47C745EB49E5": {
+      "name": "Jetpack ProfileInstaller",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "ART",
+        "编译轨迹",
+        "预填充"
+      ],
+      "confidence": 0.85
+    },
+    "8DD8485C-8749-4A20-9862-1DEEC77EB80E": {
+      "name": "Jetpack Remote Callback",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "Remote Callback",
+        "PendingIntent",
+        "开发框架",
+        "回调管理"
+      ],
+      "confidence": 0.85
+    },
+    "C6E84B9F-A3BE-49D7-B1EC-4AB7D5DBF3F1": {
+      "name": "Jetpack MediaRouter",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "媒体路由",
+        "Android",
+        "通用UI",
+        "远程设备"
+      ],
+      "confidence": 0.85
+    },
+    "7C18D201-2C7B-47BB-AAB1-AD934AC1B253": {
+      "name": "Jetpack Tracing",
+      "category": "framework",
+      "keywords": [
+        "Jetpack",
+        "跟踪事件",
+        "系统跟踪缓冲区",
+        "Android开发"
+      ],
+      "confidence": 0.85
+    },
+    "1348B371-85CB-4CDB-9FF1-20734F48AA9E": {
+      "name": "Jetpack Media Session",
+      "category": "framework",
+      "keywords": [
+        "媒体按钮",
+        "媒体会话",
+        "回调",
+        "Jetpack",
+        "Android"
+      ],
+      "confidence": 0.85
+    },
+    "BBEC9EFF-0FE0-49BB-9FB5-E49C2B70F4C3": {
+      "name": "multidex",
+      "category": "framework",
+      "keywords": [
+        "Android",
+        "多dex",
+        "方法数限制",
+        "应用优化"
+      ],
+      "confidence": 0.85
+    },
+    "CF180D61-94F6-4E27-B397-FE869D45E822": {
+      "name": "App Center",
+      "category": "framework",
+      "keywords": [
+        "DevOps",
+        "构建",
+        "测试",
+        "分发",
+        "开发工具"
+      ],
+      "confidence": 0.85
+    },
+    "DD1B51DF-9A29-4EF3-8588-F66F5E5E821B": {
+      "name": "HONOR Push",
+      "category": "push",
+      "keywords": [
+        "推送",
+        "消息推送",
+        "荣耀推送",
+        "通知服务"
+      ],
+      "confidence": 0.9
+    },
+    "1C61F52E-367F-4C70-A043-7C12249B1907": {
+      "name": "HUAWEI Push",
+      "category": "push",
+      "keywords": [
+        "推送",
+        "消息服务",
+        "华为推送",
+        "push"
+      ],
+      "confidence": 0.9
+    },
+    "9A7B0FA0-5DF8-4648-AEA1-720B021B0B15": {
+      "name": "TBS",
+      "category": "framework",
+      "keywords": [
+        "网页浏览",
+        "X5内核",
+        "浏览器服务",
+        "开发框架"
+      ],
+      "confidence": 0.85
+    },
+    "12D8BB6C-93DC-4258-AF63-388E5C2C4A8F": {
+      "name": "FCM",
+      "category": "push",
+      "keywords": [
+        "消息推送",
+        "Firebase",
+        "跨平台",
+        "通知"
+      ],
+      "confidence": 0.95
+    },
+    "55F75FCF-7271-4916-B637-5680CE43DB56": {
+      "name": "ABSCL",
+      "category": "other",
+      "keywords": [
+        "服务类",
+        "Absinthe SDK",
+        "ABSCL服务"
+      ],
+      "confidence": 0.6
+    },
+    "A80F599E-A857-4517-82C3-17FBD5198394": {
+      "name": "Legacy Photo Picker",
+      "category": "other",
+      "keywords": [
+        "图片选择",
+        "服务类",
+        "Legacy Photo Picker"
+      ],
+      "confidence": 0.7
+    },
+    "9502AC06-29A5-464C-AAA1-A81A0A8825AA": {
+      "name": "百川电商 SDK - 唤醒手淘",
+      "category": "other",
+      "keywords": [
+        "唤醒手淘",
+        "电商集成",
+        "应用跳转",
+        "套件功能"
+      ],
+      "confidence": 0.85
+    },
+    "84362B40-8621-448A-A975-73F0E69E91C6": {
+      "name": "Trichrome",
+      "category": "system",
+      "keywords": [
+        "Chrome",
+        "Webview",
+        "资源共享",
+        "APK",
+        "系统组件"
+      ],
+      "confidence": 0.85
+    },
+    "928E709A-CF34-4072-A301-AA2B0E66983C": {
+      "name": "EasyFloat",
+      "category": "system",
+      "keywords": [
+        "浮窗",
+        "悬浮窗",
+        "窗口管理",
+        "系统功能"
+      ],
+      "confidence": 0.85
+    },
+    "BF018408-691C-4527-AA5D-7921038FF8CE": {
+      "name": "Firebase Performance",
+      "category": "analytics",
+      "keywords": [
+        "性能监控",
+        "应用性能",
+        "数据分析",
+        "性能分析"
+      ],
+      "confidence": 0.85
+    },
+    "BA384E26-0BFE-4916-8640-A4AB198F4CEB": {
+      "name": "百川 SDK",
+      "category": "ai",
+      "keywords": [
+        "regex/regex_ali_baichuan",
+        "百川 sdk"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "00670C76-5F4A-45B2-8103-DA8611DD50A0": {
+      "name": "顶象无感验证 SDK",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_dx_risk",
+        "顶象无感验证 sdk"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "FA9F420B-AA1C-471E-A329-6848AFF9A7C0": {
+      "name": "Firebase C++ SDK",
+      "category": "analytics",
+      "keywords": [
+        "regex/regex_firebase_cpp",
+        "firebase c++ sdk"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "4CF2C811-245B-418C-AA1E-1C1B542274D2": {
+      "name": "Javet",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_javet",
+        "javet"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "93038F75-E442-45E5-A3B8-7F2B3A446EE5": {
+      "name": "jlibtorrent",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_jlibtorrent",
+        "jlibtorrent"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "0374D41D-B5DE-47C8-BBB0-745DAB68D173": {
+      "name": "libtnet",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_libtnet",
+        "libtnet"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "A677C5B5-5466-4446-9B69-969D5FA6DBF4": {
+      "name": "libtorrent4j",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_libtorrent4j",
+        "libtorrent4j"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "C8986862-DF6F-48B1-8CEE-D7440076934A": {
+      "name": "Qt5",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_qt5",
+        "qt5"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "154F93E4-BA48-4C0D-9DC1-172CA9A404CC": {
+      "name": "Qt6",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_qt6",
+        "qt6"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "B2AD03C6-DC66-429F-A998-4ECD0E4E82C5": {
+      "name": "Telegram APIs",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_telegram_apis",
+        "telegram apis"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "3824E3D2-1B91-41EE-8E53-3B02B429140F": {
+      "name": "腾讯乐固",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_tencent_legu",
+        "腾讯乐固"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "9A3FA509-5843-4BDF-9811-20D641484267": {
+      "name": "腾讯御安全",
+      "category": "security",
+      "keywords": [
+        "regex/regex_tencent_security",
+        "腾讯御安全"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    },
+    "E331500D-8703-4F27-9CE5-1E4224806036": {
+      "name": "Yandex SpeechKit",
+      "category": "framework",
+      "keywords": [
+        "regex/regex_yandex_speech",
+        "yandex speechkit"
+      ],
+      "confidence": 0.85,
+      "source": "auto-generated"
+    }
+  }
+}
