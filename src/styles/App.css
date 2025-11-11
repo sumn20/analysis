@@ -90,8 +90,8 @@
   --z-notification: 1100; /* 通知/Toast */
 }
 
-/* 超小屏幕响应式变量 (360px - 479px) */
-@media (max-width: 479px) {
+/* 超小屏幕响应式变量 (0px - 480px) */
+@media (max-width: 480px) {
   :root {
     --text-2xl: 18px;
     --text-xl: 17px;
@@ -544,14 +544,6 @@ body {
   color: #1e40af;
 }
 
-@media (max-width: 480px) {
-  .alert {
-    padding: 10px 12px;
-    font-size: 13px;
-    gap: 8px;
-  }
-}
-
 /* ===== 文件上传区域 ===== */
 
 /* File Uploader 容器 */
@@ -607,12 +599,6 @@ body {
 @media (min-width: 768px) {
   .hero-title {
     font-size: 32px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: 34px;
   }
 }
 
@@ -999,8 +985,8 @@ body {
   }
 }
 
-/* PC/MacBook 优化 (1024px+) - 确保滚动到底时有足够间距 */
-@media (min-width: 1024px) {
+/* PC/MacBook 优化 (1200px+) - 确保滚动到底时有足够间距 */
+@media (min-width: 1200px) {
   .footer-info {
     margin-bottom: 40px;
   }
@@ -1395,14 +1381,6 @@ body {
   }
 }
 
-/* PC/MacBook 优化 (1024px+) - 更好的宽度和居中 */
-@media (min-width: 1024px) {
-  .analysis-progress {
-    max-width: 550px;
-    padding: 28px;
-  }
-}
-
 /* 桌面端 (1200px+) */
 @media (min-width: 1200px) {
   .analysis-progress {
@@ -1450,18 +1428,6 @@ body {
 
   .first-time-tip {
     font-size: 13px;
-  }
-}
-
-/* 小屏幕：提示文字换行 */
-@media (max-width: 500px) {
-  .progress-header-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .first-time-tip {
-    white-space: normal;
   }
 }
 
