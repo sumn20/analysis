@@ -2963,3 +2963,76 @@ body {
   /* 删除项目中不必要的手机端覆盖 */
 }
 
+/* ===== 超小屏幕优化 (< 360px) ===== */
+@media (max-width: 359px) {
+  .hero-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .upload-zone {
+    padding: 24px 12px;
+    min-height: 120px;
+  }
+
+  .upload-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .upload-title {
+    font-size: 14px;
+  }
+
+  .upload-subtitle,
+  .upload-info {
+    font-size: 11px;
+  }
+
+  .privacy-alert {
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .alert-icon {
+    font-size: 18px;
+  }
+
+  .footer-info {
+    padding: 16px 12px;
+    margin-bottom: 12px;
+  }
+
+  .footer-info h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .info-list {
+    gap: 8px;
+  }
+
+  .info-list li {
+    font-size: 12px;
+  }
+}
+
+/* ===== 焦点状态样式 (可访问性) ===== */
+.link-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.btn-icon:focus-visible,
+.btn-delete:focus-visible,
+.view-all-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
