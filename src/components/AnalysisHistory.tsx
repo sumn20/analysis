@@ -150,21 +150,23 @@ export default function AnalysisHistory({
               清除历史
             </button>
             {showClearConfirm && (
-              <div className="confirm-popup">
-                <p>确定清除所有分析历史？此操作不可撤销。</p>
-                <div className="confirm-buttons">
-                  <button
-                    className="btn btn-sm btn-danger"
-                    onClick={handleConfirmClear}
-                  >
-                    清除全部
-                  </button>
-                  <button
-                    className="btn btn-sm btn-secondary"
-                    onClick={() => setShowClearConfirm(false)}
-                  >
-                    取消
-                  </button>
+              <div className="delete-popup-wrapper">
+                <div className="delete-popup-content">
+                  <p>确定清除所有分析历史？此操作不可撤销。</p>
+                  <div className="confirm-buttons">
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={handleConfirmClear}
+                    >
+                      清除全部
+                    </button>
+                    <button
+                      className="btn btn-sm btn-secondary"
+                      onClick={() => setShowClearConfirm(false)}
+                    >
+                      取消
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -269,21 +271,33 @@ export default function AnalysisHistory({
                           🗑️
                         </button>
                         {deletingRecordId === record.id && (
-                          <div className="confirm-popup">
-                            <p>确定删除此记录？</p>
-                            <div className="confirm-buttons">
-                              <button
-                                className="btn btn-sm btn-danger"
-                                onClick={() => handleConfirmDelete(record.id)}
-                              >
-                                删除
-                              </button>
-                              <button
-                                className="btn btn-sm btn-secondary"
-                                onClick={() => setDeletingRecordId(null)}
-                              >
-                                取消
-                              </button>
+                          <div className="delete-popup-wrapper">
+                            <div className="delete-popup-content">
+                              <p>确定删除此记录？</p>
+                              <div className="confirm-delete-info">
+                                <div className="delete-info-item">
+                                  <span className="info-label">文件名：</span>
+                                  <span className="info-value">{record.fileName}</span>
+                                </div>
+                                <div className="delete-info-item">
+                                  <span className="info-label">包名：</span>
+                                  <span className="info-value">{record.packageName}</span>
+                                </div>
+                              </div>
+                              <div className="confirm-buttons">
+                                <button
+                                  className="btn btn-sm btn-danger"
+                                  onClick={() => handleConfirmDelete(record.id)}
+                                >
+                                  删除
+                                </button>
+                                <button
+                                  className="btn btn-sm btn-secondary"
+                                  onClick={() => setDeletingRecordId(null)}
+                                >
+                                  取消
+                                </button>
+                              </div>
                             </div>
                           </div>
                         )}

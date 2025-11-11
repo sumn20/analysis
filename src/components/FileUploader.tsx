@@ -244,14 +244,8 @@ export default function FileUploader({
                       🗑️
                     </button>
                     {deletingRecordId === record.id && (
-                      <div
-                        className="confirm-popup-overlay"
-                        onClick={() => onSetDeletingRecordId?.(null)}
-                      >
-                        <div
-                          className="confirm-popup"
-                          onClick={(e) => e.stopPropagation()}
-                        >
+                      <div className="delete-popup-wrapper">
+                        <div className="delete-popup-content">
                           <p>确定删除此记录？</p>
                           <div className="confirm-delete-info">
                             <div className="delete-info-item">

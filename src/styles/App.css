@@ -2545,7 +2545,42 @@ body {
 
 /* ===== 删除确认弹窗样式 ===== */
 
-/* 弹窗遮罩 */
+/* 弹窗包装器 - 全屏模态 */
+.delete-popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* 弹窗内容 */
+.delete-popup-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.delete-popup-content p {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* 旧的confirm-popup样式保留用于AnalysisHistory */
 .confirm-popup-overlay {
   position: fixed;
   top: 0;
@@ -2560,7 +2595,6 @@ body {
   animation: fadeIn 0.2s ease-out;
 }
 
-/* 弹窗容器 */
 .confirm-popup {
   background: white;
   border-radius: 12px;
