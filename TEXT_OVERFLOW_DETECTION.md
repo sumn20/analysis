@@ -22,26 +22,40 @@
 │  ┌────────────────────────┐  │
 │  │ 文字元素 (.upload-info)│  │
 │  │ "支持的文件格式..."    │  │ ← 检测这里是否超出容器
-│  └────────────────────────┘  │
+│  └────────────────────────┘  │  （顶部或底部）
 │                              │
 └──────────────────────────────┘
 ```
 
-### 2️⃣ 动态调整
-如果文字底部超出容器，自动增加 `padding-bottom`：
+### 2️⃣ 两种调整方式
 
-```css
-.upload-zone {
-  padding-bottom: 40px;  /* 原始值 */
-  /* ↓ 自动调整 ↓ */
-  padding-bottom: 56px;  /* 自动增加到足够高 */
-}
+**方式 A: 自动调整高度（推荐）**
+```
+检测到文字被遮挡
+  ↓
+计算所需的最小高度
+  ↓
+自动增加容器的 min-height
+  ↓
+文字在更高的容器内完全可见
+```
+
+**方式 B: 自动调整 Padding**
+```
+检测到文字被遮挡
+  ↓
+计算需要增加的 padding
+  ↓
+自动增加 padding-bottom
+  ↓
+文字获得更多底部空间
 ```
 
 ### 3️⃣ 响应式监听
 - ✅ 监听窗口大小变化
 - ✅ 监听容器和文字元素的尺寸变化
 - ✅ 定时检查（防止异步加载导致的延迟）
+- ✅ 自动恢复原始值（当文字不再被遮挡时）
 
 ---
 
@@ -55,12 +69,14 @@
 import { useTextOverflowDetection } from '../hooks/useTextOverflowDetection';
 
 export default function FileUploader() {
-  // 自动检测 .upload-zone 中的 .upload-info 是否被遮挡
+  // 自动检测 .upload-zone 中的 .upload-info 是否被遮挡，并自动调整容器高度
   useTextOverflowDetection({
     containerSelector: '.upload-zone',      // 容器选择器
     textSelector: '.upload-info',           // 文字元素选择器
-    minPaddingBottom: 40,                   // 最小底部 padding（默认）
+    minPaddingBottom: 40,                   // 最小底部 padding
+    minPaddingTop: 32,                      // 最小顶部 padding
     checkInterval: 500,                     // 检查间隔（毫秒）
+    adjustHeight: true,                     // 自动调整高度
     debug: false,                           // 调试模式
   });
 
@@ -78,8 +94,10 @@ export default function FileUploader() {
 |------|------|--------|------|
 | `containerSelector` | string | 无 | **必需**。容器元素的 CSS 选择器（如 `.upload-zone`） |
 | `textSelector` | string | 无 | **必需**。要检测的文字元素选择器（如 `.upload-info`） |
-| `minPaddingBottom` | number | 40 | 最小底部 padding（px）。如果计算值小于此值，使用此值 |
-| `checkInterval` | number | 500 | 检查间隔时间（毫秒）。间隔越短响应越快，但消耗更多 CPU |
+| `minPaddingBottom` | number | 40 | 最小底部 padding（px） |
+| `minPaddingTop` | number | 32 | 最小顶部 padding（px） |
+| `checkInterval` | number | 500 | 检查间隔时间（毫秒） |
+| `adjustHeight` | boolean | true | **新增**。是否自动调整容器高度（推荐 true）。`false` 时只调整 padding |
 | `debug` | boolean | false | 调试模式。`true` 时会在控制台输出详细日志 |
 
 ### 返回值
@@ -87,13 +105,22 @@ export default function FileUploader() {
 Hook 返回一个对象，包含检测结果：
 
 ```tsx
-const { isOverflowing, adjustedPadding } = useTextOverflowDetection({
+const { isOverflowing, adjustedHeight, adjustedPadding } = useTextOverflowDetection({
   containerSelector: '.upload-zone',
   textSelector: '.upload-info',
+  adjustHeight: true,
 });
 
-// isOverflowing: boolean - 文字是否被遮挡
-// adjustedPadding: number | null - 自动调整后的 padding-bottom 值（px）
+// isOverflowing: boolean
+//   → 文字是否被遮挡（顶部或底部）
+
+// adjustedHeight: number | null
+//   → 当 adjustHeight=true 时，自动调整后的 min-height 值（px）
+//   → 当 adjustHeight=false 或未被遮挡时为 null
+
+// adjustedPadding: number | null
+//   → 当 adjustHeight=false 时，自动调整后的 padding-bottom 值（px）
+//   → 当 adjustHeight=true 或未被遮挡时为 null
 ```
 
 ---
@@ -102,7 +129,10 @@ const { isOverflowing, adjustedPadding } = useTextOverflowDetection({
 
 ### 案例 1: 上传区域
 
-**现状**: 在 MacBook Air 13 寸上，"支持的文件格式"被框遮挡
+**问题**:
+- 在 MacBook Air 13 寸上，"支持的文件格式"被框底部遮挡
+- 或在某些屏幕上，上传图标被框顶部遮挡
+- 需要同时处理顶部和底部的遮挡问题
 
 **解决**:
 ```tsx
@@ -114,18 +144,33 @@ export default function FileUploader() {
     containerSelector: '.upload-zone',
     textSelector: '.upload-info',
     minPaddingBottom: 40,
+    minPaddingTop: 32,
+    adjustHeight: true,  // ← 关键：自动调整容器高度！
   });
 
   return (
     <div className="upload-zone">
-      {/* ... 其他内容 ... */}
+      <div className="upload-icon">⬆️</div>
+      <h3 className="upload-title">拖拽 APK 文件到此处</h3>
+      <p className="upload-subtitle">或<button>点击选择文件</button></p>
       <p className="upload-info">支持的文件格式: .apk | 最大文件大小: 500MB</p>
     </div>
   );
 }
 ```
 
-**结果**: ✅ 所有屏幕尺寸上都能完全看到文字
+**工作原理**:
+```
+检测到文字被遮挡（顶部或底部）
+  ↓
+计算所需的最小高度（包括所有内容 + padding）
+  ↓
+自动增加 .upload-zone 的 min-height
+  ↓
+结果: 容器足够高，所有内容都能舒适地显示！✅
+```
+
+**结果**: ✅ 所有屏幕尺寸上都能完全看到所有内容
 
 ---
 
