@@ -65,23 +65,23 @@ apk-analyzer/
 
 ### 安装依赖
 
-\`\`\`bash
+```bash
 pnpm install
-\`\`\`
+```
 
 ### 启动开发服务器
 
-\`\`\`bash
+```bash
 pnpm dev
-\`\`\`
+```
 
 服务器将在 `http://localhost:3000` 启动。
 
 ### 构建生产版本
 
-\`\`\`bash
+```bash
 pnpm build
-\`\`\`
+```
 
 构建产物将输出到 `dist/` 目录。
 
@@ -90,9 +90,9 @@ pnpm build
 规则库预处理脚本会在 `pnpm dev` 和 `pnpm build` 前自动执行，将 2884+ 个规则文件合并为一个 `public/rules-bundle.json` 文件。
 
 手动执行：
-\`\`\`bash
+```bash
 node scripts/build-rules-bundle.js
-\`\`\`
+```
 
 ## 核心模块说明
 
