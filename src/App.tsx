@@ -190,6 +190,36 @@ export default function App() {
 
   return (
     <div className="app">
+      {/* 全局 Header - 根据状态显示不同内容 */}
+      <header className="app-header">
+        <div className="header-content">
+          <div>
+            {state === 'history' ? (
+              <>
+                <h1>📋 分析历史</h1>
+                <p className="subtitle">查看和管理您的 APK 分析记录</p>
+              </>
+            ) : (
+              <>
+                <h1>🔍 APK SDK 分析工具</h1>
+                <p className="subtitle">快速识别 Android 应用中的 SDK 和第三方库</p>
+              </>
+            )}
+          </div>
+        </div>
+        {/* 结果页面显示操作按钮 */}
+        {state === 'completed' && (
+          <div className="header-actions">
+            <button className="btn btn-sm btn-secondary" onClick={handleExport}>
+              导出报告
+            </button>
+            <button className="btn btn-sm btn-secondary" onClick={handleReset}>
+              重新分析
+            </button>
+          </div>
+        )}
+      </header>
+
       {/* 主内容区域 */}
       <main className="app-main">
         {/* 空闲状态 - 显示上传界面 */}
@@ -219,32 +249,13 @@ export default function App() {
 
         {/* 分析完成 - 显示结果 */}
         {state === 'completed' && result && (
-          <>
-            {/* Header with actions for result view */}
-            <header className="app-header">
-              <div className="header-content">
-                <div>
-                  <h1>🔍 APK SDK 分析工具</h1>
-                  <p className="subtitle">快速识别 Android 应用中的 SDK 和第三方库</p>
-                </div>
-              </div>
-              <div className="header-actions">
-                <button className="btn btn-sm btn-secondary" onClick={handleExport}>
-                  导出报告
-                </button>
-                <button className="btn btn-sm btn-secondary" onClick={handleReset}>
-                  重新分析
-                </button>
-              </div>
-            </header>
-            <div className="result-container">
-              <ResultTabs
-                result={result}
-                onExport={handleExport}
-                onReset={handleReset}
-              />
-            </div>
-          </>
+          <div className="result-container">
+            <ResultTabs
+              result={result}
+              onExport={handleExport}
+              onReset={handleReset}
+            />
+          </div>
         )}
 
         {/* 错误状态 - 显示错误信息 */}

@@ -15,12 +15,12 @@ export default function AnalysisProgressComponent({ progress }: AnalysisProgress
 
   // 使用 useEffect 实现实时计时
   useEffect(() => {
-    // 设置定时器,每 50ms 更新一次已耗时间(提高毫秒精度)
+    // 设置定时器,每 100ms 更新一次已耗时间(平衡性能和精度)
     const timer = setInterval(() => {
       const now = Date.now();
       const elapsed = now - startTime; // 保存为毫秒
       setElapsedTime(elapsed);
-    }, 50);
+    }, 100); // 优化: 从50ms改为100ms,减少CPU占用
 
     // 清理定时器
     return () => clearInterval(timer);

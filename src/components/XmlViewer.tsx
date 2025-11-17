@@ -1,18 +1,23 @@
 // src/components/XmlViewer.tsx
 // XML 内容查看器
 
+import { useState } from 'react';
+import Toast from './Toast';
+
 interface XmlViewerProps {
   xmlContent: string;
   filename: string;
 }
 
 export default function XmlViewer({ xmlContent, filename }: XmlViewerProps) {
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(xmlContent).then(() => {
-      alert('XML 内容已复制到剪贴板！');
+      setToast({ message: 'XML 内容已复制到剪贴板！', type: 'success' });
     }).catch(err => {
       console.error('复制失败:', err);
-      alert('复制失败，请手动复制');
+      setToast({ message: '复制失败，请手动复制', type: 'error' });
     });
   };
 
@@ -30,6 +35,14 @@ export default function XmlViewer({ xmlContent, filename }: XmlViewerProps) {
 
   return (
     <div>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+
       <div className="xml-actions">
         <button className="button" onClick={handleCopy}>
           📋 复制

@@ -12,8 +12,7 @@ interface ResultTabsProps {
   onReset: () => void;
 }
 
-// @ts-ignore
-export default function ResultTabs({ result, onExport, onReset }: ResultTabsProps) {
+export default function ResultTabs({ result, onExport: _onExport, onReset }: ResultTabsProps): JSX.Element {
   const [activeTab, setActiveTab] = useState<'libraries' | 'manifest'>('libraries');
 
   return (
@@ -36,54 +35,20 @@ export default function ResultTabs({ result, onExport, onReset }: ResultTabsProp
       </div>
 
       {/* 统计卡片 - 超紧凑单行展示 */}
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '4px',
-        padding: '10px 20px',
-        background: 'white',
-        borderBottom: '1px solid var(--border)'
-      }}>
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '4px',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          color: 'white',
-          padding: '4px 8px',
-          borderRadius: '3px',
-          fontSize: '11px',
-          fontWeight: '500'
-        }}>
-          <span style={{ opacity: 0.9 }}>识别的库</span>
-          <span style={{ fontSize: '14px', fontWeight: 'bold' }}>
-            {result.stats.total}
-          </span>
+      <div className="result-stats-cards">
+        <div className="stat-card-compact stat-card-primary">
+          <span className="stat-label">识别的库</span>
+          <span className="stat-value">{result.stats.total}</span>
         </div>
 
         {Object.entries(result.stats.byCategory).map(([category, count]) => {
           const lib = result.libraries.find(l => l.category === category);
           return (
-            <div
-              key={category}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                color: 'white',
-                padding: '4px 8px',
-                borderRadius: '3px',
-                fontSize: '11px',
-                fontWeight: '500'
-              }}
-            >
-              <span style={{ opacity: 0.9 }}>
+            <div key={category} className="stat-card-compact stat-card-category">
+              <span className="stat-label">
                 {lib?.categoryIcon} {lib?.categoryLabel || category}
               </span>
-              <span style={{ fontSize: '14px', fontWeight: 'bold' }}>
-                {count}
-              </span>
+              <span className="stat-value">{count}</span>
             </div>
           );
         })}

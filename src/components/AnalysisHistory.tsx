@@ -122,16 +122,6 @@ export default function AnalysisHistory({
 
   return (
     <div className="analysis-history">
-      {/* 顶部蓝色条 - 与首页风格一致 */}
-      <header className="analysis-history-header">
-        <div className="header-content">
-          <div>
-            <h1>📋 分析历史</h1>
-            <p className="subtitle">查看和管理您的 APK 分析记录</p>
-          </div>
-        </div>
-      </header>
-
       {/* 返回按钮和清除操作 */}
       <div className="history-header">
         <div className="header-left">

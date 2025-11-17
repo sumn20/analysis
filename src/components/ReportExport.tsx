@@ -18,20 +18,40 @@ export default function ReportExport({ result, onClose }: ReportExportProps) {
   const [format, setFormat] = useState<'html' | 'json'>('html');
   const [includeTimestamp, setIncludeTimestamp] = useState(true);
   const [prettyPrint, setPrettyPrint] = useState(true);
+  const [error, setError] = useState<string>('');
+
+  // 验证并清理文件名
+  const sanitizeFilename = (name: string): string => {
+    // 移除非法字符: / \ : * ? " < > |
+    return name.replace(/[\/\\:*?"<>|]/g, '_').trim();
+  };
+
+  // 处理文件名输入
+  const handleFilenameChange = (value: string) => {
+    setFilename(value);
+    setError('');
+  };
 
   // 处理导出
   const handleExport = () => {
+    const sanitizedFilename = sanitizeFilename(filename || defaultFilename);
+
+    if (!sanitizedFilename) {
+      setError('文件名不能为空');
+      return;
+    }
+
     try {
       exportReport(result, {
         format,
-        filename: filename || defaultFilename,
+        filename: sanitizedFilename,
         includeTimestamp,
         prettyPrint: format === 'json' ? prettyPrint : true,
       });
       onClose();
     } catch (error) {
       console.error('导出失败:', error);
-      alert('导出失败，请重试');
+      setError('导出失败，请重试');
     }
   };
 
@@ -61,11 +81,13 @@ export default function ReportExport({ result, onClose }: ReportExportProps) {
             <input
               id="filename"
               type="text"
-              className="form-input"
+              className={`form-input ${error ? 'input-error' : ''}`}
               value={filename}
-              onChange={(e) => setFilename(e.target.value)}
+              onChange={(e) => handleFilenameChange(e.target.value)}
               placeholder="请输入文件名"
             />
+            {error && <p className="error-message">{error}</p>}
+            <p className="hint-text">不支持字符: / \ : * ? " {'<'} {'>'} |</p>
           </div>
 
           {/* 导出格式 */}

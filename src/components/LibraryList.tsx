@@ -9,8 +9,7 @@ interface LibraryListProps {
   categories: Record<string, { label: string; icon: string }>;
 }
 
-// @ts-ignore
-export default function LibraryList({ libraries, categories }: LibraryListProps) {
+export default function LibraryList({ libraries, categories: _categories }: LibraryListProps): JSX.Element {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [expandedLibs, setExpandedLibs] = useState<Record<string, boolean>>({});
 
