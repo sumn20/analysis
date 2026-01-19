@@ -4,3 +4,6 @@ dist/
 .DS_Store
 *.log
 public/rules-bundle.json
+
+# APK 文件存储目录
+apkget/
