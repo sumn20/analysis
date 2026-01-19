@@ -1,7 +1,7 @@
 {
-  "version": "2026-01-19-1721",
-  "generatedAt": "2026-01-19T09:21:59.543Z",
-  "totalRules": 2451,
+  "version": "2026-01-19-0937",
+  "generatedAt": "2026-01-19T09:37:38.757Z",
+  "totalRules": 2454,
   "categories": {
     "video": {
       "label": "音视频",
@@ -2562,6 +2562,20 @@
         "categoryLabel": "其他",
         "categoryIcon": "📦",
         "categoryDescription": "其他未分类的SDK",
+        "type": "native"
+      },
+      "libWCDB.so": {
+        "id": "libWCDB.so",
+        "uuid": "A3D30556-15BA-4C00-92CB-06600F1C5909",
+        "name": "libWCDB.so",
+        "label": "WCDB",
+        "developer": "Tencent",
+        "description": "WCDB 是一个易用、高效、完整的移动数据库框架，它基于 SQLite 和 SQLCipher 开发，在微信中应用广泛，且支持在 C++、Java、Kotlin、Swift、Objc 五种语言环境中使用。",
+        "sourceLink": "https://github.com/Tencent/wcdb/",
+        "category": "database",
+        "categoryLabel": "数据存储",
+        "categoryIcon": "💾",
+        "categoryDescription": "数据库、本地存储、缓存库",
         "type": "native"
       },
       "libWTF.so": {
@@ -15808,6 +15822,20 @@
         "categoryDescription": "加密算法、安全认证、反作弊",
         "type": "native"
       },
+      "libtensorflowLite.so": {
+        "id": "libtensorflowLite.so",
+        "uuid": "8A32C25F-C130-4CAE-A840-49FD4D75E232",
+        "name": "libtensorflowLite.so",
+        "label": "LiteRT",
+        "developer": "TensorFlow",
+        "description": "LiteRT（简称自 Lite Runtime，以前称为 TensorFlow Lite）是 Google 面向设备端 AI 的高性能运行时。",
+        "sourceLink": "https://ai.google.dev/edge/litert",
+        "category": "ai",
+        "categoryLabel": "人工智能",
+        "categoryIcon": "🤖",
+        "categoryDescription": "机器学习、NLP、人脸识别、AI模型",
+        "type": "native"
+      },
       "libtensorflow_inference.so": {
         "id": "libtensorflow_inference.so",
         "uuid": "8A32C25F-C130-4CAE-A840-49FD4D75E232",
@@ -25486,6 +25514,20 @@
       }
     },
     "services": {
+      "android.net.http.MetaDataHolder": {
+        "id": "android.net.http.MetaDataHolder",
+        "uuid": "105C339E-D88A-4059-A7D3-1EF735754F8A",
+        "name": "android.net.http.MetaDataHolder",
+        "label": "Cronet",
+        "developer": "Chromium",
+        "description": "Cronet 是 Chromium 网络堆栈，可作为库提供给 Android 应用。Cronet 利用多种技术来减少延迟并提高应用正常运行所需的网络请求吞吐量。",
+        "sourceLink": "https://developer.android.google.cn/guide/topics/connectivity/cronet/",
+        "category": "network",
+        "categoryLabel": "网络通信",
+        "categoryIcon": "🌐",
+        "categoryDescription": "网络请求、HTTP客户端、WebSocket等网络相关库",
+        "type": "services"
+      },
       "android.net.http.MetadataHolder": {
         "id": "android.net.http.MetadataHolder",
         "uuid": "105C339E-D88A-4059-A7D3-1EF735754F8A",
