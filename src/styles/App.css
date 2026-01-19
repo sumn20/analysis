@@ -282,15 +282,16 @@ body {
   padding-left: 8px;
 }
 
-/* 修复: 标题和副标题水平排列并确保居中 */
+/* 修复: 标题和副标题垂直排列并确保居中 */
 .app-header .header-content > div,
 .file-uploader-header .header-content > div,
 .analysis-history-header .header-content > div {
   display: flex;
-  flex-direction: row; /* 改为水平排列 */
-  align-items: center; /* 垂直居中 */
-  justify-content: flex-start;
-  gap: 12px; /* 标题和副标题之间的间距 */
+  flex-direction: column; /* 改为垂直排列 */
+  align-items: center; /* 水平居中 */
+  justify-content: center;
+  gap: 8px; /* 标题、副标题和按钮之间的间距 */
+  text-align: center; /* 文字居中 */
 }
 
 /* 修复: 标题行高和边距,确保视觉居中 */
@@ -3715,9 +3716,9 @@ body {
 /* ===== 标题下方操作按钮样式 ===== */
 .subtitle-actions {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .subtitle-actions .btn {
