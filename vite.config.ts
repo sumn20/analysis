@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/JavaScript_Apk_Analysis/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
