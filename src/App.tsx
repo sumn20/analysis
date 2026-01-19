@@ -211,7 +211,6 @@ export default function App() {
                     <button 
                       className="btn btn-sm btn-primary" 
                       onClick={() => setShowAppStoreDialog(true)}
-                      style={{ marginTop: '12px' }}
                     >
                       📱 应用宝下载
                     </button>

@@ -3715,7 +3715,7 @@ body {
 /* ===== 标题下方操作按钮样式 ===== */
 .subtitle-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 12px;
 }
