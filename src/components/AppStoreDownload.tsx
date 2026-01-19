@@ -197,7 +197,7 @@ export default function AppStoreDownload({ result, onClose }: AppStoreDownloadPr
             <div className="app-info-card">
               <div className="app-info-item">
                 <span className="label">应用名称:</span>
-                <span className="value">{result.basic.appName}</span>
+                <span className="value">未知</span>
               </div>
               <div className="app-info-item">
                 <span className="label">包名:</span>
