@@ -82,12 +82,6 @@ export default function ContactMe({ onClose }: ContactMeProps) {
             </div>
           </div>
         </div>
-
-        <div className="modal-footer">
-          <div className="footer-note">
-            <p>🔒 隐私说明：仅用于技术交流，不会泄露您的个人信息</p>
-          </div>
-        </div>
       </div>
     </div>
   );
