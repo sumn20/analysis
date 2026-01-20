@@ -12,7 +12,18 @@ export default function ContactMe({ onClose }: ContactMeProps) {
   const [imageError, setImageError] = useState(false);
 
   // 微信二维码图片URL - 您的微信二维码
-  const wechatQRCode = '/wechat-qr.jpg';
+  const wechatQRCode = `/wechat-qr.jpg?t=${Date.now()}`;
+
+  const handleImageLoad = () => {
+    console.log('微信二维码加载成功');
+    setImageLoaded(true);
+  };
+
+  const handleImageError = (error: any) => {
+    console.error('微信二维码加载失败:', error);
+    console.error('尝试加载的URL:', wechatQRCode);
+    setImageError(true);
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -39,9 +50,9 @@ export default function ContactMe({ onClose }: ContactMeProps) {
                 <div className="qr-placeholder">
                   <div className="qr-placeholder-content">
                     <div className="qr-placeholder-icon">📱</div>
-                    <p>请将您的微信二维码图片</p>
-                    <p>命名为 <code>wechat-qr.jpg</code></p>
-                    <p>放置在 <code>public</code> 目录下</p>
+                    <p>二维码加载失败</p>
+                    <p>文件路径: <code>{wechatQRCode}</code></p>
+                    <p>请检查文件是否存在</p>
                   </div>
                 </div>
               ) : (
@@ -49,11 +60,8 @@ export default function ContactMe({ onClose }: ContactMeProps) {
                   src={wechatQRCode}
                   alt="微信二维码"
                   className={`qr-code ${imageLoaded ? 'loaded' : 'loading'}`}
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => {
-                    console.error('微信二维码加载失败');
-                    setImageError(true);
-                  }}
+                  onLoad={handleImageLoad}
+                  onError={handleImageError}
                 />
               )}
             </div>
@@ -65,18 +73,6 @@ export default function ContactMe({ onClose }: ContactMeProps) {
                 <li>或长按保存图片后在微信中识别</li>
                 <li>添加好友时请备注"APK分析工具"</li>
               </ul>
-            </div>
-
-            <div className="contact-info">
-              <h4>📞 其他联系方式：</h4>
-              <div className="contact-item">
-                <span className="contact-label">项目反馈：</span>
-                <span className="contact-value">欢迎提出建议和问题</span>
-              </div>
-              <div className="contact-item">
-                <span className="contact-label">技术交流：</span>
-                <span className="contact-value">Android 逆向分析、SDK 识别</span>
-              </div>
             </div>
           </div>
         </div>
