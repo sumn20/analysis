@@ -198,15 +198,6 @@ export default function FileUploader({
         </div>
       )}
 
-      {/* 隐私保护提示框 */}
-      <div className="privacy-alert">
-        <div className="alert-icon">ℹ️</div>
-        <div className="alert-content">
-          <h4 className="alert-title">隐私保护</h4>
-          <p className="alert-text">所有分析均在浏览器本地完成，不上传任何文件或数据到服务器</p>
-        </div>
-      </div>
-
       {/* 最近分析列表 */}
       {recentAnalyses && recentAnalyses.length > 0 && (
         <div className="recent-analyses">
@@ -284,16 +275,6 @@ export default function FileUploader({
         </div>
       )}
 
-      {/* 底部说明区域 */}
-      <div className="footer-info">
-        <h4>为什么选择本工具？</h4>
-        <ul className="info-list">
-          <li>🚀 纯前端实现，无需安装其他软件，开箱即用</li>
-          <li>🔒 完全离线运行，保护您的隐私和数据安全</li>
-          <li>⚡ 实时分析，秒级完成复杂的 APK 解析</li>
-          <li>📊 详细报告，权限、SDK、证书等完整信息</li>
-        </ul>
-      </div>
     </div>
   );
 }
