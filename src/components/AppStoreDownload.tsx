@@ -36,7 +36,14 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
   const corsProxies = [
     'https://api.allorigins.win/get?url=',
     'https://cors-anywhere.herokuapp.com/',
-    'https://api.codetabs.com/v1/proxy?quest='
+    'https://api.codetabs.com/v1/proxy?quest=',
+    'https://thingproxy.freeboard.io/fetch/',
+    'https://cors.bridged.cc/',
+    'https://yacdn.org/proxy/',
+    'https://api.proxify.io?url=',
+    'https://crossorigin.me/',
+    'https://cors-proxy.htmldriven.com/?url=',
+    'https://proxy.cors.sh/'
   ];
 
   // 从应用宝页面提取应用信息（使用 CORS 代理解决跨域问题）
@@ -64,10 +71,24 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
             throw new Error(`代理服务 ${i + 1} 返回数据为空`);
           }
           html = data.contents;
-        } else {
-          // 其他代理直接返回 HTML
-          proxyUrl = `${proxy}${url}`;
+        } else if (proxy.includes('codetabs') || proxy.includes('proxify')) {
+          // codetabs 和 proxify 使用 quest/url 参数
+          proxyUrl = `${proxy}${encodeURIComponent(url)}`;
           const response = await fetch(proxyUrl);
+          
+          if (!response.ok) {
+            throw new Error(`代理服务 ${i + 1} 请求失败: HTTP ${response.status}`);
+          }
+          
+          html = await response.text();
+        } else {
+          // 其他代理直接拼接URL
+          proxyUrl = `${proxy}${url}`;
+          const response = await fetch(proxyUrl, {
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest'
+            }
+          });
           
           if (!response.ok) {
             throw new Error(`代理服务 ${i + 1} 请求失败: HTTP ${response.status}`);
@@ -90,7 +111,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     }
     
     // 所有代理都失败了
-    throw new Error(`所有代理服务都不可用。最后错误: ${lastError?.message || '未知错误'}`);
+    throw new Error(`所有代理服务都不可用，无法访问应用宝页面。请检查网络连接或稍后重试。最后错误: ${lastError?.message || '未知错误'}`);
   };
 
   // 解析应用宝 HTML 页面内容
