@@ -13,6 +13,7 @@ import ResultTabs from './components/ResultTabs';
 import ReportExport from './components/ReportExport';
 import AppStoreDownload from './components/AppStoreDownload';
 import GooglePlayDownload from './components/GooglePlayDownload';
+import ContactMe from './components/ContactMe';
 import AnalysisHistory from './components/AnalysisHistory';
 import './styles/App.css';
 
@@ -41,6 +42,7 @@ export default function App() {
   const [showExportModal, setShowExportModal] = useState(false);
   const [showAppStoreDialog, setShowAppStoreDialog] = useState(false);
   const [showGooglePlayDialog, setShowGooglePlayDialog] = useState(false);
+  const [showContactMe, setShowContactMe] = useState(false);
 
   // 自动检测页脚信息框是否被遮挡
   useTextOverflowDetection({
@@ -325,7 +327,14 @@ export default function App() {
                     >
                       {config.footer.projectLabel}
                     </a>{' '}
-                    | 支持识别 2800+ SDK
+                    | 支持识别 2800+ SDK |{' '}
+                    <button
+                      className="contact-me-btn"
+                      onClick={() => setShowContactMe(true)}
+                      title="联系开发者"
+                    >
+                      联系我
+                    </button>
                   </p>
                 </div>
               )}
@@ -371,6 +380,11 @@ export default function App() {
       {/* Google Play下载对话框 */}
       {showGooglePlayDialog && (
         <GooglePlayDownload onClose={() => setShowGooglePlayDialog(false)} />
+      )}
+
+      {/* 联系我对话框 */}
+      {showContactMe && (
+        <ContactMe onClose={() => setShowContactMe(false)} />
       )}
     </div>
   );

@@ -3825,6 +3825,157 @@ body {
   color: #6b7280;
   margin-top: 16px;
 }
+
+/* 联系我按钮样式 */
+.contact-me-btn {
+  background: none;
+  border: none;
+  color: #0ea5e9;
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.contact-me-btn:hover {
+  color: #0284c7;
+}
+
+/* 联系我对话框样式 */
+.contact-me {
+  max-width: 500px;
+  width: 90vw;
+}
+
+.contact-me .contact-section {
+  text-align: center;
+}
+
+.contact-me .qr-code-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-me .qr-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  min-height: 200px;
+}
+
+.contact-me .qr-code {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.contact-me .qr-code.loading {
+  opacity: 0;
+}
+
+.contact-me .qr-code.loaded {
+  opacity: 1;
+}
+
+.contact-me .qr-placeholder {
+  min-height: 200px;
+  width: 200px;
+  background: #f8f9fa;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-me .qr-placeholder-content {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
+
+.contact-me .qr-placeholder-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.contact-me .qr-placeholder-content p {
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.contact-me .qr-placeholder-content code {
+  background: #e5e7eb;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.contact-me .contact-tips,
+.contact-me .contact-info {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.contact-me .contact-tips h4,
+.contact-me .contact-info h4 {
+  margin: 0 0 12px 0;
+  color: #374151;
+  font-size: 14px;
+}
+
+.contact-me .contact-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.contact-me .contact-item {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.contact-me .contact-label {
+  font-weight: 500;
+  color: #374151;
+  min-width: 80px;
+}
+
+.contact-me .contact-value {
+  color: #6b7280;
+}
+
+.contact-me .loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 8px;
+}
   justify-content: space-between;
   align-items: center;
   padding: 4px 0;
