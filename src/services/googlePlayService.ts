@@ -63,48 +63,13 @@ function isValidPackageName(packageName: string): boolean {
 }
 
 /**
- * 通过包名直接构建APKPure下载页面URL并获取下载地址
+ * 构建APKPure搜索页面URL
  * @param packageName - 应用包名
- * @returns 下载信息
+ * @returns 搜索页面URL
  */
-export async function getAPKPureDownloadUrl(packageName: string): Promise<{
-  downloadPageUrl: string;
-  downloadUrl: string | null;
-  error?: string;
-}> {
-  console.log(`🔍 直接访问APKPure下载页面: ${packageName}`);
-
-  try {
-    // 构建APKPure下载页面URL
-    // 格式: https://apkpure.com/{app-name}/{package-name}/download
-    // 由于我们不知道app-name，先尝试用包名的最后一部分
-    const appName = packageName.split('.').pop() || packageName;
-    const downloadPageUrl = `https://apkpure.com/${appName}/${packageName}/download`;
-    
-    console.log(`📱 尝试下载页面: ${downloadPageUrl}`);
-
-    // 获取下载页面内容
-    const downloadUrl = await fetchAPKPureDownloadUrl(downloadPageUrl);
-    
-    if (downloadUrl) {
-      return {
-        downloadPageUrl,
-        downloadUrl
-      };
-    } else {
-      // 如果直接构建的URL失败，尝试搜索方式
-      console.log('🔄 直接URL失败，尝试搜索方式...');
-      const searchResult = await searchAndGetDownloadUrl(packageName);
-      return searchResult;
-    }
-  } catch (error) {
-    console.error('获取APKPure下载地址失败:', error);
-    return {
-      downloadPageUrl: '',
-      downloadUrl: null,
-      error: error instanceof Error ? error.message : '获取下载地址失败'
-    };
-  }
+export function getAPKPureSearchUrl(packageName: string): string {
+  console.log(`🔍 构建APKPure搜索页面: ${packageName}`);
+  return `https://apkpure.com/search?q=${encodeURIComponent(packageName)}`;
 }
 
 /**

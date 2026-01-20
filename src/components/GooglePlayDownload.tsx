@@ -2,23 +2,22 @@
 // Google Play下载组件
 
 import { useState } from 'react';
-import { parseGooglePlayUrl, getAPKPureDownloadUrl, GooglePlayInfo } from '../services/googlePlayService';
+import { parseGooglePlayUrl, getAPKPureSearchUrl, GooglePlayInfo } from '../services/googlePlayService';
 
 interface GooglePlayDownloadProps {
   onClose: () => void;
 }
 
-type DownloadState = 'idle' | 'parsing' | 'searching' | 'success' | 'error';
+type DownloadState = 'idle' | 'parsing' | 'success' | 'error';
 
 export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps) {
   const [inputUrl, setInputUrl] = useState('');
   const [state, setState] = useState<DownloadState>('idle');
   const [playInfo, setPlayInfo] = useState<GooglePlayInfo | null>(null);
-  const [downloadPageUrl, setDownloadPageUrl] = useState<string | null>(null);
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [searchUrl, setSearchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // 处理URL解析和搜索
+  // 处理URL解析和跳转
   const handleSearch = async () => {
     if (!inputUrl.trim()) {
       setError('请输入Google Play URL或包名');
@@ -29,7 +28,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
     setState('parsing');
 
     try {
-      // 第一步：解析Google Play URL
+      // 解析Google Play URL
       const parsed = parseGooglePlayUrl(inputUrl.trim());
       if (!parsed) {
         setError('无法解析URL，请检查格式是否正确');
@@ -38,37 +37,23 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
       }
 
       setPlayInfo(parsed);
-      setState('searching');
-
-      // 第二步：直接构建APKPure下载页面URL并获取下载地址
-      const result = await getAPKPureDownloadUrl(parsed.packageName);
       
-      if (result.error) {
-        setError(result.error);
-        setState('error');
-        return;
-      }
-
-      if (result.downloadPageUrl && result.downloadUrl) {
-        setDownloadPageUrl(result.downloadPageUrl);
-        setDownloadUrl(result.downloadUrl);
-        setState('success');
-      } else {
-        setError('无法获取下载地址');
-        setState('error');
-      }
+      // 构建APKPure搜索页面URL
+      const apkpureSearchUrl = getAPKPureSearchUrl(parsed.packageName);
+      setSearchUrl(apkpureSearchUrl);
+      setState('success');
     } catch (err) {
-      console.error('搜索失败:', err);
-      setError(err instanceof Error ? err.message : '搜索失败，请重试');
+      console.error('解析失败:', err);
+      setError(err instanceof Error ? err.message : '解析失败，请重试');
       setState('error');
     }
   };
 
-  // 处理下载
-  const handleDownload = () => {
-    if (downloadUrl) {
-      // 在新标签页打开下载链接
-      window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+  // 处理跳转到APKPure
+  const handleGoToAPKPure = () => {
+    if (searchUrl) {
+      // 在新标签页打开APKPure搜索页面
+      window.open(searchUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -76,8 +61,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
   const handleReset = () => {
     setState('idle');
     setPlayInfo(null);
-    setDownloadPageUrl(null);
-    setDownloadUrl(null);
+    setSearchUrl(null);
     setError(null);
     setInputUrl('');
   };
@@ -101,7 +85,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
               onChange={(e) => setInputUrl(e.target.value)}
               placeholder="例如：https://play.google.com/store/search?q=com.purpur.ohio 或 com.purpur.ohio"
               className="url-input"
-              disabled={state === 'parsing' || state === 'searching'}
+              disabled={state === 'parsing'}
             />
             <div className="input-help">
               支持格式：
@@ -118,11 +102,10 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
             <button
               className="btn btn-primary"
               onClick={handleSearch}
-              disabled={state === 'parsing' || state === 'searching' || !inputUrl.trim()}
+              disabled={state === 'parsing' || !inputUrl.trim()}
             >
               {state === 'parsing' && '解析中...'}
-              {state === 'searching' && '搜索中...'}
-              {(state === 'idle' || state === 'error' || state === 'success') && '搜索应用'}
+              {(state === 'idle' || state === 'error' || state === 'success') && '解析并跳转'}
             </button>
             
             {(state === 'error' || state === 'success') && (
@@ -147,35 +130,36 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
             </div>
           )}
 
-          {/* 下载页面信息 */}
-          {downloadPageUrl && (
-            <div className="download-page-info">
-              <h3>🔗 下载页面</h3>
+          {/* APKPure搜索页面信息 */}
+          {searchUrl && (
+            <div className="search-page-info">
+              <h3>🔗 APKPure搜索页面</h3>
               <div className="info-item">
-                <span className="info-label">APKPure页面：</span>
+                <span className="info-label">搜索页面：</span>
                 <span className="info-value">
-                  <a href={downloadPageUrl} target="_blank" rel="noopener noreferrer">
-                    {downloadPageUrl}
+                  <a href={searchUrl} target="_blank" rel="noopener noreferrer">
+                    {searchUrl}
                   </a>
                 </span>
               </div>
             </div>
           )}
 
-          {/* 下载区域 */}
-          {state === 'success' && downloadUrl && (
-            <div className="download-section">
-              <h3>⬇️ 下载</h3>
-              <div className="download-info">
-                <p>已找到下载地址，点击下载按钮开始下载。</p>
-                <button className="btn btn-success download-btn" onClick={handleDownload}>
-                  📥 立即下载
+          {/* 跳转区域 */}
+          {state === 'success' && searchUrl && (
+            <div className="jump-section">
+              <h3>🔍 前往APKPure搜索</h3>
+              <div className="jump-info">
+                <p>已解析包名，点击按钮跳转到APKPure搜索页面。</p>
+                <button className="btn btn-success jump-btn" onClick={handleGoToAPKPure}>
+                  🔗 前往APKPure搜索
                 </button>
               </div>
-              <div className="download-note">
+              <div className="jump-note">
                 <p>💡 提示：</p>
                 <ul>
-                  <li>下载的文件可能是 APK 或 XAPK 格式</li>
+                  <li>将在新标签页打开APKPure搜索页面</li>
+                  <li>在搜索结果中找到对应应用并下载</li>
                   <li>下载完成后可以直接上传到本工具进行分析</li>
                   <li>请确保从可信来源下载应用</li>
                 </ul>
@@ -194,20 +178,17 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
           )}
 
           {/* 加载状态 */}
-          {(state === 'parsing' || state === 'searching') && (
+          {state === 'parsing' && (
             <div className="loading-section">
               <div className="loading-spinner"></div>
-              <p>
-                {state === 'parsing' && '正在解析URL...'}
-                {state === 'searching' && '正在构建APKPure下载页面...'}
-              </p>
+              <p>正在解析URL...</p>
             </div>
           )}
         </div>
 
         <div className="modal-footer">
           <div className="footer-note">
-            <p>🔒 隐私说明：所有操作均通过代理服务完成，不会直接访问Google Play或APKPure</p>
+            <p>🔒 隐私说明：仅解析URL并构建APKPure搜索链接，不会直接访问Google Play</p>
           </div>
         </div>
       </div>
