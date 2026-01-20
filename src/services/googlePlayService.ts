@@ -63,23 +63,66 @@ function isValidPackageName(packageName: string): boolean {
 }
 
 /**
- * 通过APKPure搜索应用并获取下载地址
+ * 通过包名直接构建APKPure下载页面URL并获取下载地址
  * @param packageName - 应用包名
- * @returns 搜索结果和下载信息
+ * @returns 下载信息
  */
-export async function searchAndDownloadFromAPKPure(packageName: string): Promise<{
-  searchResult: APKPureSearchResult | null;
+export async function getAPKPureDownloadUrl(packageName: string): Promise<{
+  downloadPageUrl: string;
   downloadUrl: string | null;
   error?: string;
 }> {
-  console.log(`🔍 开始在APKPure搜索: ${packageName}`);
+  console.log(`🔍 直接访问APKPure下载页面: ${packageName}`);
 
+  try {
+    // 构建APKPure下载页面URL
+    // 格式: https://apkpure.com/{app-name}/{package-name}/download
+    // 由于我们不知道app-name，先尝试用包名的最后一部分
+    const appName = packageName.split('.').pop() || packageName;
+    const downloadPageUrl = `https://apkpure.com/${appName}/${packageName}/download`;
+    
+    console.log(`📱 尝试下载页面: ${downloadPageUrl}`);
+
+    // 获取下载页面内容
+    const downloadUrl = await fetchAPKPureDownloadUrl(downloadPageUrl);
+    
+    if (downloadUrl) {
+      return {
+        downloadPageUrl,
+        downloadUrl
+      };
+    } else {
+      // 如果直接构建的URL失败，尝试搜索方式
+      console.log('🔄 直接URL失败，尝试搜索方式...');
+      const searchResult = await searchAndGetDownloadUrl(packageName);
+      return searchResult;
+    }
+  } catch (error) {
+    console.error('获取APKPure下载地址失败:', error);
+    return {
+      downloadPageUrl: '',
+      downloadUrl: null,
+      error: error instanceof Error ? error.message : '获取下载地址失败'
+    };
+  }
+}
+
+/**
+ * 通过搜索方式获取下载地址（备用方案）
+ * @param packageName - 包名
+ * @returns 下载信息
+ */
+async function searchAndGetDownloadUrl(packageName: string): Promise<{
+  downloadPageUrl: string;
+  downloadUrl: string | null;
+  error?: string;
+}> {
   try {
     // 第一步：搜索应用
     const searchResult = await searchAPKPure(packageName);
     if (!searchResult) {
       return {
-        searchResult: null,
+        downloadPageUrl: '',
         downloadUrl: null,
         error: '未在APKPure找到该应用'
       };
@@ -87,30 +130,75 @@ export async function searchAndDownloadFromAPKPure(packageName: string): Promise
 
     console.log(`✓ 找到应用: ${searchResult.title}`);
 
+    // 构建下载页面URL
+    const downloadPageUrl = searchResult.downloadUrl.endsWith('/download') 
+      ? searchResult.downloadUrl 
+      : `${searchResult.downloadUrl}/download`;
+
     // 第二步：获取下载地址
-    const downloadUrl = await getAPKPureDownloadUrl(searchResult.downloadUrl);
-    if (!downloadUrl) {
-      return {
-        searchResult,
-        downloadUrl: null,
-        error: '无法获取下载地址'
-      };
-    }
-
-    console.log(`✓ 获取到下载地址`);
-
+    const downloadUrl = await fetchAPKPureDownloadUrl(downloadPageUrl);
+    
     return {
-      searchResult,
-      downloadUrl
+      downloadPageUrl,
+      downloadUrl,
+      error: downloadUrl ? undefined : '无法获取下载地址'
     };
   } catch (error) {
-    console.error('APKPure搜索失败:', error);
     return {
-      searchResult: null,
+      downloadPageUrl: '',
       downloadUrl: null,
       error: error instanceof Error ? error.message : '搜索失败'
     };
   }
+}
+
+/**
+ * 从APKPure下载页面获取实际下载地址
+ * @param downloadPageUrl - 下载页面URL
+ * @returns 下载地址
+ */
+async function fetchAPKPureDownloadUrl(downloadPageUrl: string): Promise<string | null> {
+  const proxyServices = [
+    'https://api.allorigins.win/get?url=',
+    'https://cors-anywhere.herokuapp.com/',
+    'https://api.codetabs.com/v1/proxy?quest='
+  ];
+
+  for (const proxy of proxyServices) {
+    try {
+      console.log(`🌐 使用代理获取下载页面: ${proxy}`);
+      const response = await fetch(proxy + encodeURIComponent(downloadPageUrl), {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
+
+      if (!response.ok) {
+        console.warn(`代理 ${proxy} 响应失败: ${response.status}`);
+        continue;
+      }
+
+      let html: string;
+      if (proxy.includes('allorigins')) {
+        const data = await response.json();
+        html = data.contents;
+      } else {
+        html = await response.text();
+      }
+
+      // 解析下载地址
+      const downloadUrl = parseAPKPureDownloadPage(html);
+      if (downloadUrl) {
+        console.log(`✓ 成功获取下载地址`);
+        return downloadUrl;
+      }
+    } catch (error) {
+      console.warn(`代理 ${proxy} 请求失败:`, error);
+      continue;
+    }
+  }
+
+  return null;
 }
 
 /**
@@ -220,50 +308,7 @@ function parseAPKPureSearchResults(html: string, packageName: string): APKPureSe
   }
 }
 
-/**
- * 从APKPure下载页面获取实际下载地址
- * @param pageUrl - 应用页面URL
- * @returns 下载地址
- */
-async function getAPKPureDownloadUrl(pageUrl: string): Promise<string | null> {
-  const proxyServices = [
-    'https://api.allorigins.win/get?url=',
-    'https://cors-anywhere.herokuapp.com/',
-    'https://api.codetabs.com/v1/proxy?quest='
-  ];
 
-  for (const proxy of proxyServices) {
-    try {
-      console.log(`获取下载页面: ${pageUrl}`);
-      const response = await fetch(proxy + encodeURIComponent(pageUrl), {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-      });
-
-      if (!response.ok) continue;
-
-      let html: string;
-      if (proxy.includes('allorigins')) {
-        const data = await response.json();
-        html = data.contents;
-      } else {
-        html = await response.text();
-      }
-
-      // 解析下载地址
-      const downloadUrl = parseAPKPureDownloadPage(html);
-      if (downloadUrl) {
-        return downloadUrl;
-      }
-    } catch (error) {
-      console.warn(`获取下载页面失败:`, error);
-      continue;
-    }
-  }
-
-  return null;
-}
 
 /**
  * 解析APKPure下载页面，提取下载地址

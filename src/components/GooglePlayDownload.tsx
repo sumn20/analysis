@@ -2,7 +2,7 @@
 // Google Play下载组件
 
 import { useState } from 'react';
-import { parseGooglePlayUrl, searchAndDownloadFromAPKPure, GooglePlayInfo, APKPureSearchResult } from '../services/googlePlayService';
+import { parseGooglePlayUrl, getAPKPureDownloadUrl, GooglePlayInfo } from '../services/googlePlayService';
 
 interface GooglePlayDownloadProps {
   onClose: () => void;
@@ -14,7 +14,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
   const [inputUrl, setInputUrl] = useState('');
   const [state, setState] = useState<DownloadState>('idle');
   const [playInfo, setPlayInfo] = useState<GooglePlayInfo | null>(null);
-  const [searchResult, setSearchResult] = useState<APKPureSearchResult | null>(null);
+  const [downloadPageUrl, setDownloadPageUrl] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,8 +40,8 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
       setPlayInfo(parsed);
       setState('searching');
 
-      // 第二步：在APKPure搜索并获取下载地址
-      const result = await searchAndDownloadFromAPKPure(parsed.packageName);
+      // 第二步：直接构建APKPure下载页面URL并获取下载地址
+      const result = await getAPKPureDownloadUrl(parsed.packageName);
       
       if (result.error) {
         setError(result.error);
@@ -49,12 +49,12 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
         return;
       }
 
-      if (result.searchResult && result.downloadUrl) {
-        setSearchResult(result.searchResult);
+      if (result.downloadPageUrl && result.downloadUrl) {
+        setDownloadPageUrl(result.downloadPageUrl);
         setDownloadUrl(result.downloadUrl);
         setState('success');
       } else {
-        setError('未找到应用或无法获取下载地址');
+        setError('无法获取下载地址');
         setState('error');
       }
     } catch (err) {
@@ -76,7 +76,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
   const handleReset = () => {
     setState('idle');
     setPlayInfo(null);
-    setSearchResult(null);
+    setDownloadPageUrl(null);
     setDownloadUrl(null);
     setError(null);
     setInputUrl('');
@@ -147,25 +147,17 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
             </div>
           )}
 
-          {/* 搜索结果 */}
-          {searchResult && (
-            <div className="search-result">
-              <h3>🔍 搜索结果</h3>
-              <div className="app-info">
-                {searchResult.iconUrl && (
-                  <img 
-                    src={searchResult.iconUrl} 
-                    alt={searchResult.title}
-                    className="app-icon"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                )}
-                <div className="app-details">
-                  <div className="app-title">{searchResult.title}</div>
-                  <div className="app-package">{searchResult.packageName}</div>
-                </div>
+          {/* 下载页面信息 */}
+          {downloadPageUrl && (
+            <div className="download-page-info">
+              <h3>🔗 下载页面</h3>
+              <div className="info-item">
+                <span className="info-label">APKPure页面：</span>
+                <span className="info-value">
+                  <a href={downloadPageUrl} target="_blank" rel="noopener noreferrer">
+                    {downloadPageUrl}
+                  </a>
+                </span>
               </div>
             </div>
           )}
@@ -207,7 +199,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
               <div className="loading-spinner"></div>
               <p>
                 {state === 'parsing' && '正在解析URL...'}
-                {state === 'searching' && '正在APKPure搜索应用...'}
+                {state === 'searching' && '正在构建APKPure下载页面...'}
               </p>
             </div>
           )}

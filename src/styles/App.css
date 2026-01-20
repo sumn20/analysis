@@ -3680,7 +3680,7 @@ body {
 }
 
 .google-play-download .parse-info,
-.google-play-download .search-result,
+.google-play-download .download-page-info,
 .google-play-download .download-section,
 .google-play-download .error-section,
 .google-play-download .loading-section {
@@ -3694,7 +3694,7 @@ body {
   background: #f8f9fa;
 }
 
-.google-play-download .search-result {
+.google-play-download .download-page-info {
   background: #f0f9ff;
   border-color: #0ea5e9;
 }
@@ -3729,6 +3729,16 @@ body {
 .google-play-download .info-value {
   color: #1f2937;
   word-break: break-all;
+}
+
+.google-play-download .info-value a {
+  color: #0ea5e9;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.google-play-download .info-value a:hover {
+  text-decoration: underline;
 }
 
 .google-play-download .app-info {
