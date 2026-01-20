@@ -519,6 +519,7 @@ body {
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
   opacity: 0;
   transition: opacity var(--duration-base) var(--ease-out);
+  z-index: -1;
 }
 
 .btn-primary:hover,
