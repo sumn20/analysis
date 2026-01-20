@@ -6,11 +6,12 @@ import { convertAxmlToXml, extractManifestInfo, extractComponents } from '../uti
 import { scanApk, ScanResult } from './sdkScanner';
 import { loadRules } from './rulesLoader';
 import { fuzzyMatchLibraryWithCache } from '../utils/fuzzyMatcher';
+import { parseXapk, isXapkFile } from './xapkParser';
 import { AnalysisResult, Library, RulesBundle, AnalysisProgress } from '../types';
 
 /**
- * 分析 APK 文件
- * @param file - APK 文件
+ * 分析 APK 或 XAPK 文件
+ * @param file - APK 或 XAPK 文件
  * @param onProgress - 进度回调
  * @returns 分析结果
  */
@@ -18,9 +19,28 @@ export async function analyzeApk(
   file: File,
   onProgress?: (progress: AnalysisProgress) => void
 ): Promise<AnalysisResult> {
-  console.log(`🚀 开始分析 APK: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
+  const fileType = isXapkFile(file) ? 'XAPK' : 'APK';
+  console.log(`🚀 开始分析 ${fileType}: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
 
   try {
+    let targetApkFile: File = file;
+    
+    // 如果是 XAPK 文件，先解析提取主 APK
+    if (isXapkFile(file)) {
+      onProgress?.({
+        stage: 'extracting',
+        message: '正在解析 XAPK 文件...',
+        progress: 5,
+      });
+
+      const xapkInfo = await parseXapk(file);
+      targetApkFile = xapkInfo.mainApk;
+      console.log(`✓ XAPK 解析成功，主 APK: ${xapkInfo.mainApk.name}`);
+      
+      // 注意：目前我们只分析主 APK，配置 APK 通常只包含资源文件
+      // 如果需要分析配置 APK，可以在这里扩展逻辑
+    }
+
     // 阶段 1: 提取 APK 文件
     onProgress?.({
       stage: 'extracting',
@@ -28,7 +48,7 @@ export async function analyzeApk(
       progress: 10,
     });
 
-    const zip = await JSZip.loadAsync(file);
+    const zip = await JSZip.loadAsync(targetApkFile);
     console.log('✓ APK 文件提取成功');
 
     // 阶段 2: 解析 AndroidManifest.xml
@@ -112,10 +132,10 @@ export async function analyzeApk(
       timestamp: new Date().toISOString(),
     };
 
-    console.log('✅ APK 分析完成！');
+    console.log(`✅ ${fileType} 分析完成！`);
     return result;
   } catch (error) {
-    console.error('❌ APK 分析失败:', error);
+    console.error(`❌ ${fileType} 分析失败:`, error);
     onProgress?.({
       stage: 'error',
       message: `分析失败: ${error instanceof Error ? error.message : '未知错误'}`,

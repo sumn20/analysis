@@ -68,7 +68,7 @@ export default function AnalysisProgressComponent({ progress }: AnalysisProgress
         <div className="steps-label">分析步骤详情</div>
         <div className={`step ${progress.stage === 'extracting' ? 'active' : ''}`}>
           <span className="step-icon">{progress.stage === 'extracting' ? '→' : progress.progress > 10 ? '✓' : '○'}</span>
-          <span className="step-name">提取 APK 文件</span>
+          <span className="step-name">提取文件</span>
           <span className="step-status">{progress.stage === 'extracting' ? '处理中...' : progress.progress > 10 ? '完成' : '等待中...'}</span>
         </div>
         <div className={`step ${progress.stage === 'parsing' ? 'active' : ''}`}>

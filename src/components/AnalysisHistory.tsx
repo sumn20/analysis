@@ -222,7 +222,7 @@ export default function AnalysisHistory({
           <div className="empty-state">
             <div className="empty-icon">📭</div>
             <h3>暂无分析记录</h3>
-            <p>上传 APK 文件开始分析吧！</p>
+            <p>上传 APK 或 XAPK 文件开始分析吧！</p>
           </div>
         ) : (
           Object.entries(groupedByDate).map(([dateStr, records]) => (

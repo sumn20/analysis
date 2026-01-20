@@ -106,17 +106,20 @@ export default function FileUploader({
     // 重置错误信息
     onValidationError?.('');
 
-    // 检查文件格式（支持大小写 .apk）
-    const fileExtension = file.name.toLowerCase().slice(-4);
-    if (fileExtension !== '.apk') {
-      const error = '请选择 APK 文件';
+    // 检查文件格式（支持 .apk 和 .xapk）
+    const fileName = file.name.toLowerCase();
+    const isApk = fileName.endsWith('.apk');
+    const isXapk = fileName.endsWith('.xapk');
+    
+    if (!isApk && !isXapk) {
+      const error = '请选择 APK 或 XAPK 文件';
       onValidationError?.(error);
       return;
     }
 
     // 检查文件大小：太小
     if (file.size < MIN_FILE_SIZE) {
-      const error = '文件太小，请选择有效的 APK 文件';
+      const error = `文件太小，请选择有效的 ${isXapk ? 'XAPK' : 'APK'} 文件`;
       onValidationError?.(error);
       return;
     }
@@ -147,9 +150,9 @@ export default function FileUploader({
     <div className="file-uploader">
       {/* Hero 区域 - 欢迎标题和描述 */}
       <div className="hero-section">
-        <h2 className="hero-title">快速识别 APK 中的所有 SDK</h2>
+        <h2 className="hero-title">快速识别 APK/XAPK 中的所有 SDK</h2>
         <p className="hero-subtitle">
-          上传 APK 文件，自动扫描并识别应用中使用的第三方 SDK 库，支持 2300+ 规则匹配
+          上传 APK 或 XAPK 文件，自动扫描并识别应用中使用的第三方 SDK 库，支持 2300+ 规则匹配
         </p>
       </div>
 
@@ -164,7 +167,7 @@ export default function FileUploader({
         <div className="upload-content">
           <div className="upload-icon">⬆️</div>
           <h3 className="upload-title">
-            {disabled ? '正在分析...' : '拖拽 APK 文件到此处'}
+            {disabled ? '正在分析...' : '拖拽 APK/XAPK 文件到此处'}
           </h3>
           <p className="upload-subtitle">
             或<button
@@ -175,11 +178,11 @@ export default function FileUploader({
               }}
             >点击选择文件</button>
           </p>
-          <p className="upload-info">支持的文件格式: .apk | 最大文件大小: 500MB</p>
+          <p className="upload-info">支持的文件格式: .apk, .xapk | 最大文件大小: 500MB</p>
           <input
             ref={fileInputRef}
             type="file"
-            accept=".apk"
+            accept=".apk,.xapk"
             onChange={handleFileInputChange}
             style={{ display: 'none' }}
             disabled={disabled}

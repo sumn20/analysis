@@ -96,7 +96,7 @@ export default function App() {
     setProgress({
       stage: 'extracting',
       progress: 0,
-      message: '正在提取 APK 文件...',
+      message: '正在提取文件...',
     });
 
     try {
