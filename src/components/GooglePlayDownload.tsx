@@ -182,10 +182,11 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
           )}
         </div>
 
+        {/* 操作按钮 */}
         <div className="modal-footer">
-          <div className="footer-note">
-            <p>🔒 隐私说明：仅解析URL并构建APKPure搜索链接，不会直接访问Google Play</p>
-          </div>
+          <button className="button button-secondary" onClick={onClose}>
+            关闭
+          </button>
         </div>
       </div>
     </div>
