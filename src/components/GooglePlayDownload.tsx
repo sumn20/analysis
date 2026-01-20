@@ -146,27 +146,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
             </div>
           )}
 
-          {/* 成功跳转提示 */}
-          {state === 'success' && searchUrl && (
-            <div className="form-group">
-              <label>跳转成功</label>
-              <div className="app-store-info">
-                <p>已自动在新标签页打开APKPure搜索页面。</p>
-                <p>如果页面没有自动打开，请点击下面的链接：</p>
-                <a href={searchUrl} target="_blank" rel="noopener noreferrer" className="button button-primary" style={{ display: 'inline-block', marginTop: '8px' }}>
-                  🔗 手动打开APKPure搜索页面
-                </a>
-                <div style={{ marginTop: '12px', padding: '12px', background: '#f8f9fa', borderRadius: '6px', fontSize: '13px' }}>
-                  <p><strong>💡 接下来：</strong></p>
-                  <ul style={{ margin: '8px 0 0 16px', padding: '0' }}>
-                    <li>在APKPure搜索结果中找到对应的应用</li>
-                    <li>下载APK或XAPK文件</li>
-                    <li>将下载的文件上传到本工具进行分析</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )}
+
 
           {/* 加载状态 */}
           {state === 'parsing' && (
