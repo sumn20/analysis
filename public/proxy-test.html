@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS代理服务器测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .test-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .proxy-item {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+        .proxy-name {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .status.testing {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .result-details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .html-preview {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 3px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .summary {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 CORS代理服务器测试工具</h1>
+        
+        <div class="test-info">
+            <strong>测试目标：</strong> https://sj.qq.com/appdetail/tv.danmaku.bili (哔哩哔哩)
+            <br>
+            <strong>测试目的：</strong> 检测哪些代理服务器能够成功获取应用宝页面内容
+        </div>
+
+        <div class="controls">
+            <button id="startTest" onclick="startTest()">开始测试所有代理</button>
+            <button id="clearResults" onclick="clearResults()">清除结果</button>
+        </div>
+
+        <div id="results"></div>
+
+        <div id="summary" class="summary" style="display: none;">
+            <h3>📊 测试总结</h3>
+            <div id="summaryContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // CORS 代理服务列表
+        const corsProxies = [
+            {
+                name: 'AllOrigins (推荐)',
+                url: 'https://api.allorigins.win/get?url=',
+                type: 'json'
+            },
+            {
+                name: 'CORS Anywhere (Heroku)',
+                url: 'https://cors-anywhere.herokuapp.com/',
+                type: 'direct'
+            },
+            {
+                name: 'CodeTabs Proxy',
+                url: 'https://api.codetabs.com/v1/proxy?quest=',
+                type: 'direct'
+            },
+            {
+                name: 'ThingProxy',
+                url: 'https://thingproxy.freeboard.io/fetch/',
+                type: 'direct'
+            },
+            {
+                name: 'CORS Bridged',
+                url: 'https://cors.bridged.cc/',
+                type: 'direct'
+            },
+            {
+                name: 'YACDN Proxy',
+                url: 'https://yacdn.org/proxy/',
+                type: 'direct'
+            },
+            {
+                name: 'Proxify',
+                url: 'https://api.proxify.io?url=',
+                type: 'direct'
+            },
+            {
+                name: 'CrossOrigin.me',
+                url: 'https://crossorigin.me/',
+                type: 'direct'
+            },
+            {
+                name: 'HTML Driven CORS Proxy',
+                url: 'https://cors-proxy.htmldriven.com/?url=',
+                type: 'direct'
+            },
+            {
+                name: 'CORS.sh',
+                url: 'https://proxy.cors.sh/',
+                type: 'direct'
+            }
+        ];
+
+        const targetUrl = 'https://sj.qq.com/appdetail/tv.danmaku.bili';
+        let testResults = [];
+
+        function createProxyElement(proxy, index) {
+            return `
+                <div class="proxy-item" id="proxy-${index}">
+                    <div class="proxy-name">${index + 1}. ${proxy.name}</div>
+                    <div class="proxy-url" style="font-family: monospace; color: #666; margin-bottom: 10px;">
+                        ${proxy.url}
+                    </div>
+                    <div id="status-${index}" class="status testing">等待测试</div>
+                    <div id="details-${index}" class="result-details"></div>
+                    <div id="preview-${index}" class="html-preview" style="display: none;"></div>
+                </div>
+            `;
+        }
+
+        function initializeResults() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = corsProxies.map((proxy, index) => 
+                createProxyElement(proxy, index)
+            ).join('');
+        }
+
+        async function testProxy(proxy, index) {
+            const statusEl = document.getElementById(`status-${index}`);
+            const detailsEl = document.getElementById(`details-${index}`);
+            const previewEl = document.getElementById(`preview-${index}`);
+
+            statusEl.className = 'status testing';
+            statusEl.textContent = '测试中...';
+            detailsEl.textContent = '';
+            previewEl.style.display = 'none';
+
+            const startTime = Date.now();
+
+            try {
+                let proxyUrl;
+                let response;
+                let html;
+
+                if (proxy.type === 'json') {
+                    // AllOrigins 返回 JSON 格式
+                    proxyUrl = `${proxy.url}${encodeURIComponent(targetUrl)}`;
+                    response = await fetch(proxyUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    if (!data.contents) {
+                        throw new Error('返回数据为空');
+                    }
+                    html = data.contents;
+                } else {
+                    // 其他代理直接返回 HTML
+                    proxyUrl = `${proxy.url}${targetUrl}`;
+                    response = await fetch(proxyUrl, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    html = await response.text();
+                }
+
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+
+                // 检查是否包含应用宝的关键内容
+                const hasAppName = html.includes('哔哩哔哩') || html.includes('bilibili');
+                const hasGameCard = html.includes('GameCard') || html.includes('app');
+                const hasValidContent = html.length > 1000 && (hasAppName || hasGameCard);
+
+                if (hasValidContent) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = '✅ 成功';
+                    detailsEl.innerHTML = `
+                        <strong>响应时间:</strong> ${duration}ms<br>
+                        <strong>内容长度:</strong> ${html.length} 字符<br>
+                        <strong>包含应用名:</strong> ${hasAppName ? '是' : '否'}<br>
+                        <strong>代理URL:</strong> <a href="${proxyUrl}" target="_blank">${proxyUrl}</a>
+                        <br><button onclick="togglePreview(${index})" style="margin-top: 5px; padding: 3px 8px; font-size: 12px;">查看HTML预览</button>
+                    `;
+                    previewEl.textContent = html.substring(0, 2000) + (html.length > 2000 ? '...' : '');
+                    
+                    testResults.push({
+                        index,
+                        name: proxy.name,
+                        url: proxy.url,
+                        success: true,
+                        duration,
+                        contentLength: html.length,
+                        hasAppName
+                    });
+                } else {
+                    throw new Error(`内容验证失败 (长度: ${html.length}, 包含应用名: ${hasAppName})`);
+                }
+
+            } catch (error) {
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+
+                statusEl.className = 'status failed';
+                statusEl.textContent = '❌ 失败';
+                detailsEl.innerHTML = `
+                    <strong>错误:</strong> ${error.message}<br>
+                    <strong>耗时:</strong> ${duration}ms
+                `;
+
+                testResults.push({
+                    index,
+                    name: proxy.name,
+                    url: proxy.url,
+                    success: false,
+                    duration,
+                    error: error.message
+                });
+            }
+        }
+
+        function togglePreview(index) {
+            const previewEl = document.getElementById(`preview-${index}`);
+            previewEl.style.display = previewEl.style.display === 'none' ? 'block' : 'none';
+        }
+
+        async function startTest() {
+            const startBtn = document.getElementById('startTest');
+            startBtn.disabled = true;
+            startBtn.textContent = '测试中...';
+            
+            testResults = [];
+            document.getElementById('summary').style.display = 'none';
+
+            // 初始化结果显示
+            initializeResults();
+
+            // 并发测试所有代理（限制并发数）
+            const concurrency = 3; // 同时测试3个代理
+            for (let i = 0; i < corsProxies.length; i += concurrency) {
+                const batch = corsProxies.slice(i, i + concurrency);
+                const promises = batch.map((proxy, batchIndex) => 
+                    testProxy(proxy, i + batchIndex)
+                );
+                await Promise.all(promises);
+                
+                // 每批之间稍微延迟
+                if (i + concurrency < corsProxies.length) {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+            }
+
+            // 显示测试总结
+            showSummary();
+
+            startBtn.disabled = false;
+            startBtn.textContent = '重新测试';
+        }
+
+        function showSummary() {
+            const summaryDiv = document.getElementById('summary');
+            const summaryContent = document.getElementById('summaryContent');
+            
+            const successfulProxies = testResults.filter(r => r.success);
+            const failedProxies = testResults.filter(r => !r.success);
+            
+            // 按响应时间排序成功的代理
+            successfulProxies.sort((a, b) => a.duration - b.duration);
+            
+            let summaryHtml = `
+                <p><strong>总计:</strong> ${corsProxies.length} 个代理服务器</p>
+                <p><strong>成功:</strong> ${successfulProxies.length} 个</p>
+                <p><strong>失败:</strong> ${failedProxies.length} 个</p>
+            `;
+            
+            if (successfulProxies.length > 0) {
+                summaryHtml += `
+                    <h4>🏆 推荐排序 (按响应时间):</h4>
+                    <ol>
+                `;
+                successfulProxies.forEach(proxy => {
+                    summaryHtml += `
+                        <li>
+                            <strong>${proxy.name}</strong> 
+                            (${proxy.duration}ms, ${proxy.contentLength} 字符)
+                            ${proxy.hasAppName ? '✅ 包含应用名' : ''}
+                        </li>
+                    `;
+                });
+                summaryHtml += '</ol>';
+                
+                summaryHtml += `
+                    <h4>📋 代码中的推荐顺序:</h4>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto;">const corsProxies = [
+${successfulProxies.map(proxy => `    '${proxy.url}',`).join('\n')}
+];</pre>
+                `;
+            }
+            
+            summaryContent.innerHTML = summaryHtml;
+            summaryDiv.style.display = 'block';
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('summary').style.display = 'none';
+            testResults = [];
+        }
+
+        // 页面加载时初始化
+        window.onload = function() {
+            initializeResults();
+        };
+    </script>
+</body>
+</html>
