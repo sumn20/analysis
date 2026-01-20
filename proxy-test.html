@@ -254,18 +254,26 @@
                 const endTime = Date.now();
                 const duration = endTime - startTime;
 
-                // 检查是否包含应用宝的关键内容
+                // 检查是否成功获取到内容
                 const hasAppName = html.includes('哔哩哔哩') || html.includes('bilibili');
                 const hasGameCard = html.includes('GameCard') || html.includes('app');
-                const hasValidContent = html.length > 1000 && (hasAppName || hasGameCard);
+                const isValidHtml = html.includes('<html') || html.includes('<!DOCTYPE');
+                const hasMinLength = html.length > 500; // 降低最小长度要求
+                
+                // 检查是否是应用宝的错误页面
+                const isErrorPage = html.includes('页面不存在') || html.includes('找不到') || html.includes('404');
+                
+                // 只要能获取到有效的HTML内容就算成功（即使是错误页面）
+                const isSuccess = hasMinLength && isValidHtml;
 
-                if (hasValidContent) {
+                if (isSuccess) {
                     statusEl.className = 'status success';
-                    statusEl.textContent = '✅ 成功';
+                    statusEl.textContent = isErrorPage ? '⚠️ 成功(错误页)' : (hasAppName ? '✅ 成功(完整)' : '✅ 成功');
                     detailsEl.innerHTML = `
                         <strong>响应时间:</strong> ${duration}ms<br>
                         <strong>内容长度:</strong> ${html.length} 字符<br>
                         <strong>包含应用名:</strong> ${hasAppName ? '是' : '否'}<br>
+                        <strong>是否错误页:</strong> ${isErrorPage ? '是' : '否'}<br>
                         <strong>代理URL:</strong> <a href="${proxyUrl}" target="_blank">${proxyUrl}</a>
                         <br><button onclick="togglePreview(${index})" style="margin-top: 5px; padding: 3px 8px; font-size: 12px;">查看HTML预览</button>
                     `;
@@ -278,10 +286,11 @@
                         success: true,
                         duration,
                         contentLength: html.length,
-                        hasAppName
+                        hasAppName,
+                        isErrorPage
                     });
                 } else {
-                    throw new Error(`内容验证失败 (长度: ${html.length}, 包含应用名: ${hasAppName})`);
+                    throw new Error(`内容验证失败 (长度: ${html.length}, 有效HTML: ${isValidHtml})`);
                 }
 
             } catch (error) {
@@ -366,11 +375,20 @@
                     <ol>
                 `;
                 successfulProxies.forEach(proxy => {
+                    let statusIcon = '';
+                    if (proxy.hasAppName) {
+                        statusIcon = '✅ 完整内容';
+                    } else if (proxy.isErrorPage) {
+                        statusIcon = '⚠️ 错误页面';
+                    } else {
+                        statusIcon = '✅ 有效响应';
+                    }
+                    
                     summaryHtml += `
                         <li>
                             <strong>${proxy.name}</strong> 
                             (${proxy.duration}ms, ${proxy.contentLength} 字符)
-                            ${proxy.hasAppName ? '✅ 包含应用名' : ''}
+                            ${statusIcon}
                         </li>
                     `;
                 });
