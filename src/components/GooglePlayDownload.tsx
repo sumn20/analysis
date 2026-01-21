@@ -95,7 +95,7 @@ export default function GooglePlayDownload({ onClose }: GooglePlayDownloadProps)
                 onClick={handleSearch}
                 disabled={state === 'parsing' || !inputUrl.trim()}
               >
-                {state === 'parsing' ? '解析并跳转中...' : 'APKPure下载(推荐)'}
+                {state === 'parsing' ? '解析并跳转中...' : 'APKPure下载(海外推荐)'}
               </button>
             </div>
             <div className="hint-text" style={{ marginTop: '8px', fontSize: '12px', color: '#6c757d' }}>

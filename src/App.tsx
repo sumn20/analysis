@@ -216,13 +216,13 @@ export default function App() {
                       className="btn btn-sm btn-success" 
                       onClick={() => setShowGooglePlayDialog(true)}
                     >
-                      🌐 APKPure下载(推荐)
+                      🌐 APKPure下载(海外推荐)
                     </button>
                     <button 
                       className="btn btn-sm btn-primary" 
                       onClick={() => setShowAppStoreDialog(true)}
                     >
-                      📱 应用宝下载
+                      📱 应用宝下载(国内推荐)
                     </button>
                   </div>
                 )}
