@@ -53,7 +53,7 @@ const DEFAULT_CONFIG: AppConfig = {
   footer: {
     projectUrl: 'https://github.com/LibChecker/LibChecker-Rules',
     projectLabel: '规则库',
-    copyright: '© 2025 APK Analyzer. All rights reserved.',
+    copyright: '',
   },
   rules: {},
 };
