@@ -13,7 +13,7 @@
       "url": "https://beian.miit.gov.cn/",
       "label": "ICP 备案号"
     },
-    "copyright": "© 2025 APK Analyzer. All rights reserved."
+    "copyright": ""
   },
   "rules": {
     "bundleUrl": "https://raw.githubusercontent.com/LibChecker/LibChecker-Rules/master/",
