@@ -46,6 +46,9 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
 
   // CORS 代理服务列表（已测试成功的排在前面）
   const corsProxies = [
+    // 自定义代理服务（优先使用）
+    'https://sumn20.github.io/analysis/api/proxy?url=',  // 部署后会自动更新为正确域名
+    // 第三方代理服务
     'https://api.allorigins.win/get?url=',
     'https://api.codetabs.com/v1/proxy?quest=',
     'https://crossorigin.me/',
