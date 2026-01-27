@@ -44,20 +44,17 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     return { isValid: false, url: '' };
   };
 
-  // CORS 代理服务列表（已测试成功的排在前面）
+  // CORS 代理服务列表（已测试可用的排在前面）
   const corsProxies = [
-    'https://api.allorigins.win/get?url=',
+    // ✅ 已验证可用
     'https://api.codetabs.com/v1/proxy?quest=',
+    'https://r.jina.ai/',  // Jina AI 文本代理（已测试成功）
+    
+    // 🔄 备用代理（可能间歇性可用）
+    'https://api.allorigins.win/get?url=',
     'https://crossorigin.me/',
     'https://cors.bridged.cc/',
     'https://proxy.cors.sh/',
-    'https://cors-proxy.htmldriven.com/p/',
-    'https://cors.io/?',
-    'https://api.proxify.io/?url=',
-    'https://yacdn.org/proxy/',
-    'https://cors-anywhere.herokuapp.com/',
-    'https://thingproxy.freeboard.io/fetch/',
-    'https://api.1forge.com/cors/?url=',
   ];
 
   // 单个代理请求函数
@@ -82,6 +79,16 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     } else if (proxy.includes('codetabs') || proxy.includes('proxify')) {
       // codetabs 和 proxify 使用 quest/url 参数
       proxyUrl = `${proxy}${encodeURIComponent(url)}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) {
+        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+      }
+      
+      html = await response.text();
+    } else if (proxy.includes('jina.ai')) {
+      // Jina AI 直接拼接URL
+      proxyUrl = `${proxy}${url}`;
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
