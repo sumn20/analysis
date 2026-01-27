@@ -46,9 +46,10 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
 
   // CORS 代理服务列表（已测试可用的排在前面）
   const corsProxies = [
-    // ✅ 已验证可用
+    // ✅ 已验证可用（优先测试Jina AI）
+    'https://r.jina.ai/',  // Jina AI 文本代理（优先使用）
     'https://api.codetabs.com/v1/proxy?quest=',
-    'https://r.jina.ai/',  // Jina AI 文本代理（已测试成功）
+    'https://api.cors.lol/?url=',
     
     // 🔄 备用代理（可能间歇性可用）
     'https://api.allorigins.win/get?url=',
@@ -89,6 +90,16 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     } else if (proxy.includes('jina.ai')) {
       // Jina AI 直接拼接URL
       proxyUrl = `${proxy}${url}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) {
+        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+      }
+      
+      html = await response.text();
+    } else if (proxy.includes('cors.lol')) {
+      // cors.lol 使用 url 参数
+      proxyUrl = `${proxy}${encodeURIComponent(url)}`;
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
