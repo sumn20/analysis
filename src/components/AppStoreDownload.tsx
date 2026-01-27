@@ -51,6 +51,13 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     'https://crossorigin.me/',
     'https://cors.bridged.cc/',
     'https://proxy.cors.sh/',
+    'https://cors-proxy.htmldriven.com/p/',
+    'https://cors.io/?',
+    'https://api.proxify.io/?url=',
+    'https://yacdn.org/proxy/',
+    'https://cors-anywhere.herokuapp.com/',
+    'https://thingproxy.freeboard.io/fetch/',
+    'https://api.1forge.com/cors/?url=',
   ];
 
   // 单个代理请求函数
@@ -75,6 +82,26 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     } else if (proxy.includes('codetabs') || proxy.includes('proxify')) {
       // codetabs 和 proxify 使用 quest/url 参数
       proxyUrl = `${proxy}${encodeURIComponent(url)}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) {
+        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+      }
+      
+      html = await response.text();
+    } else if (proxy.includes('cors.io') || proxy.includes('1forge')) {
+      // cors.io 和 1forge 使用 url 参数
+      proxyUrl = `${proxy}${encodeURIComponent(url)}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) {
+        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+      }
+      
+      html = await response.text();
+    } else if (proxy.includes('thingproxy')) {
+      // thingproxy 直接拼接URL
+      proxyUrl = `${proxy}${url}`;
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
