@@ -46,9 +46,9 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
 
   // CORS 代理服务列表（已测试成功的排在前面）
   const corsProxies = [
-    'https://crossorigin.me/',
     'https://api.allorigins.win/get?url=',
     'https://api.codetabs.com/v1/proxy?quest=',
+    'https://crossorigin.me/',
     'https://cors.bridged.cc/',
     'https://proxy.cors.sh/',
   ];
