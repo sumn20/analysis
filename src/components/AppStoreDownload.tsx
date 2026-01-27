@@ -46,8 +46,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
 
   // CORS 代理服务列表（已测试可用的排在前面）
   const corsProxies = [
-    // ✅ 已验证可用（优先测试Jina AI）
-    'https://r.jina.ai/',  // Jina AI 文本代理（优先使用）
+    // ✅ 已验证可用（优先使用可靠的HTML代理）
     'https://api.codetabs.com/v1/proxy?quest=',
     'https://api.cors.lol/?url=',
     
@@ -56,6 +55,9 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     'https://crossorigin.me/',
     'https://cors.bridged.cc/',
     'https://proxy.cors.sh/',
+    
+    // 📝 文本代理（返回AI处理后的内容，可能不适合HTML解析）
+    // 'https://r.jina.ai/',  // 暂时注释，因为返回的是AI摘要而非原始HTML
   ];
 
   // 单个代理请求函数
