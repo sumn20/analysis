@@ -49,13 +49,6 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     'https://crossorigin.me/',
     'https://cors.bridged.cc/',
     'https://proxy.cors.sh/',
-    'https://api.codetabs.com/v1/proxy?quest=',
-    'https://api.allorigins.win/get?url=',
-    'https://cors-anywhere.herokuapp.com/',
-    'https://thingproxy.freeboard.io/fetch/',
-    'https://yacdn.org/proxy/',
-    'https://api.proxify.io?url=',
-    'https://cors-proxy.htmldriven.com/?url='
   ];
 
   // 从应用宝页面提取应用信息（使用 CORS 代理解决跨域问题）
