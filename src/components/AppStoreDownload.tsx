@@ -61,8 +61,23 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
     // 'https://r.jina.ai/',  // 暂时注释，因为返回的是AI摘要而非原始HTML
   ];
 
+  // 获取代理服务器名称
+  const getProxyName = (proxy: string): string => {
+    if (proxy.includes('codetabs')) return 'codetabs.com';
+    if (proxy.includes('cors.lol')) return 'cors.lol';
+    if (proxy.includes('corsproxy.io')) return 'corsproxy.io';
+    if (proxy.includes('allorigins')) return 'allorigins.win';
+    if (proxy.includes('crossorigin.me')) return 'crossorigin.me';
+    if (proxy.includes('cors.bridged.cc')) return 'cors.bridged.cc';
+    if (proxy.includes('proxy.cors.sh')) return 'cors.sh';
+    if (proxy.includes('jina.ai')) return 'jina.ai';
+    if (proxy.includes('thingproxy')) return 'thingproxy';
+    return new URL(proxy).hostname;
+  };
+
   // 单个代理请求函数
   const fetchWithProxy = async (proxy: string, url: string, index: number): Promise<string> => {
+    const proxyName = getProxyName(proxy);
     let proxyUrl: string;
     let html: string;
     
@@ -72,12 +87,12 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       const data = await response.json();
       if (!data.contents) {
-        throw new Error(`代理服务 ${index + 1} 返回数据为空`);
+        throw new Error(`代理服务 ${proxyName} 返回数据为空`);
       }
       html = data.contents;
     } else if (proxy.includes('codetabs') || proxy.includes('proxify')) {
@@ -86,7 +101,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
@@ -96,7 +111,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
@@ -106,7 +121,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
@@ -116,7 +131,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
@@ -126,7 +141,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       const response = await fetch(proxyUrl);
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
@@ -140,17 +155,17 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       });
       
       if (!response.ok) {
-        throw new Error(`代理服务 ${index + 1} 请求失败: HTTP ${response.status}`);
+        throw new Error(`代理服务 ${proxyName} 请求失败: HTTP ${response.status}`);
       }
       
       html = await response.text();
     }
     
     if (!html || html.length === 0) {
-      throw new Error(`代理服务 ${index + 1} 返回空内容`);
+      throw new Error(`代理服务 ${proxyName} 返回空内容`);
     }
     
-    console.log(`✅ 代理服务 ${index + 1} 成功返回内容`);
+    console.log(`✅ 代理服务 ${proxyName} 成功返回内容`);
     return html;
   };
 
@@ -165,16 +180,17 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
       
       // 启动所有代理请求
       corsProxies.forEach((proxy, index) => {
+        const proxyName = getProxyName(proxy);
         fetchWithProxy(proxy, url, index)
           .then(html => {
             if (!completed) {
               completed = true;
-              console.log(`🎉 代理服务 ${index + 1} 率先成功返回，开始解析页面内容`);
+              console.log(`🎉 代理服务 ${proxyName} 率先成功返回，开始解析页面内容`);
               try {
                 const result = parseAppStoreHtml(html, url);
                 resolve(result);
               } catch (parseError) {
-                console.error(`❌ 代理服务 ${index + 1} 解析失败:`, parseError);
+                console.error(`❌ 代理服务 ${proxyName} 解析失败:`, parseError);
                 // 解析失败，继续等待其他代理
                 completed = false;
                 failedCount++;
@@ -185,7 +201,7 @@ export default function AppStoreDownload({ onClose }: AppStoreDownloadProps) {
             }
           })
           .catch(error => {
-            console.warn(`⚠️ 代理服务 ${index + 1} 失败:`, error);
+            console.warn(`⚠️ 代理服务 ${proxyName} 失败:`, error);
             failedCount++;
             if (failedCount >= totalProxies && !completed) {
               reject(new Error('所有代理服务都不可用，无法访问应用宝页面。请检查网络连接或稍后重试。'));
